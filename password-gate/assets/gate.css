@@ -1,0 +1,293 @@
+/* Weston James Group - password gate mockup. Charcoal & Stone. Local only. */
+:root{
+  --bg:#1B1B1A;
+  --surface:#252524;
+  --text:#ECE7DE;
+  --secondary:#A3A098;
+  --stone:#C8C2B6;
+  --divider:#3A3936;
+  --error:#C9A9A4;
+  --ink:#121211;
+  --font-serif:"Playfair Display",Georgia,serif;
+  --font-sans:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);min-height:100%;}
+html{background:var(--bg);}
+body{
+  min-height:100vh;min-height:100dvh;
+  position:relative;overflow-x:hidden;
+  display:flex;flex-direction:column;
+}
+img,svg{display:block;max-width:100%}
+a{color:var(--stone);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+a:focus-visible,button:focus-visible,input:focus-visible,.submit-button-3:focus-visible{
+  outline:2px solid var(--stone);
+  outline-offset:3px;
+}
+
+.grain{
+  position:fixed;inset:0;pointer-events:none;z-index:8;
+  background-image:url("grain.svg");
+  opacity:.07;
+  mix-blend-mode:overlay;
+}
+
+/* Header: logo only, no bar, no gradient */
+.site-header{
+  position:relative;z-index:4;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:flex-start;
+  padding:28px 64px 0;
+  background:transparent;
+}
+.site-header a{display:block;line-height:0;}
+.site-header img{width:210px;height:auto;margin:0;filter:none;}
+
+main.gate{
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  padding:32px 64px 80px;
+}
+
+/* Invitation, centered as a single text block */
+.invite{max-width:440px;width:100%;padding:0;}
+.eyebrow{
+  display:flex;align-items:center;gap:14px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--secondary);margin:0 0 22px;
+}
+.eyebrow::before{
+  content:"";display:block;width:36px;height:1px;background:var(--stone);flex:0 0 36px;
+}
+.invite h1{
+  font-family:var(--font-serif);
+  font-weight:400;
+  font-size:clamp(52px,5.4vw,80px);
+  line-height:.96;
+  letter-spacing:-.02em;
+  margin:0 0 22px;
+  color:var(--text);
+}
+.invite h1 em{
+  font-style:italic;
+  color:var(--stone);
+  font-weight:400;
+}
+.lede{
+  font-size:17px;line-height:1.7;color:var(--secondary);
+  margin:0 0 40px;max-width:26em;
+}
+
+.utility-page-form{margin:0;width:100%;}
+
+.code-field{
+  position:relative;
+  padding:28px 0 12px;
+  margin:0 0 28px;
+}
+.code-field label{
+  position:absolute;
+  left:0;bottom:14px;
+  font-size:16px;
+  line-height:1;
+  color:var(--secondary);
+  pointer-events:none;
+  transform-origin:left center;
+  transition:transform .35s ease, color .35s ease, font-size .35s ease, letter-spacing .35s ease;
+}
+.code-field.is-active label,
+.code-field.has-value label{
+  transform:translateY(-28px);
+  font-size:11px;
+  letter-spacing:.12em;
+  color:var(--stone);
+}
+#field{
+  display:block;width:100%;
+  background:transparent;border:0;border-radius:0;
+  font-family:var(--font-sans);
+  font-size:16px;line-height:1.4;
+  color:transparent;
+  caret-color:var(--stone);
+  padding:8px 0 10px;
+  letter-spacing:.12em;
+  outline:none;
+  position:relative;
+  z-index:1;
+}
+#field::-ms-reveal,#field::-ms-clear{display:none;}
+#field::placeholder{color:transparent;}
+.code-dots{
+  position:absolute;
+  left:0;bottom:20px;
+  display:flex;flex-wrap:nowrap;gap:7px;
+  pointer-events:none;
+  max-width:100%;
+  overflow:hidden;
+  min-height:8px;
+}
+.code-dots i{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--stone);
+  display:block;flex:0 0 7px;
+  opacity:0;
+  transform:scale(.4);
+  animation:dot-in .35s ease forwards;
+}
+@keyframes dot-in{
+  to{opacity:1;transform:scale(1);}
+}
+.code-line{
+  position:absolute;left:0;right:0;bottom:0;
+  height:1px;background:var(--divider);
+  pointer-events:none;
+}
+.code-line::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:var(--stone);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .7s cubic-bezier(.22,1,.36,1);
+}
+.code-field.is-active .code-line::after,
+.code-field.has-value .code-line::after{transform:scaleX(1);}
+.code-field:focus-within{outline:none;}
+.code-field.is-active{outline:none;}
+
+.submit-button-3{
+  appearance:none;-webkit-appearance:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:14px 36px;
+  border:1px solid var(--stone);
+  background:transparent;
+  color:var(--text);
+  font-family:var(--font-sans);
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  cursor:pointer;
+  transition:background .25s ease, color .25s ease;
+}
+.submit-button-3:hover,
+.submit-button-3:focus-visible{
+  background:var(--stone);
+  color:var(--bg);
+}
+.submit-button-3:focus-visible{outline-offset:4px;}
+
+.form-foot{
+  margin:22px 0 0;
+  font-size:14px;line-height:1.6;color:var(--secondary);
+}
+.form-foot a{color:var(--stone);}
+
+.w-form-fail{
+  display:none;
+  margin:18px 0 0;
+  font-size:14px;line-height:1.6;
+  color:var(--error);
+}
+.w-form-fail.is-visible,
+.w-form-fail[data-open="true"]{display:block;}
+.w-form-fail a{color:var(--error);text-decoration:underline;text-underline-offset:3px;}
+.utility-page-form.has-error .form-foot{display:none;}
+
+.utility-page-form.is-shake{
+  animation:form-shake .48s ease;
+}
+@keyframes form-shake{
+  0%,100%{transform:translateX(0);}
+  20%{transform:translateX(-7px);}
+  40%{transform:translateX(7px);}
+  60%{transform:translateX(-4px);}
+  80%{transform:translateX(4px);}
+}
+
+/* Door (local mock success only) */
+.doors{
+  position:fixed;inset:0;z-index:20;
+  pointer-events:none;
+  visibility:hidden;
+}
+.doors.is-closing,
+.doors.is-parting{visibility:visible;pointer-events:auto;}
+.door{
+  position:absolute;top:0;bottom:0;width:50%;
+  background:var(--ink);
+  transform:translateX(0);
+}
+.door-l{left:0;border-right:1px solid var(--divider);transform:translateX(-101%);}
+.door-r{right:0;border-left:1px solid var(--divider);transform:translateX(101%);}
+.doors.is-closing .door-l,
+.doors.is-closing .door-r,
+.doors.is-parting .door-l,
+.doors.is-parting .door-r{transition:transform .7s cubic-bezier(.77,0,.18,1);}
+.doors.is-closing .door-l{transform:translateX(0);}
+.doors.is-closing .door-r{transform:translateX(0);}
+.doors.is-parting .door-l{transform:translateX(-101%);}
+.doors.is-parting .door-r{transform:translateX(101%);}
+
+.after{
+  display:none;
+  min-height:100vh;min-height:100dvh;
+  padding:120px 64px 72px;
+  position:relative;z-index:3;
+}
+.after.is-shown{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;max-width:720px;}
+.after p{
+  font-family:var(--font-serif);font-size:32px;font-style:italic;color:var(--stone);
+  margin:0 0 16px;
+}
+.after .note{font-family:var(--font-sans);font-size:13px;color:var(--secondary);font-style:normal;max-width:28em;line-height:1.6;}
+body.is-entered main.gate{display:none;}
+
+/* Phone */
+@media (max-width:800px){
+  .site-header{padding:18px 24px 0;}
+  .site-header img{width:168px;}
+  main.gate{
+    padding:24px 24px 56px;
+    align-items:center;
+    justify-content:center;
+  }
+  .invite{max-width:none;}
+  .invite h1{font-size:48px;margin-bottom:16px;}
+  .lede{font-size:16px;margin-bottom:24px;}
+  .submit-button-3{width:100%;}
+  .after{padding:100px 24px 40px;}
+}
+
+@media (max-width:390px){
+  .site-header{padding:16px 20px 0;}
+  main.gate{padding:20px 20px 48px;}
+  .invite h1{font-size:44px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .code-field label,
+  .code-line::after,
+  .code-dots i,
+  .submit-button-3,
+  .doors.is-closing .door-l,
+  .doors.is-closing .door-r,
+  .doors.is-parting .door-l,
+  .doors.is-parting .door-r{transition:none;animation:none;}
+  .utility-page-form.is-shake{animation:none;}
+  .code-dots i{opacity:1;transform:none;}
+}
+
+.visually-hidden{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+.code-field.is-active .code-line,
+.code-field.has-value .code-line{
+  background:transparent;
+}
+.code-field.is-active .code-line::after,
+.code-field.has-value .code-line::after{
+  height:2px;
+  top:-0.5px;
+}

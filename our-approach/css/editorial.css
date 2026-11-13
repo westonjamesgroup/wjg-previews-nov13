@@ -1,0 +1,119 @@
+/* Editorial points variant. Glass cards stay on the main charcoal-stone page.
+   The four points sit below a clean photo ending, on solid charcoal. */
+body.is-editorial .intro-lead {
+  background: #1B1B1A;
+}
+body.is-editorial .intro-scene {
+  padding-bottom: 64px;
+}
+/* Extra veil on the left so eyebrow and body type stay AA over the photo.
+   The right side of the photograph stays clean. */
+body.is-editorial .intro-scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(27, 27, 26, 0.5) 0%, rgba(27, 27, 26, 0.22) 46%, rgba(27, 27, 26, 0) 68%);
+}
+body.is-editorial .intro-scene > * {
+  position: relative;
+  z-index: 2;
+}
+body.is-editorial .nav-motto {
+  color: #ECE7DE;
+}
+/* 12px kicker must be cream over the photograph; taupe does not hold 4.5:1 there. */
+body.is-editorial .intro-hero .kicker {
+  color: #ECE7DE;
+}
+body.is-editorial .intro-grid {
+  grid-template-columns: minmax(0, 34em) minmax(0, 1fr);
+}
+body.is-editorial .points-band {
+  background: #1B1B1A;
+  padding: 28px 0 96px;
+}
+body.is-editorial .points-band .photo-credit {
+  margin: 0 0 36px;
+  color: #A3A098;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+body.is-editorial .points-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+  row-gap: 64px;
+  padding: 48px 0 0;
+  border-top: 1px solid #C8C2B6;
+  list-style: none;
+  margin: 0;
+  background: none;
+}
+body.is-editorial .point {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+@supports ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+  body.is-editorial .point {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+body.is-editorial .point-num {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C8C2B6;
+  margin: 0 0 18px;
+  line-height: 1.4;
+}
+body.is-editorial .point-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ECE7DE;
+  margin: 0 0 14px;
+}
+body.is-editorial .point-body {
+  color: #A3A098;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 28em;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  body.is-editorial .intro-grid {
+    grid-template-columns: 1fr;
+  }
+  body.is-editorial .points-grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    column-gap: 0;
+    padding-top: 36px;
+  }
+  body.is-editorial .point-title { font-size: 24px; }
+  body.is-editorial .points-band { padding: 20px 0 72px; }
+}
+@media (max-width: 390px) {
+  body.is-editorial .points-grid {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+    padding-top: 32px;
+  }
+}
