@@ -1,0 +1,305 @@
+<!doctype html><html lang="en"><head><meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../preview.css"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Weston James Group — homepage preview (line)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Playfair+Display:wght@400&display=swap" rel="stylesheet"><style>
+:root{--bg:#0C0C0C;--card:#1C1C1C;--w:#fff;--body:rgba(255,255,255,.78);--mute:rgba(255,255,255,.62);--hair:rgba(255,255,255,.14);--hair2:rgba(255,255,255,.28)}
+*{box-sizing:border-box;font-style:normal!important}
+html,body{margin:0;background:var(--bg);color:var(--w)}
+body{font-family:Inter,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}p,h1,h2,h3,figure{margin:0}
+.num{font-family:Inter,sans-serif;font-variant-numeric:lining-nums tabular-nums}
+.pf{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-.3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px}
+.kick{font:200 12px/16.8px Inter,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--w)}
+.krow{display:flex;align-items:center;gap:20px}
+.krow .rule{flex:1;height:1px;background:var(--hair2)}
+.krow .more{font:300 12px/16px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--body);display:inline-flex;align-items:center;gap:12px;min-height:44px}
+.body{font:300 17px/30px Inter,sans-serif;color:var(--body)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:0 24px;border:1px solid rgba(255,255,255,.62);font:200 12px/12px Inter,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--w)}
+.credit{font:300 11px/16px Inter,sans-serif;color:var(--mute);margin-top:10px}
+img.ph{display:block;width:100%;object-fit:cover}
+.sec{padding-top:144px}
+/* header: transparent, no gradient. Scrolls with the hero in the mock; spec: auto-hide on scroll */
+.nav{position:absolute;top:0;left:0;right:0;height:100px;z-index:5}
+.nav .menu{position:absolute;left:28px;top:26px;display:flex;align-items:center;gap:16px;height:44px}
+.nav .menu img{width:32px;height:32px}
+.nav .menu span,.nav .wmd{font:300 11px/11px Inter,sans-serif;letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 12px rgba(0,0,0,.45)}
+.nav .wmd{position:absolute;left:50%;top:42.5px;transform:translateX(-50%)}
+.nav .brand{position:absolute;right:24px;top:16px;width:254px}.nav .brand img{width:100%;display:block}
+/* hero */
+.hero{position:relative;height:820px;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero .cap{position:absolute;left:48px;bottom:72px;max-width:760px}
+.hero .cap h1{font-size:56px;line-height:60px;text-shadow:0 1px 24px rgba(0,0,0,.35)}
+.hero .cap p{font:300 17px/26px Inter,sans-serif;margin-top:14px;text-shadow:0 1px 16px rgba(0,0,0,.5)}
+.hero .cap .btn{margin-top:28px;background:rgba(12,12,12,.28);backdrop-filter:blur(6px)}
+.hero .credit{position:absolute;right:48px;bottom:24px;color:rgba(255,255,255,.7)}
+/* intro */
+.intro{padding-top:120px}
+.intro h2{font-size:56px;line-height:62px;max-width:15em;margin-top:36px}
+.intro .body{max-width:640px;margin-top:32px}
+/* listings */
+.lst{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+.lst a{display:block}
+.lst img{aspect-ratio:4/3}
+.lst .meta{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-top:22px;padding-bottom:6px}
+.lst h3{font-size:30px;line-height:36px}
+.lst .st{font:300 11px/16px Inter,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--body);white-space:nowrap}
+.lst .sub{font:300 15px/24px Inter,sans-serif;color:var(--mute);margin-top:6px}
+/* architects */
+.arch{display:grid;grid-template-columns:repeat(5,1fr);margin-top:40px;border-top:1px solid var(--hair)}
+.arch a{display:block;padding:28px 24px 30px 0;min-height:44px}
+.arch a+a{padding-left:24px;border-left:1px solid var(--hair)}
+.arch .an{font:300 11px/16px Inter,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--mute)}
+.arch .hn{font-size:22px;line-height:29px;margin-top:10px}
+.arch-note{border-top:1px solid var(--hair)}
+/* grid A: index */
+.ix{display:grid;grid-template-columns:1fr 400px;gap:64px;margin-top:40px;align-items:start}
+.ix ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.ix li{border-bottom:1px solid var(--hair)}
+.ix li>a,.ix li>div{display:grid;grid-template-columns:176px 1fr auto;align-items:center;gap:24px;min-height:108px}
+.ix .lab{font:300 11px/16px Inter,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--mute)}
+.ix .t{font-size:40px;line-height:48px;white-space:nowrap;transition:transform .5s}
+.ix .arw{color:var(--mute)}
+.ix li.on .t{transform:translateX(12px)}
+.ix li.on .lab,.ix li.on .arw{color:var(--w)}
+.ix ul.dim li:not(.on) .t{color:rgba(255,255,255,.42)}
+.ix li.soon .t{color:rgba(255,255,255,.42)}
+.ix .thumb{display:none}
+.ix .panel{position:sticky;top:120px}
+.ix .panel img{aspect-ratio:4/5}
+.ix .panel .line{font:300 15px/24px Inter,sans-serif;color:var(--body);margin-top:16px}
+/* grid B: rail */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:360px;gap:24px;margin-top:40px;overflow:hidden;padding-right:48px}
+.rail a,.rail .soon{display:block}
+.rail img{aspect-ratio:3/4}
+.rail .lab{font:300 11px/16px Inter,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--mute);margin-top:20px}
+.rail h3{font-size:28px;line-height:34px;margin-top:8px}
+.rail .line{font:300 14px/22px Inter,sans-serif;color:var(--body);margin-top:8px;max-width:26em}
+.rail .soon .blank{aspect-ratio:3/4;border:1px solid var(--hair);display:flex;align-items:flex-end;padding:28px}
+.rail .soon .blank p{font:300 14px/22px Inter,sans-serif;color:var(--mute)}
+.railbar{display:flex;align-items:center;gap:24px;margin-top:36px}
+.railbar .track{flex:1;height:1px;background:var(--hair);position:relative}
+.railbar .track i{position:absolute;left:0;top:0;height:1px;width:34%;background:var(--w)}
+.railbar button{width:44px;height:44px;border:1px solid var(--hair2);border-radius:50%;background:none;color:var(--w);display:grid;place-items:center}
+/* grid C: line */
+.ln{margin-top:48px;font-size:64px;line-height:84px;letter-spacing:-.5px;max-width:1180px}
+.ln a,.ln span.s{white-space:nowrap}
+.ln a{border-bottom:1px solid transparent;transition:color .4s}
+.ln.dim a:not(.on){color:rgba(255,255,255,.42)}
+.ln a.on{border-bottom-color:rgba(255,255,255,.62)}
+.ln .s{color:rgba(255,255,255,.42)}
+.ln .sep{display:inline-block;width:7px;height:7px;border-radius:50%;border:1px solid rgba(255,255,255,.42);vertical-align:middle;margin:0 26px 12px}
+.ln-sub{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:48px;border-top:1px solid var(--hair);padding-top:24px}
+.ln-sub p{font:300 13px/21px Inter,sans-serif;color:var(--mute)}
+.ln-sub b{display:block;font:300 11px/16px Inter,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--body);margin-bottom:8px}
+/* search */
+.srch h2{font-size:48px;line-height:56px;margin-top:36px}
+.srch .body{margin-top:14px}
+.sbar{display:grid;grid-template-columns:1fr 200px 200px 160px;gap:0;margin-top:40px;border:1px solid var(--hair2)}
+.sbar>div{min-height:64px;padding:12px 20px;border-right:1px solid var(--hair)}
+.sbar label{display:block;font:300 10.5px/14px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--mute)}
+.sbar span{display:block;font:300 15px/24px Inter,sans-serif;color:var(--body);margin-top:4px}
+.sbar a{display:flex;align-items:center;justify-content:center;background:#fff;color:#0C0C0C;font:400 12px/12px Inter,sans-serif;letter-spacing:3px;text-transform:uppercase}
+.sopts{margin-top:16px;font:300 13px/20px Inter,sans-serif;color:var(--mute);display:flex;gap:24px}
+.sopts a{display:inline-flex;align-items:center;min-height:44px;color:var(--body);border-bottom:1px solid var(--hair2)}
+/* founder */
+.fd{display:grid;grid-template-columns:1fr 1fr;gap:96px;margin-top:40px}
+.fd h2{font-size:56px;line-height:62px}
+.fd .body+.body{margin-top:20px}
+.fd .rd{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:20px;font:300 12px/16px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--hair2)}
+.stats{display:grid;grid-template-columns:1fr;border-top:1px solid var(--hair);margin-top:48px;max-width:400px}
+.stats div{padding:20px 0;border-bottom:1px solid var(--hair);display:flex;align-items:baseline;justify-content:space-between;gap:24px}
+.stats span{margin-top:0!important;text-align:right}
+.stats b{display:block;font:300 34px/40px Inter,sans-serif;letter-spacing:-.5px}
+.stats span{display:block;font:300 13px/20px Inter,sans-serif;color:var(--mute);margin-top:8px}
+/* press */
+.press{display:flex;align-items:center;justify-content:space-between;gap:40px;margin-top:96px;padding:28px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.press .kick{color:var(--mute);white-space:nowrap}
+.press .logos{display:flex;align-items:center;gap:56px;opacity:.72}
+.press img{display:block;height:22px;width:auto}
+.press img.tall{height:30px}
+.press img.ad{height:38px}
+/* journal */
+.jr{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+.jr img{aspect-ratio:3/2}
+.jr .lab{font:300 11px/16px Inter,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--mute);margin-top:22px}
+.jr h3{font-size:30px;line-height:38px;margin-top:10px;max-width:16em}
+.jr .dek{font:300 15px/25px Inter,sans-serif;color:var(--body);margin-top:10px;max-width:34em}
+.jr .rd{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:10px;font:300 12px/16px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--body)}
+/* note */
+.note{display:grid;grid-template-columns:300px 1fr;gap:80px;align-items:center;margin-top:40px}
+.note img{aspect-ratio:4/5;object-position:50% 30%;filter:grayscale(1)}
+.note blockquote{margin:0;font-family:"Playfair Display",serif;font-size:36px;line-height:46px;max-width:17em}
+.note .tag{display:inline-block;font:300 10px/14px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#0C0C0C;background:#d9d6cf;padding:4px 8px;margin-bottom:20px}
+.note .sig{font:300 14px/22px Inter,sans-serif;color:var(--body);margin-top:24px}
+.note .btn{margin-top:32px}
+/* close + doors */
+.close{text-align:center;padding-top:160px}
+.close .r{width:48px;height:1px;background:var(--hair2);margin:0 auto 40px}
+.close h2{font-size:40px;line-height:50px}
+.doors{text-align:left;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:96px}
+.door{display:flex;flex-direction:column;justify-content:space-between;min-height:440px;padding:36px 48px 44px}
+.door+.door{border-left:1px solid var(--hair)}
+.door .line{font-size:40px;line-height:50px;max-width:12em}
+.door .btn{align-self:flex-start;min-height:60px;padding:0 32px;gap:18px;font-size:13px}
+/* footer */
+.foot{padding:72px 48px 40px}
+.foot .g{display:grid;grid-template-columns:280px 1fr 1fr;gap:48px;max-width:1184px;margin:0 auto}
+.foot .g img{width:200px}
+.foot h4{margin:0 0 16px;font:200 11px/14px Inter,sans-serif;letter-spacing:3px;text-transform:uppercase}
+.foot li{list-style:none;font:300 14px/22px Inter,sans-serif;color:var(--body)}
+.foot ul{margin:0;padding:0;display:grid;gap:8px}
+.foot .legal{max-width:1184px;margin:56px auto 0;padding-top:24px;border-top:1px solid var(--hair);font:300 12px/20px Inter,sans-serif;color:var(--mute);display:flex;flex-wrap:wrap;gap:4px 16px}
+.mark{position:absolute;z-index:9;left:50%;transform:translateX(-50%);font:400 10px/14px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#0C0C0C;background:#d9d6cf;padding:4px 10px;white-space:nowrap}
+@media (max-width:600px){
+ .wrap{padding:0 20px}
+ .sec{padding-top:96px}
+ .nav .menu{left:20px;top:18px;gap:12px}.nav .menu span{font-size:10px}
+ .nav .wmd{display:none}.nav .brand{right:16px;top:10px;width:234px}
+ .hero{height:780px}.hero>img{object-position:38% 40%}
+ .hero .cap{left:20px;right:20px;bottom:56px}
+ .hero .cap h1{font-size:38px;line-height:42px}
+ .hero .cap p{font-size:15px;line-height:24px}
+ .hero .cap .btn{width:100%;min-height:52px}
+ .hero .credit{right:20px;bottom:16px;left:20px}
+ .intro{padding-top:88px}
+ .intro h2{font-size:36px;line-height:42px;margin-top:28px}
+ .body{font-size:16px;line-height:28px}
+ .krow .more span{display:none}
+ .lst{grid-template-columns:1fr;gap:56px;margin-top:28px}
+ .lst h3{font-size:26px;line-height:32px}
+ .arch{grid-template-columns:1fr;margin-top:28px}
+ .arch a,.arch a+a{padding:18px 0;border-left:0;border-bottom:1px solid var(--hair)}
+ .arch .hn{font-size:22px;line-height:28px;margin-top:6px}
+ .ix{grid-template-columns:1fr;margin-top:28px}
+ .ix .panel{display:none}
+ .ix li>a,.ix li>div{grid-template-columns:minmax(0,1fr) 64px;grid-template-rows:auto auto;gap:6px 16px;min-height:0;padding:20px 0}
+ .ix .lab{grid-column:1;grid-row:1}
+ .ix .t{grid-column:1;grid-row:2;font-size:28px;line-height:34px;white-space:normal}
+ .ix .arw{display:none}
+ .ix .thumb{display:block;grid-column:2;grid-row:1/3;width:64px;height:80px;object-fit:cover}
+ .ix .thumb.blank{border:1px solid var(--hair)}
+ .ix li.on .t{transform:none}
+ .ix ul.dim li:not(.on) .t{color:#fff}
+ .ix ul.dim li.soon .t{color:rgba(255,255,255,.42)}
+ .rail{grid-auto-columns:78%;gap:16px;padding-right:20px;margin-top:28px}
+ .rail h3{font-size:24px;line-height:30px}
+ .railbar{margin-top:28px}
+ .ln{font-size:34px;line-height:50px;margin-top:32px}
+ .ln a,.ln span.s{display:block;white-space:normal;padding:10px 0;border-bottom:1px solid var(--hair)}
+ .ln a.on{border-bottom-color:var(--hair)}
+ .ln .sep{display:none}
+ .ln.dim a:not(.on){color:#fff}
+ .ln-sub{display:none}
+ .srch h2{font-size:34px;line-height:40px;margin-top:28px}
+ .sbar{grid-template-columns:1fr;border:0;gap:12px}
+ .sbar>div{border:1px solid var(--hair2);border-radius:0}
+ .sbar>div.opt{display:none}
+ .sbar a{min-height:52px}
+ .fd{grid-template-columns:1fr;gap:28px;margin-top:28px}
+ .fd h2{font-size:40px;line-height:46px}
+ .stats{grid-template-columns:1fr;margin-top:48px}
+ .stats{max-width:none;margin-top:28px}
+ .stats b{font-size:28px;line-height:34px}
+ .press{flex-direction:column;align-items:flex-start;gap:20px;margin-top:64px}
+ .press .logos{gap:28px;flex-wrap:wrap}
+ .press img{height:16px}.press img.tall{height:22px}
+ .jr{grid-template-columns:1fr;gap:48px;margin-top:28px}
+ .jr h3{font-size:26px;line-height:33px}
+ .note{grid-template-columns:1fr;gap:20px;align-items:start;margin-top:28px}
+ .note blockquote{font-size:24px;line-height:32px;grid-column:1/-1}
+ .note .txt{display:contents}
+ .note .tag{grid-column:1/-1;justify-self:start;margin:4px 0 0}
+ .note img{width:160px}
+ .note .sig,.note .btn{grid-column:1/-1}
+ .note .btn{width:100%;margin-top:8px;letter-spacing:2px;padding:0 12px;white-space:nowrap}
+ .close{padding-top:112px}
+ .close h2{font-size:28px;line-height:36px;padding:0 20px}
+ .doors{grid-template-columns:1fr;margin-top:64px}
+ .door{min-height:300px;padding:24px 20px 28px}
+ .door+.door{border-left:0;border-top:1px solid var(--hair)}
+ .door .line{font-size:30px;line-height:38px}
+ .door .btn{width:100%}
+ .foot{padding:56px 20px 40px}
+ .foot .g{grid-template-columns:1fr;gap:36px}
+ .foot .legal{flex-direction:column}
+}
+</style></head><body><div class="preview-bar" data-preview-chrome>
+  <span>Unpublished preview. Not on the live site.</span>
+  <nav>
+    <a href="../">All versions</a>
+    <a href="../homepage/">Recommended</a>
+    <a href="../rail/">Rail</a>
+    <a href="../line/" aria-current="page">Line</a>
+  </nav>
+</div>
+<script src="../preview.js" defer></script><div class="preview-root">
+<header class="nav"><a class="menu" href="#"><img src="../img/plus.png" alt=""><span>Menu</span></a><div class="wmd">We Move Different</div><a class="brand" href="https://www.westonjamesgroup.com/" target="_blank" rel="noopener noreferrer"><img src="../img/wordmark.svg" alt="Weston James Group"></a></header>
+<section class="hero" id="hero"><img src="../img/garcia-full.jpg" alt="Garcia House at dusk above its curved pool">
+<div class="cap"><h1 class="pf">A Higher Standard of Representation.</h1><p>Refined, confident, and focused on the client experience.</p>
+<a class="btn" href="tel:+13108800582"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h2.3l1.2 3.4-1.7 1.2a8.6 8.6 0 0 0 4.1 4.1l1.2-1.7 3.4 1.2v2.3a1.5 1.5 0 0 1-1.5 1.5A13 13 0 0 1 2.5 3a1.5 1.5 0 0 1 1.5-1.5z" fill="none" stroke="currentColor" stroke-width="1"/></svg><span class="num">310.880.0582</span></a></div>
+<p class="credit">Photograph: Roger Davies. Courtesy of Weston James Group.</p></section>
+
+<section class="wrap intro" id="intro"><div class="krow"><p class="kick">The Art of Representation</p><span class="rule"></span></div>
+<h2 class="pf">An Appreciation for Architecture. A Passion for Exceptional Real Estate.</h2>
+<p class="body">Weston James Group represents architecturally significant residences, private estates, and coastal properties throughout Los Angeles. With an appreciation for design and a distinct creative perspective, we approach each property through thoughtful storytelling, sophisticated marketing, and a level of presentation that reflects its individual character.</p></section>
+
+<section class="wrap sec" id="listings"><div class="krow"><p class="kick">Current Listings</p><span class="rule"></span><a class="more" href="https://www.westonjamesgroup.com/our-listings" target="_blank" rel="noopener noreferrer"><span>All listings</span><svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></a></div>
+<div class="lst">
+<a href="https://www.westonjamesgroup.com/954-hillside-terrace" target="_blank" rel="noopener noreferrer"><img class="ph" src="../img/hillside.webp" alt="954 Hillside Terrace, Pasadena, seen through mature trees above a terraced garden" style="object-position:50% 90%">
+<div class="meta"><h3 class="pf"><span class="num">954</span> Hillside Terrace</h3><span class="st">In Escrow</span></div><p class="sub">San Rafael, Pasadena. Ainsworth, Angel &amp; McClellan.</p><p class="credit">Photography by Matthew Momberger.</p></a>
+<a href="https://www.westonjamesgroup.com/7200-la-presa-drive" target="_blank" rel="noopener noreferrer"><img class="ph" src="../img/lapresa.jpg" alt="7200 La Presa Drive, aerial of the level lawn with city view" style="object-position:50% 50%">
+<div class="meta"><h3 class="pf"><span class="num">7200</span> La Presa Drive</h3><span class="st">For Sale</span></div><p class="sub">Outpost Estates. A <span class="num">0.97</span>-acre site with city and ocean views.</p><p class="credit">Photographer to be confirmed.</p></a>
+</div></section>
+
+<section class="wrap sec" id="architects"><div class="krow"><p class="kick">Selected Architecture</p><span class="rule"></span><a class="more" href="https://www.westonjamesgroup.com/our-showcase" target="_blank" rel="noopener noreferrer"><span>Notable transactions</span><svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></a></div>
+<div class="arch">
+<a href="https://www.westonjamesgroup.com/our-showcase" target="_blank" rel="noopener noreferrer"><p class="an">Richard Neutra</p><p class="hn pf">The Tremaine House</p></a>
+<a href="https://www.westonjamesgroup.com/our-showcase" target="_blank" rel="noopener noreferrer"><p class="an">John Lautner</p><p class="hn pf">Garcia House</p></a>
+<a href="https://www.westonjamesgroup.com/our-showcase" target="_blank" rel="noopener noreferrer"><p class="an">Craig Ellwood</p><p class="hn pf">Case Study House No. <span class="num">16</span></p></a>
+<a href="https://www.westonjamesgroup.com/our-showcase" target="_blank" rel="noopener noreferrer"><p class="an">Cliff May</p><p class="hn pf"><span class="num">667</span> Ledo Way</p></a>
+<a href="https://www.westonjamesgroup.com/our-showcase" target="_blank" rel="noopener noreferrer"><p class="an">Richard Frazer</p><p class="hn pf"><span class="num">8818</span> Rising Glen Place</p></a>
+</div></section>
+
+<section class="wrap sec" id="explore"><div class="krow"><p class="kick">Explore</p><span class="rule"></span></div>
+<p class="ln pf dim"><a class="pf" href="https://www.westonjamesgroup.com/our-listings" target="_blank" rel="noopener noreferrer">Featured Exclusives</a><span class="sep"></span><a class="pf on" href="https://www.westonjamesgroup.com/our-showcase" target="_blank" rel="noopener noreferrer">Notable Transactions</a><span class="sep"></span><a class="pf" href="https://www.westonjamesgroup.com/search-properties" target="_blank" rel="noopener noreferrer">Search Homes</a><span class="sep"></span><a class="pf" href="https://www.westonjamesgroup.com/journal" target="_blank" rel="noopener noreferrer">The Journal</a><span class="sep"></span><span class="s pf">The Club</span></p><div class="ln-sub"><p><b>Our Listings</b>The homes we currently represent, presented in full.</p><p class="is-on"><b>Our Showcase</b>Selected past transactions, kept as a record of our work.</p><p><b>Homes for Sale</b>Take your time exploring. The right home reveals itself.</p><p><b>A Life Well Placed</b>Architecture, Design, Culture, People, Place.</p><p><b>Coming Soon</b>A private program in preparation. Details to follow.</p></div></section>
+
+<section class="wrap sec srch" id="search"><div class="krow"><p class="kick">Search Homes</p><span class="rule"></span></div>
+<h2 class="pf">Your Next Chapter Begins Here.</h2><p class="body">Hillside modern, courtyard houses, and estates from the canyons to the beach.</p>
+<div class="sbar"><div><label>City or ZIP code</label><span>Venice, Beverly Hills or 90049</span></div><div class="opt"><label>Price</label><span>Any</span></div><div class="opt"><label>Architectural style</label><span>All styles</span></div><a href="https://www.westonjamesgroup.com/search-properties" target="_blank" rel="noopener noreferrer">Search</a></div>
+<div class="sopts"><a href="https://www.westonjamesgroup.com/search-properties" target="_blank" rel="noopener noreferrer">More filters</a></div></section>
+
+<section class="wrap sec" id="founder"><div class="krow"><p class="kick">Meet the Founder</p><span class="rule"></span></div>
+<div class="fd"><div><h2 class="pf">Weston Littlefield</h2><div class="stats"><div><b>$550M+</b><span>In career sales</span></div><div><b>20</b><span>Sales above $10 million</span></div><div><b>20</b><span>Malibu beach-lot transactions</span></div></div></div><div>
+<p class="body">With more than <span class="num">$550</span> million in career sales, Weston Littlefield has established himself as a leading figure in Los Angeles luxury real estate, specializing in architecturally significant residences, exceptional estates, and exclusive off-market opportunities. His portfolio includes some of Southern California&#8217;s most celebrated architectural works, including John Lautner&#8217;s Garcia House, Richard Neutra&#8217;s Tremaine House and William H. Levit House, Craig Ellwood&#8217;s Case Study House #<span class="num">16</span>, Wallace Neff&#8217;s Straus House, and Cliff May&#8217;s Dr. Richard Henry House. Beyond architectural estates, his track record includes <span class="num">20</span> beach-lot sales along Malibu&#8217;s La Costa Beach and Carbon Beach, alongside a <span class="num">$39</span> million residential sale that began with a direct message on social media.</p>
+<p class="body">Recognized among The Hollywood Reporter&#8217;s <span class="num">37</span> Top L.A. Real Estate Brokers in <span class="num">2026</span> and named to the Los Angeles Business Journal Leaders of Influence, Weston has earned a reputation for exceptional representation and an unwavering commitment to his clients. Known for his personable, intuitive approach, he combines market expertise, discretion, and a profound appreciation for architecture to deliver a highly personalized real estate experience built on trust, integrity, and lasting relationships.</p>
+<a class="rd" href="https://www.westonjamesgroup.com/our-story" target="_blank" rel="noopener noreferrer">Read Weston Littlefield&#8217;s story <svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></a></div></div>
+<div class="press" id="press"><p class="kick">As seen in</p><div class="logos"><img src="../img/press-ad.png" class="ad" alt="Architectural Digest"><img src="../img/press-forbes.png" alt="Forbes"><img src="../img/press-bi.png" class="tall" alt="Business Insider"><img src="../img/press-cnbc.png" class="tall" alt="CNBC"></div></div>
+</section>
+
+<section class="wrap sec" id="journal"><div class="krow"><p class="kick">From the Journal</p><span class="rule"></span><a class="more" href="https://www.westonjamesgroup.com/journal" target="_blank" rel="noopener noreferrer"><span>All stories</span><svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></a></div>
+<div class="jr">
+<a href="https://www.westonjamesgroup.com/post/selling-an-architectural-home-in-los-angeles" target="_blank" rel="noopener noreferrer"><img class="ph" src="../img/brown1.webp" alt="The Brown House, Richard Neutra. A long balcony above planted slopes."><p class="lab">Story. Architecture</p><h3 class="pf">Selling an Architectural Home in Los Angeles</h3><p class="dek">An informed approach to preserving, positioning, and representing Los Angeles&#8217; most distinctive residences.</p><span class="rd">Read the story <svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span></a>
+<a href="https://www.westonjamesgroup.com/post/venice-compound-palms-boulevard" target="_blank" rel="noopener noreferrer"><img class="ph" src="../img/venice.jpg" alt="The Venice Compound residence and pool at dusk" style="object-position:50% 55%"><p class="lab">Story. Architecture</p><h3 class="pf">On Palms Boulevard, Four Buildings Around One Garden</h3><p class="dek">On two adjacent lots in Venice, four Craftsman buildings were renovated as one place, with a garden and courtyards holding them together.</p><span class="rd">Read the story <svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span></a>
+</div><p class="credit">Photography by Matthew Momberger.</p></section>
+
+<section class="wrap sec" id="note"><div class="krow"><p class="kick">A Note from Weston</p><span class="rule"></span></div>
+<div class="note"><img class="ph" src="../img/headshot.jpg" alt="Weston Littlefield">
+<div class="txt"><span class="tag">Placeholder line for Marketing Director</span>
+<blockquote>A single line from Weston on how he works with each client, written by Marketing Director.</blockquote>
+<p class="sig">Weston Littlefield, founder of Weston James Group, Estates Director at AKG | Christie&#8217;s International Real Estate</p>
+<a class="btn" href="https://www.westonjamesgroup.com/contact-us-final-page" target="_blank" rel="noopener noreferrer">Arrange a private consultation</a></div></div></section>
+
+<section class="close" id="doors"><div class="r"></div><h2 class="pf">The Next Chapter Is Yours.<br>We Look Forward to Being Part of It.</h2>
+<div class="doors">
+<a class="door" href="https://www.westonjamesgroup.com/contact-us-final-page?path=buyer" target="_blank" rel="noopener noreferrer"><p class="kick">Buying</p><p class="line pf">Find the one worth telling people about.</p><span class="btn">Start here <svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span></a>
+<a class="door" href="https://www.westonjamesgroup.com/contact-us-final-page?path=seller" target="_blank" rel="noopener noreferrer"><p class="kick">Selling</p><p class="line pf">Hand it on to someone who will get it.</p><span class="btn">Start here <svg class="arw" width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M0 6h21M15.5 .5 21 6l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span></a>
+</div></section>
+
+<footer class="foot"><div class="g"><img src="../img/wordmark.svg" alt="Weston James Group">
+<div><h4>Contact</h4><ul><li class="num">+1 310.880.0582</li><li>Weston@WestonJamesGroup.com</li><li>433 N. Camden Drive, Suite 600</li></ul></div>
+<div><h4>Navigation</h4><ul><li>Our Story</li><li>Featured Exclusives</li><li>Notable Transactions</li><li>Search Homes</li><li>Journal</li><li>Press &amp; Recognition</li><li>Contact Us</li></ul></div></div>
+<div class="legal"><span>Copyright &copy; <span class="num">2026</span> Weston James Group</span><span>All Rights Reserved</span><span>Terms of Use</span><span>Privacy Policy</span><span>Weston Littlefield, Estates Director &middot; CA DRE# <span class="num">02053581</span></span><span>AKG | Christie&#8217;s International Real Estate &middot; AKGRE Inc. &middot; CA DRE# <span class="num">01527644</span></span><span>Equal Housing Opportunity</span></div></footer>
+</div></body></html>

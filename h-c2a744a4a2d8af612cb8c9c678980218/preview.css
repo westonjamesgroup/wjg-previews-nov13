@@ -1,0 +1,36 @@
+
+.preview-bar{
+  position:sticky;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:40px;padding:8px 16px;
+  background:#f4f1ea;color:#1a1814;
+  font:400 11px/1.3 Inter,sans-serif;letter-spacing:.04em;
+  border-bottom:1px solid rgba(26,24,20,.12);
+}
+.preview-bar nav{display:flex;flex-wrap:wrap;gap:4px 14px}
+.preview-bar a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;padding:6px 0}
+.preview-bar a:hover{border-bottom-color:#1a1814}
+.preview-bar a[aria-current="page"]{border-bottom-color:#1a1814}
+.preview-root{position:relative}
+@media(max-width:600px){
+  .preview-bar{align-items:flex-start;flex-direction:column;gap:2px;padding:8px 16px 10px}
+}
+/* Index panel crossfade */
+.ix .panel .stage{position:relative;aspect-ratio:4/5;background:#1C1C1C;overflow:hidden}
+.ix .panel .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s ease}
+.ix .panel .stage img.is-back{opacity:0}
+.ix .lab,.ix .arw{transition:color .5s}
+.ix .t{transition:transform .5s,color .5s}
+/* Rail: allow scroll and button movement in the preview */
+.rail{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{scroll-snap-align:start}
+.rail a h3{text-decoration:underline 1px solid transparent;text-underline-offset:8px;transition:text-decoration-color .3s}
+.rail a:hover h3,.rail a:focus-visible h3{text-decoration-color:rgba(255,255,255,.62)}
+/* Line sub-row highlight */
+.ln-sub p{opacity:.55;transition:opacity .4s}
+.ln-sub p.is-on{opacity:1}
+@media(prefers-reduced-motion:reduce){
+  .ix .t,.ix .lab,.ix .arw,.ix .panel .stage img,.ln a,.ln-sub p,.rail a h3{transition:none}
+  .rail{scroll-behavior:auto}
+}
