@@ -350,6 +350,26 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 /* La Presa match 2026-11-17: status line is one label with a middot (live .wl-status), kicker #fff at .9 (live .wl-hero-k) */
 .wl .wjgv-status{display:block;font-weight:200;color:var(--ink)}
 .wl .wjgv-hero-k{color:#fff;opacity:.9}
+/* floor plans 2026-11-17 18:14: one viewer for all widths (full plate, zoom, drag, pinch, pan slider), garage/studio toggle */
+.wl .wjgv-scroll{overflow-x:auto;overflow-y:hidden;touch-action:pan-x pan-y;overscroll-behavior-x:contain;scrollbar-width:none;cursor:default}
+.wl .wjgv-scroll::-webkit-scrollbar{display:none}
+.wl .wjgv-scroll[data-z="true"]{cursor:grab}.wl .wjgv-scroll.wjgv-drag{cursor:grabbing}
+.wl .wjgv-scroll img{display:block;width:100%;max-width:none;height:auto;user-select:none;-webkit-user-drag:none}
+.wl .wjgv-opt{display:inline-flex;margin:16px 0 0;border:1px solid #d6d3cc}
+.wl .wjgv-opt[hidden]{display:none}
+.wl .wjgv-opt-b{min-height:44px;padding:0 18px;border:0;background:transparent;color:#757575;font:200 12px/1 "WJG Tag",Inter,sans-serif;letter-spacing:3px;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.wl .wjgv-opt-b+.wjgv-opt-b{border-left:1px solid #d6d3cc}
+.wl .wjgv-opt-b[aria-pressed=true]{background:#2a2a28;color:#fff}
+.wl .wjgv-opt-b:focus-visible,.wl .wjgv-pan:focus-visible{outline:1px solid #2a2a28;outline-offset:3px}
+.wl .wjgv-pan-row{display:flex;align-items:center;min-height:44px;margin:6px 0 0;visibility:hidden}
+.wl .wjgv-pan-row[data-on=true]{visibility:visible}
+.wl .wjgv-pan{-webkit-appearance:none;appearance:none;width:100%;height:44px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.wl .wjgv-pan::-webkit-slider-runnable-track{height:1px;background:#c9c6bf}
+.wl .wjgv-pan::-moz-range-track{height:1px;background:#c9c6bf}
+.wl .wjgv-pan::-webkit-slider-thumb{-webkit-appearance:none;width:44px;height:14px;margin-top:-7px;border:1px solid #2a2a28;border-radius:0;background:#fff}
+.wl .wjgv-pan::-moz-range-thumb{width:44px;height:14px;border:1px solid #2a2a28;border-radius:0;background:#fff}
+.wl .wjgv-meta{display:block}
+@media (max-width:767px){.wl .wjgv-opt{display:flex;width:100%}.wl .wjgv-opt-b{flex:1 1 0;padding:0 8px;font-size:11px;letter-spacing:.14em}.wl .wjgv-opt[hidden]{display:none}}
 </style>
 <section class="wjgv-hero" data-wjh-hero="" id="s-hero" aria-label="828 Venezia Avenue">
  <div class="wjgv-ph"><div><b>Hero photograph</b>Exterior, from Weston (pro shoot pending)</div></div>
@@ -403,12 +423,13 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
    <button class="wjgv-tab" role="tab" aria-selected="false" data-f="second-floor">Second Floor</button>
    <button class="wjgv-tab" role="tab" aria-selected="false" data-f="roof-deck">Roof Deck</button>
   </div>
-  <div class="wjgv-meta"><span class="wjgv-hint-d">Use + and &minus; to zoom</span><span class="wjgv-hint-m">Swipe to pan &nbsp;·&nbsp; + and &minus; to zoom</span></div>
+  <div class="wjgv-opt" id="altrow" role="group" aria-label="Garage layout"><button type="button" class="wjgv-opt-b" data-v="garage" aria-pressed="true">Two-car garage</button><button type="button" class="wjgv-opt-b" data-v="studio" aria-pressed="false">Creative studio</button></div>
+  <div class="wjgv-meta"><span class="wjgv-hint-d">Use + and &minus; to zoom, then drag to pan</span><span class="wjgv-hint-m">Pinch or use + and &minus; to zoom</span></div>
   <div class="wjgv-stage">
-   <div class="wjgv-scroll" id="sc"><img id="plate" src="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp" srcset="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp 1200w, https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822b27d08b16af83d39_828-venezia-first-floor-plan-v2-2400.png 2400w" sizes="(max-width:767px) 900px, 880px" width="1200" height="487" alt="828 Venezia Avenue, first floor plan"></div>
+   <div class="wjgv-scroll" id="sc"><img id="plate" src="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp" srcset="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp 1200w, https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822b27d08b16af83d39_828-venezia-first-floor-plan-v2-2400.png 2400w" sizes="(max-width:767px) 100vw, 880px" width="1200" height="487" alt="828 Venezia Avenue, first floor plan" draggable="false"></div>
    <div class="wjgv-zoom"><button type="button" aria-label="Zoom in" data-z="in">+</button><button type="button" aria-label="Zoom out" data-z="out">&minus;</button><button type="button" aria-label="Reset zoom" data-z="reset">&#8634;</button></div>
   </div>
-  <div class="wjgv-alt-row" id="altrow"><button class="wjgv-alt" id="alt" type="button" aria-pressed="false">Alternate: Creative Office</button></div>
+  <div class="wjgv-pan-row" id="panrow" data-on="false"><input type="range" class="wjgv-pan" id="pan" min="0" max="1000" step="1" value="0" aria-label="Pan along the plan" tabindex="-1"></div>
   <p class="wjgv-note" id="fpnote">Drawn from the owner's plans. Landscape is illustrative. Not to scale.</p>
  </div>
 </section>
@@ -432,25 +453,49 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 <div class="wjgv-foot" data-wjh-theme="dark" id="s-foot"><p class="wjgv-disc">Weston James Group makes no representation, warranty or guaranty as to accuracy of any data contained herein, and advises interested parties to confirm all information before relying on it for a purchase decision. All information provided has been obtained from sources believed reliable, but may be subject to errors, omissions, change of price, prior sale, or withdrawal without notice. Measurements and square footages are approximate and may be verified by consulting an appraiser or architect. The content set forth on this website is provided exclusively for consumers&rsquo; personal, non-commercial use, solely to identify potential properties for potential purchase; unlawful use, distribution or duplication is strictly prohibited and may violate relevant federal and state law. &copy; 2026 Weston James Group. &nbsp;·&nbsp; <a href="#">Terms of Use</a></p></div>
 <script id="wjgv-js">
 (function(){
- var P={"first-floor-plan": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822b27d08b16af83d39_828-venezia-first-floor-plan-v2-2400.png"}, "second-floor-plan": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f833aca8dcc32457e7_828-venezia-second-floor-plan-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f85365990d111edc1c_828-venezia-second-floor-plan-2400.png"}, "roof-deck-plan": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f8d325a73de387fb77_828-venezia-roof-deck-plan-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f86ce45e20c0855c8b_828-venezia-roof-deck-plan-2400.png"}, "first-floor-plan-studio": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5834b_828-venezia-first-floor-plan-studio-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822790e784df06cb12d_828-venezia-first-floor-plan-studio-2400.png"}};
- var img=document.getElementById('plate'),sc=document.getElementById('sc'),lv=document.getElementById('lv');
+ /* plates: generated from PLATE_FILES in build.py (drop-in swap) */
+ var P={"first-floor": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822b27d08b16af83d39_828-venezia-first-floor-plan-v2-2400.png"}, "first-floor-studio": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5834b_828-venezia-first-floor-plan-studio-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822790e784df06cb12d_828-venezia-first-floor-plan-studio-2400.png"}, "second-floor": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f833aca8dcc32457e7_828-venezia-second-floor-plan-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f85365990d111edc1c_828-venezia-second-floor-plan-2400.png"}, "roof-deck": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f8d325a73de387fb77_828-venezia-roof-deck-plan-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f86ce45e20c0855c8b_828-venezia-roof-deck-plan-2400.png"}}, NOTE="Drawn from the owner's plans. Landscape is illustrative. Not to scale.", ADDR="828 Venezia Avenue";
+ var img=document.getElementById('plate'),sc=document.getElementById('sc'),pan=document.getElementById('pan'),panrow=document.getElementById('panrow'),altrow=document.getElementById('altrow'),note=document.getElementById('fpnote');
  if(img&&sc){
- var mobile=matchMedia('(max-width:767px)').matches, base=mobile?2.6:1, z=base, atGarage=false;
- function apply(){img.style.width=(z*100)+'%';}
- function home(){ if(mobile){ sc.scrollLeft = atGarage ? sc.scrollWidth-sc.clientWidth : sc.scrollWidth*0.055; } else sc.scrollLeft=0; }
- apply(); requestAnimationFrame(home); img.addEventListener('load',home);
+ var z=1, level='first-floor', studio=false, ZMAX=5;
+ function maxL(){return Math.max(0,sc.scrollWidth-sc.clientWidth);}
+ function syncPan(){ if(!pan)return; var m=maxL(); pan.value=m?Math.round(sc.scrollLeft/m*1000):0; }
+ function apply(ax){ /* ax: x inside the viewport to keep fixed while zooming */
+  if(ax==null)ax=sc.clientWidth/2; var w0=sc.scrollWidth||1, frac=(sc.scrollLeft+ax)/w0;
+  img.style.width=(z*100)+'%'; img.sizes=Math.round(sc.clientWidth*z)+'px';
+  sc.scrollLeft=frac*sc.scrollWidth-ax;
+  var on=z>1.001; sc.setAttribute('data-z',on); if(panrow)panrow.setAttribute('data-on',on); if(pan)pan.tabIndex=on?0:-1; syncPan(); }
+ function setZ(nz,ax){ z=Math.min(ZMAX,Math.max(1,nz)); apply(ax); }
  document.querySelectorAll('.wjgv-zoom button').forEach(function(b){b.addEventListener('click',function(){
-  var k=b.dataset.z; z = k==='in'?Math.min(z*1.4,5):k==='out'?Math.max(z/1.4,1):base; apply(); if(k==='reset')home();});});
- var alt=document.getElementById('alt'),altrow=document.getElementById('altrow'),note=document.getElementById('fpnote'),NOTE=note?note.textContent:'';
- function show(key,label){ var f=P[key]; img.src=f.s; img.srcset=f.s+' 1200w, '+f.l+' 2400w'; img.alt='828 Venezia Avenue, '+label.toLowerCase(); if(lv)lv.textContent=label; atGarage=/Creative/.test(label); (img.decode?img.decode():Promise.resolve()).then(home,home); home(); }
- function setAlt(on){ if(!alt)return; alt.setAttribute('aria-pressed',on); alt.textContent=on?'Show: Two-Car Garage':'Alternate: Creative Office';
-  if(note)note.textContent=on?NOTE+' Creative office is an illustrative alternative use of the garage.':NOTE;
-  show(on?'first-floor-plan-studio':'first-floor-plan', on?'First Floor · Alternate: Creative Office':'First Floor'); }
- if(alt)alt.addEventListener('click',function(){ setAlt(alt.getAttribute('aria-pressed')!=='true'); });
+  var k=b.dataset.z; if(k==='reset'){z=1;apply(0);sc.scrollLeft=0;syncPan();} else setZ(k==='in'?z*1.4:z/1.4); });});
+ sc.addEventListener('scroll',syncPan,{passive:true});
+ if(pan)pan.addEventListener('input',function(){ sc.scrollLeft=maxL()*pan.value/1000; });
+ /* mouse drag to pan (touch uses native scrolling) */
+ var drag=null;
+ sc.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse'||z<=1.001||e.button!==0)return; drag={x:e.clientX,l:sc.scrollLeft}; sc.classList.add('wjgv-drag'); sc.setPointerCapture(e.pointerId); e.preventDefault(); });
+ sc.addEventListener('pointermove',function(e){ if(drag) sc.scrollLeft=drag.l-(e.clientX-drag.x); });
+ function endDrag(){ drag=null; sc.classList.remove('wjgv-drag'); }
+ sc.addEventListener('pointerup',endDrag); sc.addEventListener('pointercancel',endDrag);
+ /* pinch zoom: only two-finger gestures are handled; one finger keeps native page scroll and plate panning */
+ var pin=null;
+ function dist(t){var dx=t[0].clientX-t[1].clientX,dy=t[0].clientY-t[1].clientY;return Math.sqrt(dx*dx+dy*dy);}
+ sc.addEventListener('touchstart',function(e){ if(e.touches.length===2){ var r=sc.getBoundingClientRect(); pin={d:dist(e.touches),z:z,ax:(e.touches[0].clientX+e.touches[1].clientX)/2-r.left}; } },{passive:true});
+ sc.addEventListener('touchmove',function(e){ if(pin&&e.touches.length===2){ e.preventDefault(); setZ(pin.z*dist(e.touches)/pin.d,pin.ax); } },{passive:false});
+ sc.addEventListener('touchend',function(e){ if(e.touches.length<2)pin=null; },{passive:true});
+ /* keep zoom anchored when the stage width changes */
+ addEventListener('resize',function(){ apply(); });
+ function show(){ var key=level==='first-floor'&&studio?'first-floor-studio':level, f=P[key];
+  img.src=f.s; img.srcset=f.s+' 1200w, '+f.l+' 2400w';
+  img.alt=ADDR+', '+(key==='first-floor-studio'?'first floor plan with the garage as a creative studio':level.replace('-',' ')+' plan');
+  if(note)note.textContent=key==='first-floor-studio'?NOTE+' Creative studio is an illustrative alternative use of the garage.':NOTE;
+  var done=function(){ if(img.naturalWidth){img.width=img.naturalWidth/(img.currentSrc.indexOf('-2400')>-1?2:1);img.height=img.naturalHeight/(img.currentSrc.indexOf('-2400')>-1?2:1);} if(key==='first-floor-studio'&&z>1.001)sc.scrollLeft=maxL(); syncPan(); };
+  (img.decode?img.decode():Promise.resolve()).then(done,done); }
+ if(altrow)altrow.querySelectorAll('.wjgv-opt-b').forEach(function(b){b.addEventListener('click',function(){
+  studio=b.dataset.v==='studio'; altrow.querySelectorAll('.wjgv-opt-b').forEach(function(o){o.setAttribute('aria-pressed',o===b);}); show(); });});
  document.querySelectorAll('.wjgv-tab').forEach(function(t){t.addEventListener('click',function(){
   document.querySelectorAll('.wjgv-tab').forEach(function(o){o.setAttribute('aria-selected',o===t)});
-  var f=t.dataset.f; if(altrow)altrow.hidden=f!=='first-floor'; if(alt){alt.setAttribute('aria-pressed',false);alt.textContent='Alternate: Creative Office';} if(note)note.textContent=NOTE;
-  show(f+'-plan', t.textContent);});});
+  level=t.dataset.f; if(altrow)altrow.hidden=level!=='first-floor'; show(); });});
+ apply(0);
  }
  var rm=document.getElementById('rm');
  if(rm)rm.addEventListener('click',function(){var m=document.getElementById('more'),o=m.classList.toggle('wjgv-open');rm.setAttribute('aria-expanded',o);rm.textContent=o?'Read less':'Read more';});
