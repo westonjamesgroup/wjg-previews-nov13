@@ -371,6 +371,28 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 .wl .wjgv-meta{display:block}
 .wl .wjgv-opt-s{display:none}
 @media (max-width:767px){.wl .wjgv-opt{display:flex;width:100%}.wl .wjgv-opt-b{flex:1 1 0;min-width:0;padding:0 6px;font-size:11px;letter-spacing:.14em}.wl .wjgv-opt[hidden]{display:none}.wl .wjgv-opt-l{display:none}.wl .wjgv-opt-s{display:inline}}
+/* Local Favorites 2026-11-17 (wjgv-lf-*). Numerals: section-only digits face using the La Presa Tinos file and metric overrides (the shared "WJG Amp" 300 digits face is shadowed by its 300-700 ampersand face in Chrome, so Inter would show) */
+@font-face{font-family:"WJGV LF Num";src:url(https://fonts.gstatic.com/s/tinos/v26/buE4poGnedXvwjX7fmQ.woff2) format("woff2");font-weight:200 400;font-style:normal;unicode-range:U+0030-0039;size-adjust:108.1%;ascent-override:100.1%;descent-override:23.2%;line-gap-override:0%;font-display:swap}
+.wl .wjgv-lf-intro{margin:40px var(--gut) 0;max-width:620px;font:300 18px/31.5px var(--sans);color:var(--wjgv-soft)}
+.wl .wjgv-lf{--wjgv-lf-num:"WJGV LF Num",var(--sans);display:grid;grid-template-columns:minmax(0,620fr) minmax(0,443fr);gap:77px;margin:32px var(--gut) 0;align-items:start}
+.wl .wjgv-lf-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule,#d9d9d9)}
+.wl .wjgv-lf-item{display:grid;grid-template-columns:44px minmax(0,1fr) auto;grid-template-areas:"n name walk" ". cat ." ". note .";gap:0 20px;align-items:baseline;padding:18px 0 17px;border-bottom:1px solid var(--rule,#d9d9d9);margin:0}
+.wl .wjgv-lf-n{grid-area:n;font:300 13px/16.8px var(--wjgv-lf-num);letter-spacing:1.5px;color:var(--grey,#6b6b6b)}
+.wl .wjgv-lf-name{grid-area:name;font:400 22px/28px var(--serif);color:var(--ink);overflow-wrap:anywhere;margin:0;font-style:normal}
+.wl .wjgv-lf-name a{display:inline-block;padding:9px 8px;margin:-9px -8px;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:#d0d0d0;transition:text-decoration-color .2s}
+.wl .wjgv-lf-name a:hover{text-decoration-color:var(--ink)}
+.wl .wjgv-lf-name a:focus-visible{outline:2px solid var(--ink);outline-offset:-6px;text-decoration-color:var(--ink)}
+.wl .wjgv-lf-ar{font:300 12px/1 var(--sans);color:var(--grey,#6b6b6b);margin-left:6px;vertical-align:3px;display:inline-block;text-decoration:none}
+.wl .wjgv-lf-name a:hover .wjgv-lf-ar{color:var(--ink)}
+.wl .wjgv-lf-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wl .wjgv-lf-cat{grid-area:cat;display:block;margin-top:6px;font:200 11px/15.4px var(--sans);letter-spacing:3px;text-transform:uppercase;color:var(--grey,#6b6b6b)}
+.wl .wjgv-lf-note{grid-area:note;margin:8px 0 0;font:300 14px/22.4px var(--sans);color:var(--wjgv-soft)}
+.wl .wjgv-lf-walk{grid-area:walk;font:300 14px/22.4px var(--wjgv-lf-num);color:var(--wjgv-soft);white-space:nowrap;text-align:right}
+.wl .wjgv-lf-map{margin:0}
+.wl .wjgv-lf-map svg{display:block;width:100%;height:auto}
+.wl .wjgv-lf-map figcaption{margin-top:12px;font:200 10px/18px var(--sans);letter-spacing:2.5px;text-transform:uppercase;color:var(--grey,#6b6b6b)}
+.wl .wjgv-lf-wide{grid-template-columns:1fr}
+@media (max-width:767px){.wl .wjgv-lf-intro{margin-top:28px;font-size:16px;line-height:28px}.wl .wjgv-lf{grid-template-columns:1fr;gap:36px;margin-top:24px}.wl .wjgv-lf-item{grid-template-columns:32px minmax(0,1fr);grid-template-areas:"n name" ". cat" ". walk" ". note";padding:16px 0 15px}.wl .wjgv-lf-name{font-size:20px;line-height:26px}.wl .wjgv-lf-walk{text-align:left;margin-top:6px;font-size:13px}.wl .wjgv-lf-note{margin-top:6px}.wl .wjgv-lf-map{max-width:420px}.wl .wjgv-lf-map figcaption{font-size:11px;letter-spacing:2.2px;line-height:19.8px}}
 </style>
 <section class="wjgv-hero" data-wjh-hero="" id="s-hero" aria-label="828 Venezia Avenue">
  <div class="wjgv-ph"><div><b>Hero photograph</b>Exterior, from Weston (pro shoot pending)</div></div>
@@ -444,6 +466,15 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
  </div>
  <p class="wjgv-credit">Photography by <span class="wjgv-tbd">Photographer</span></p>
 </section>
+<section class="wjgv-sec wjgv-lf-sec" data-wjh-theme="light" id="s-local-favorites" data-component="local-favorites">
+ <div class="wjgv-sec-h"><h2>Local Favorites</h2></div>
+ <p class="wjgv-lf-intro">A short walk from the house reaches a market, Abbot Kinney Boulevard, the canals, and the shore.</p>
+ <script type="application/json" id="wjgv-lf-data">{"max":10,"map":{"home":{"label":"828 Venezia","x":70.0,"y":64.8},"shore":11,"avenue":[48.8,62.8,32.7,40.1]},"items":[{"name":"Erewhon","category":"Market","walk":"8 min walk","note":"The Venice market on Venice Boulevard.","url":"https://ship.erewhon.com/pages/location","x":51.6,"y":64.9},{"name":"The Tasting Kitchen","category":"Restaurant","walk":"10 min walk","note":"Opened in 2009 by chef Casey Lane, and reopened on Abbot Kinney in 2026.","url":"https://www.thetastingkitchen.com/location/the-tasting-kitchen-venice/","x":48.8,"y":62.8},{"name":"Gjelina","category":"Restaurant","walk":"12 min walk","note":"An all-day restaurant, open from breakfast through dinner.","url":"https://www.gjelina.com/location/gjelina-venice-ca/","x":46.4,"y":57.6},{"name":"Intelligentsia Coffee","category":"Coffee","walk":"14 min walk","note":"A coffeebar on Abbot Kinney, with a patio.","url":"https://www.intelligentsia.com/pages/venice-coffeebar","x":42.8,"y":52.2},{"name":"Venice Canals","category":"Historic district","walk":"16 min walk","note":"Public paths and footbridges along the historic canals.","url":"https://ohp.parks.ca.gov/ListedResources/Detail/N1133","x":29.5,"y":74.3},{"name":"Felix Trattoria","category":"Restaurant","walk":"21 min walk","note":"Evan Funke's trattoria, with a pasta laboratorio at the center of the room.","url":"https://felixla.com/","x":32.7,"y":40.1},{"name":"Menotti's Coffee Stop","category":"Coffee","walk":"22 min walk","note":"A coffee shop on Windward Avenue, near the boardwalk.","url":"https://menottis.com/pages/coffee-shop-venice-beach","x":20.2,"y":53.2},{"name":"Venice Beach","category":"Beach","walk":"24 min walk","note":"The municipal beach and Ocean Front Walk.","url":"https://recreation.parks.lacity.gov/venice/","x":16.4,"y":57.9},{"name":"Gjusta","category":"Bakery","walk":"27 min walk","note":"A bakery and deli on Sunset Avenue, with patio seating.","url":"https://www.gjusta.com/location/gjusta/","x":32.8,"y":25.7}]}</script>
+ <div class="wjgv-lf">
+  <ol class="wjgv-lf-list" id="wjgv-lf-list"></ol>
+  <figure class="wjgv-lf-map" id="wjgv-lf-map" aria-hidden="true"></figure>
+ </div>
+</section>
 <section class="wjgv-enq" data-wjh-theme="light" id="s-enquire">
  <h2>Enquire about 828 Venezia Avenue</h2>
  <p class="wjgv-enq-line">Private viewings are by appointment with Weston Littlefield and Alex Howe.</p>
@@ -502,6 +533,55 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
  var rm=document.getElementById('rm');
  if(rm)rm.addEventListener('click',function(){var m=document.getElementById('more'),o=m.classList.toggle('wjgv-open');rm.setAttribute('aria-expanded',o);rm.textContent=o?'Read less':'Read more';});
  document.querySelectorAll('#s-gallery .wjgv-arrows button').forEach(function(b,i){b.addEventListener('click',function(){var s=document.querySelector('#s-gallery .wjgv-strip');s.scrollBy({left:(i?1:-1)*s.clientWidth*.7,behavior:'smooth'});});});
+})();
+
+/* Local Favorites renderer (reusable): reads #wjgv-lf-data, max 10 items, hides the section when empty */
+(function(){
+ var root=document.getElementById('s-local-favorites'); if(!root) return;
+ var d={}; try{ d=JSON.parse(document.getElementById('wjgv-lf-data').textContent); }catch(e){}
+ var max=Math.min(d.max||10,10), items=(d.items||[]).filter(function(i){return i&&i.name;}).slice(0,max);
+ if(!items.length){ root.hidden=true; return; }
+ var esc=function(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+ var pad=function(n){return (n<10?'0':'')+n;};
+ var list=document.getElementById('wjgv-lf-list');
+ list.innerHTML=items.map(function(it,k){
+  var nm=esc(it.name), safe=/^https?:\/\//i.test(it.url||'');
+  var inner=safe?'<a href="'+esc(it.url)+'" target="_blank" rel="noopener noreferrer">'+nm+'<span class="wjgv-lf-ar" aria-hidden="true">&#8599;</span><span class="wjgv-lf-sr"> (opens in new tab)</span></a>':nm;
+  return '<li class="wjgv-lf-item"><span class="wjgv-lf-n">'+pad(k+1)+'</span><p class="wjgv-lf-name">'+inner+'</p><span class="wjgv-lf-cat">'+esc(it.category||'')+'</span><span class="wjgv-lf-walk">'+esc(it.walk||'')+'</span>'+(it.note?'<p class="wjgv-lf-note">'+esc(it.note)+'</p>':'')+'</li>';
+ }).join('');
+ var m=document.getElementById('wjgv-lf-map'), mc=d.map||false;
+ if(!mc){ m.remove(); root.querySelector('.wjgv-lf').classList.add('wjgv-lf-wide'); return; }
+ function draw(){
+  var W=443,H=443,desk=matchMedia('(min-width:768px)').matches;
+  if(desk&&m.clientWidth){ H=Math.max(443,Math.round(W*(list.offsetHeight-30)/m.clientWidth)); }
+  var st='#cfcfcf', st2='#e3e3e3', sx=(mc.shore||11)/100*W;
+  // x: % of width (shore-relative, as geocoded). y: fitted so the dots and the house span 12%-88% of the map height (not to scale)
+  var ys=items.filter(function(i){return i.y!=null;}).map(function(i){return +i.y;}); if(mc.home)ys.push(+mc.home.y);
+  var y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys), pd=.12*H;
+  var P=function(x,y){return [x/100*W, y1>y0?pd+(y-y0)/(y1-y0)*(H-2*pd):H/2];};
+  var g='<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg">';
+  g+='<rect x=".5" y=".5" width="'+(W-1)+'" height="'+(H-1)+'" fill="none" stroke="'+st2+'"/>';
+  g+='<path d="M0 0H'+(sx)+'C'+(sx-8)+' '+H*.2+' '+(sx+18)+' '+H*.36+' '+(sx-4)+' '+H*.54+'S'+(sx-12)+' '+H*.86+' '+(sx+8)+' '+H+'H0Z" fill="#f4f3ef"/>';
+  g+='<path d="M'+(sx+2)+' 0C'+(sx-6)+' '+H*.2+' '+(sx+20)+' '+H*.36+' '+(sx-2)+' '+H*.54+'S'+(sx-10)+' '+H*.86+' '+(sx+10)+' '+H+'" fill="none" stroke="'+st+'"/>';
+  for(var x=sx+60;x<W;x+=60) g+='<path d="M'+x+' 0L'+(x-26)+' '+H+'" stroke="'+st2+'"/>';
+  for(var y=70;y<H;y+=80) g+='<path d="M'+(sx+10)+' '+y+'L'+W+' '+(y-30)+'" stroke="'+st2+'"/>';
+  if(mc.avenue){ var a=P(mc.avenue[0],mc.avenue[1]), b=P(mc.avenue[2],mc.avenue[3]), dx=b[0]-a[0], dy=b[1]-a[1], L=Math.sqrt(dx*dx+dy*dy)||1, e=W*2;
+   g+='<path d="M'+(a[0]-dx/L*e)+' '+(a[1]-dy/L*e)+'L'+(b[0]+dx/L*e)+' '+(b[1]+dy/L*e)+'" stroke="'+st+'" stroke-width="1.4"/>'; }
+  var h=mc.home?P(mc.home.x,mc.home.y):null;
+  // dots: start at data positions, then nudge apart so circles never overlap (positions are indicative)
+  var D=items.map(function(it,k){ return (it.x==null||it.y==null)?null:{k:k,p:P(it.x,it.y)}; }).filter(Boolean);
+  for(var it=0;it<80;it++){ D.forEach(function(A,i){ D.forEach(function(B,j){ if(j<=i) return; var ux=B.p[0]-A.p[0], uy=B.p[1]-A.p[1], dd=Math.sqrt(ux*ux+uy*uy)||.01; if(dd<25){ var f=(25-dd)/2; ux/=dd; uy/=dd; A.p[0]-=ux*f; A.p[1]-=uy*f; B.p[0]+=ux*f; B.p[1]+=uy*f; } });
+   if(h){ var vx=A.p[0]-h[0], vy=A.p[1]-h[1], hd=Math.sqrt(vx*vx+vy*vy)||.01; if(hd<20){ A.p[0]+=vx/hd*(20-hd); A.p[1]+=vy/hd*(20-hd); } }
+   A.p[0]=Math.max(14,Math.min(W-14,A.p[0])); A.p[1]=Math.max(14,Math.min(H-14,A.p[1])); }); }
+  if(h){ var lab=esc(String(mc.home.label||'').toUpperCase()), right=h[0]<W-110;
+   g+='<rect x="'+(h[0]-6)+'" y="'+(h[1]-6)+'" width="12" height="12" fill="#0c0c0c"/>';
+   g+='<text x="'+(right?h[0]+14:h[0]-14)+'" y="'+(h[1]+4)+'"'+(right?'':' text-anchor="end"')+' font-family="Inter,sans-serif" font-weight="300" font-size="10" letter-spacing="2" fill="#2a2a2a">'+lab+'</text>'; }
+  D.forEach(function(A){ g+='<circle cx="'+A.p[0].toFixed(1)+'" cy="'+A.p[1].toFixed(1)+'" r="11" fill="#fff" stroke="#2a2a2a" stroke-width=".8"/>';
+   g+='<text x="'+A.p[0].toFixed(1)+'" y="'+(A.p[1]+3.5).toFixed(1)+'" text-anchor="middle" font-family="Inter,sans-serif" font-weight="300" font-size="10" fill="#2a2a2a">'+(A.k+1)+'</text>'; });
+  g+='</svg>';
+  m.innerHTML=g+'<figcaption>Illustrative map. Not to scale. Positions indicative.</figcaption>';
+ }
+ draw(); if(document.fonts&&document.fonts.ready)document.fonts.ready.then(draw); var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(draw,150);});
 })();
 </script>
 </div>
