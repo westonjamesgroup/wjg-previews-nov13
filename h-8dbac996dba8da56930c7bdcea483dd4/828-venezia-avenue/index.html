@@ -7,7 +7,7 @@
 :root{--ink:#0c0c0c;--soft:#2a2a2a;--grey:#6b6b6b;--rule:#d9d9d9;--paper:#fff;--gut:clamp(20px,5.5vw,103px);
 --serif:"WJG Amp","Playfair Display",Georgia,serif;--sans:Inter,system-ui,sans-serif}
 *{box-sizing:border-box}
-html,body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%}
 a{color:inherit}
 .hdr{position:fixed;top:0;left:0;right:0;height:108px;z-index:20;pointer-events:none;background:none}
@@ -374,7 +374,7 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 /* Local Favorites 2026-11-17 (wjgv-lf-*). Numerals: section-only digits face using the La Presa Tinos file and metric overrides (the shared "WJG Amp" 300 digits face is shadowed by its 300-700 ampersand face in Chrome, so Inter would show) */
 @font-face{font-family:"WJGV LF Num";src:url(https://fonts.gstatic.com/s/tinos/v26/buE4poGnedXvwjX7fmQ.woff2) format("woff2");font-weight:200 400;font-style:normal;unicode-range:U+0030-0039;size-adjust:108.1%;ascent-override:100.1%;descent-override:23.2%;line-gap-override:0%;font-display:swap}
 .wl .wjgv-lf-intro{margin:40px var(--gut) 0;max-width:620px;font:300 18px/31.5px var(--sans);color:var(--wjgv-soft)}
-.wl .wjgv-lf{--wjgv-lf-num:"WJGV LF Num",var(--sans);display:grid;grid-template-columns:minmax(0,620fr) minmax(0,443fr);gap:77px;margin:32px var(--gut) 0;align-items:start}
+.wl .wjgv-lf{--wjgv-lf-num:"WJGV LF Num",var(--sans);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;margin:32px var(--gut) 0;align-items:start}
 .wl .wjgv-lf-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule,#d9d9d9)}
 .wl .wjgv-lf-item{display:grid;grid-template-columns:44px minmax(0,1fr) auto;grid-template-areas:"n name walk" ". cat ." ". note .";gap:0 20px;align-items:baseline;padding:18px 0 17px;border-bottom:1px solid var(--rule,#d9d9d9);margin:0}
 .wl .wjgv-lf-n{grid-area:n;font:300 13px/16.8px var(--wjgv-lf-num);letter-spacing:1.5px;color:var(--grey,#6b6b6b)}
@@ -388,11 +388,20 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 .wl .wjgv-lf-cat{grid-area:cat;display:block;margin-top:6px;font:200 11px/15.4px var(--sans);letter-spacing:3px;text-transform:uppercase;color:var(--grey,#6b6b6b)}
 .wl .wjgv-lf-note{grid-area:note;margin:8px 0 0;font:300 14px/22.4px var(--sans);color:var(--wjgv-soft)}
 .wl .wjgv-lf-walk{grid-area:walk;font:300 14px/22.4px var(--wjgv-lf-num);color:var(--wjgv-soft);white-space:nowrap;text-align:right}
+/* page-only: same horizontal clipping as the base embed, but not a scroll container, so the map can stick */.wl{overflow-x:clip}
+.wl .wjgv-lf-mapcol{position:sticky;top:32px}
 .wl .wjgv-lf-map{margin:0}
-.wl .wjgv-lf-map svg{display:block;width:100%;height:auto}
-.wl .wjgv-lf-map figcaption{margin-top:12px;font:200 10px/18px var(--sans);letter-spacing:2.5px;text-transform:uppercase;color:var(--grey,#6b6b6b)}
+.wl .wjgv-lf-art{position:relative;aspect-ratio:1/1;overflow:hidden}
+.wl .wjgv-lf-art img{display:block;width:100%;height:auto}
+.wl .wjgv-lf-dot{position:absolute;transform:translate(-50%,-50%);width:20px;height:20px;box-sizing:border-box;border-radius:50%;background:#fefdf9;border:1px solid #2a2a2a;box-shadow:0 0 0 2.5px rgba(254,253,249,.92);display:flex;align-items:center;justify-content:center;font:400 11px/1 var(--wjgv-lf-num);color:#2a2a2a;font-variant-numeric:lining-nums;padding-top:1px}
+.wl .wjgv-lf-dir{position:absolute;left:50%;top:50%;width:0;height:0}
+.wl .wjgv-lf-dir:before{content:"";position:absolute;left:12px;top:-4px;border-left:6px solid #2a2a2a;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.wl .wjgv-lf-map figcaption,.wl .wjgv-lf-credit{margin-top:12px;font:200 10px/18px var(--sans);letter-spacing:2.5px;text-transform:uppercase;color:var(--grey,#6b6b6b)}
+.wl .wjgv-lf-credit{margin:2px 0 0;letter-spacing:1px;text-transform:none}
+.wl .wjgv-lf-credit a{color:inherit;text-decoration:underline;text-decoration-color:#d0d0d0;text-underline-offset:3px}
+.wl .wjgv-lf-credit a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .wl .wjgv-lf-wide{grid-template-columns:1fr}
-@media (max-width:767px){.wl .wjgv-lf-intro{margin-top:28px;font-size:16px;line-height:28px}.wl .wjgv-lf{grid-template-columns:1fr;gap:36px;margin-top:24px}.wl .wjgv-lf-item{grid-template-columns:32px minmax(0,1fr);grid-template-areas:"n name" ". cat" ". walk" ". note";padding:16px 0 15px}.wl .wjgv-lf-name{font-size:20px;line-height:26px}.wl .wjgv-lf-walk{text-align:left;margin-top:6px;font-size:13px}.wl .wjgv-lf-note{margin-top:6px}.wl .wjgv-lf-map{max-width:420px}.wl .wjgv-lf-map figcaption{font-size:11px;letter-spacing:2.2px;line-height:19.8px}}
+@media (max-width:767px){.wl .wjgv-lf-intro{margin-top:28px;font-size:16px;line-height:28px}.wl .wjgv-lf{grid-template-columns:1fr;gap:36px;margin-top:24px}.wl .wjgv-lf-item{grid-template-columns:32px minmax(0,1fr);grid-template-areas:"n name" ". cat" ". walk" ". note";padding:16px 0 15px}.wl .wjgv-lf-name{font-size:20px;line-height:26px}.wl .wjgv-lf-walk{text-align:left;margin-top:6px;font-size:13px}.wl .wjgv-lf-note{margin-top:6px}.wl .wjgv-lf-mapcol{position:static;margin:0 calc(-1 * var(--gut))}.wl .wjgv-lf-map figcaption,.wl .wjgv-lf-credit{padding:0 var(--gut);font-size:11px;letter-spacing:2.2px;line-height:19.8px}.wl .wjgv-lf-credit{letter-spacing:.8px}.wl .wjgv-lf-dot{width:19px;height:19px;font-size:10.5px}}
 </style>
 <section class="wjgv-hero" data-wjh-hero="" id="s-hero" aria-label="828 Venezia Avenue">
  <div class="wjgv-ph"><div><b>Hero photograph</b>Exterior, from Weston (pro shoot pending)</div></div>
@@ -469,10 +478,10 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 <section class="wjgv-sec wjgv-lf-sec" data-wjh-theme="light" id="s-local-favorites" data-component="local-favorites">
  <div class="wjgv-sec-h"><h2>Local Favorites</h2></div>
  <p class="wjgv-lf-intro">Restaurants within a 15-minute walk of the house, plus a members&rsquo; club opening in 2027.</p>
- <script type="application/json" id="wjgv-lf-data">{"max":10,"map":{"home":{"label":"828 Venezia","x":71.0,"y":50.0},"shore":11,"avenue":[49.4,47.9,47.1,42.6]},"items":[{"name":"Paloma","category":"Restaurant","walk":"9 min walk","note":"A restaurant at Abbot Kinney and Venice Boulevard, with a patio.","url":"https://www.palomavenicebeach.com/","x":51.8,"y":52.6},{"name":"The Tasting Kitchen","category":"Restaurant","walk":"10 min walk","note":"Opened in 2009 by chef Casey Lane, and back on Abbot Kinney since 2026.","url":"https://www.thetastingkitchen.com/location/the-tasting-kitchen-venice/","x":49.4,"y":47.9},{"name":"Badmaash","category":"Restaurant","walk":"11 min walk","note":"The Venice location of Badmaash, No. 79 on the Los Angeles Times 101 Best Restaurants list for 2026.","url":"https://badmaashla.com/","x":48.7,"y":47.7},{"name":"Gjelina","category":"Restaurant","walk":"12 min walk","note":"An all-day restaurant, open from breakfast through dinner.","url":"https://www.gjelina.com/location/gjelina-venice-ca/","x":47.1,"y":42.6},{"name":"Zinque","category":"Restaurant","walk":"12 min walk","note":"A French restaurant on Lincoln Boulevard, with patio seating, open from 7am until late.","url":"https://lezinque.com/venice","x":76.3,"y":29.1},{"name":"Night + Market Sahm","category":"Restaurant","walk":"14 min walk","note":"A Thai restaurant on Lincoln Boulevard.","url":"https://www.nightmarketsong.com/nm-sahm-1","x":90.0,"y":69.1},{"name":"Scopa Italian Roots","category":"Restaurant","walk":"14 min walk","note":"An Italian restaurant on Washington Place.","url":"https://scopaitalianroots.com/venice-italian-restaurant-location/","x":76.5,"y":74.4},{"name":"Soho House Venice Beach","category":"Members’ club","walk":"23 min walk","note":"Opening in 2027. A members’ club.","url":"https://www.sohohouse.com/en-us/houses/soho-house-venice-beach","x":21.0,"y":34.6}]}</script>
+ <script type="application/json" id="wjgv-lf-data">{"max":10,"map":{"image":"https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd1af5b6430efd4574bc64_828-venezia-venice-map-886.png","webp":"https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd1af5b6430efd4574bc55_828-venezia-venice-map-886.webp","size":886,"alt":"Hand-drawn map of Venice, north up, showing 828 Venezia Avenue, Abbot Kinney Boulevard, Venice Boulevard, Washington Boulevard, the Venice Canals, Ocean Front Walk and the Pacific Ocean.","home":{"x":75.23,"y":19.72},"credit":"Map data &copy; OpenStreetMap contributors, ODbL","creditUrl":"https://www.openstreetmap.org/copyright"},"items":[{"name":"Paloma","category":"Restaurant","walk":"9 min walk","note":"A restaurant at Abbot Kinney and Venice Boulevard, with a patio.","url":"https://www.palomavenicebeach.com/","x":55.4,"y":38.61,"dist":"0.4 mi"},{"name":"The Tasting Kitchen","category":"Restaurant","walk":"10 min walk","note":"Opened in 2009 by chef Casey Lane, and back on Abbot Kinney since 2026.","url":"https://www.thetastingkitchen.com/location/the-tasting-kitchen-venice/","x":49.04,"y":35.34,"dist":"0.5 mi"},{"name":"Badmaash","category":"Restaurant","walk":"11 min walk","note":"The Venice location of Badmaash, No. 79 on the Los Angeles Times 101 Best Restaurants list for 2026.","url":"https://badmaashla.com/","x":48.15,"y":35.71,"dist":"0.5 mi"},{"name":"Gjelina","category":"Restaurant","walk":"12 min walk","note":"An all-day restaurant, open from breakfast through dinner.","url":"https://www.gjelina.com/location/gjelina-venice-ca/","x":42.28,"y":31.49,"dist":"0.6 mi"},{"name":"Zinque","category":"Restaurant","walk":"12 min walk","note":"A French restaurant on Lincoln Boulevard, with patio seating, open from 7am until late.","url":"https://lezinque.com/venice","x":63.35,"y":-6.27,"dist":"0.5 mi"},{"name":"Night + Market Sahm","category":"Restaurant","walk":"14 min walk","note":"A Thai restaurant on Lincoln Boulevard.","url":"https://www.nightmarketsong.com/nm-sahm-1","x":109.82,"y":26.35,"dist":"0.7 mi"},{"name":"Scopa Italian Roots","category":"Restaurant","walk":"14 min walk","note":"An Italian restaurant on Washington Place.","url":"https://scopaitalianroots.com/venice-italian-restaurant-location/","x":99.35,"y":42.73,"dist":"0.7 mi"},{"name":"Soho House Venice Beach","category":"Members’ club","walk":"23 min walk","note":"Opening in 2027. A members’ club.","url":"https://www.sohohouse.com/en-us/houses/soho-house-venice-beach","x":7.65,"y":43.39,"dist":"1.1 mi"}]}</script>
  <div class="wjgv-lf">
   <ol class="wjgv-lf-list" id="wjgv-lf-list"></ol>
-  <figure class="wjgv-lf-map" id="wjgv-lf-map" aria-hidden="true"></figure>
+  <div class="wjgv-lf-mapcol" id="wjgv-lf-mapcol"><figure class="wjgv-lf-map" id="wjgv-lf-map"></figure><p class="wjgv-lf-credit" id="wjgv-lf-credit"></p></div>
  </div>
 </section>
 <section class="wjgv-enq" data-wjh-theme="light" id="s-enquire">
@@ -547,41 +556,29 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
  list.innerHTML=items.map(function(it,k){
   var nm=esc(it.name), safe=/^https?:\/\//i.test(it.url||'');
   var inner=safe?'<a href="'+esc(it.url)+'" target="_blank" rel="noopener noreferrer">'+nm+'<span class="wjgv-lf-ar" aria-hidden="true">&#8599;</span><span class="wjgv-lf-sr"> (opens in new tab)</span></a>':nm;
-  return '<li class="wjgv-lf-item"><span class="wjgv-lf-n">'+pad(k+1)+'</span><p class="wjgv-lf-name">'+inner+'</p><span class="wjgv-lf-cat">'+esc(it.category||'')+'</span><span class="wjgv-lf-walk">'+esc(it.walk||'')+'</span>'+(it.note?'<p class="wjgv-lf-note">'+esc(it.note)+'</p>':'')+'</li>';
+  return '<li class="wjgv-lf-item"><span class="wjgv-lf-n">'+pad(k+1)+'</span><p class="wjgv-lf-name">'+inner+'</p><span class="wjgv-lf-cat">'+esc(it.category||'')+'</span><span class="wjgv-lf-walk">'+esc(it.walk||'')+(it.walk&&it.dist?'&nbsp;&middot;&nbsp;':'')+esc(it.dist||'')+'</span>'+(it.note?'<p class="wjgv-lf-note">'+esc(it.note)+'</p>':'')+'</li>';
  }).join('');
- var m=document.getElementById('wjgv-lf-map'), mc=d.map||false;
- if(!mc){ m.remove(); root.querySelector('.wjgv-lf').classList.add('wjgv-lf-wide'); return; }
- function draw(){
-  var W=443,H=443,desk=matchMedia('(min-width:768px)').matches;
-  if(desk&&m.clientWidth){ H=Math.max(443,Math.round(W*(list.offsetHeight-30)/m.clientWidth)); }
-  var st='#cfcfcf', st2='#e3e3e3', sx=(mc.shore||11)/100*W;
-  // x: % of width (shore-relative, as geocoded). y: fitted so the dots and the house span 12%-88% of the map height (not to scale)
-  var ys=items.filter(function(i){return i.y!=null;}).map(function(i){return +i.y;}); if(mc.home)ys.push(+mc.home.y);
-  var y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys), pd=.12*H;
-  var P=function(x,y){return [x/100*W, y1>y0?pd+(y-y0)/(y1-y0)*(H-2*pd):H/2];};
-  var g='<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg">';
-  g+='<rect x=".5" y=".5" width="'+(W-1)+'" height="'+(H-1)+'" fill="none" stroke="'+st2+'"/>';
-  g+='<path d="M0 0H'+(sx)+'C'+(sx-8)+' '+H*.2+' '+(sx+18)+' '+H*.36+' '+(sx-4)+' '+H*.54+'S'+(sx-12)+' '+H*.86+' '+(sx+8)+' '+H+'H0Z" fill="#f4f3ef"/>';
-  g+='<path d="M'+(sx+2)+' 0C'+(sx-6)+' '+H*.2+' '+(sx+20)+' '+H*.36+' '+(sx-2)+' '+H*.54+'S'+(sx-10)+' '+H*.86+' '+(sx+10)+' '+H+'" fill="none" stroke="'+st+'"/>';
-  for(var x=sx+60;x<W;x+=60) g+='<path d="M'+x+' 0L'+(x-26)+' '+H+'" stroke="'+st2+'"/>';
-  for(var y=70;y<H;y+=80) g+='<path d="M'+(sx+10)+' '+y+'L'+W+' '+(y-30)+'" stroke="'+st2+'"/>';
-  if(mc.avenue){ var a=P(mc.avenue[0],mc.avenue[1]), b=P(mc.avenue[2],mc.avenue[3]), dx=b[0]-a[0], dy=b[1]-a[1], L=Math.sqrt(dx*dx+dy*dy)||1, e=W*2;
-   g+='<path d="M'+(a[0]-dx/L*e)+' '+(a[1]-dy/L*e)+'L'+(b[0]+dx/L*e)+' '+(b[1]+dy/L*e)+'" stroke="'+st+'" stroke-width="1.4"/>'; }
-  var h=mc.home?P(mc.home.x,mc.home.y):null;
-  // dots: start at data positions, then nudge apart so circles never overlap (positions are indicative)
-  var D=items.map(function(it,k){ return (it.x==null||it.y==null)?null:{k:k,p:P(it.x,it.y)}; }).filter(Boolean);
-  for(var it=0;it<80;it++){ D.forEach(function(A,i){ D.forEach(function(B,j){ if(j<=i) return; var ux=B.p[0]-A.p[0], uy=B.p[1]-A.p[1], dd=Math.sqrt(ux*ux+uy*uy)||.01; if(dd<25){ var f=(25-dd)/2; ux/=dd; uy/=dd; A.p[0]-=ux*f; A.p[1]-=uy*f; B.p[0]+=ux*f; B.p[1]+=uy*f; } });
-   if(h){ var vx=A.p[0]-h[0], vy=A.p[1]-h[1], hd=Math.sqrt(vx*vx+vy*vy)||.01; if(hd<20){ A.p[0]+=vx/hd*(20-hd); A.p[1]+=vy/hd*(20-hd); } }
-   A.p[0]=Math.max(14,Math.min(W-14,A.p[0])); A.p[1]=Math.max(14,Math.min(H-14,A.p[1])); }); }
-  if(h){ var lab=esc(String(mc.home.label||'').toUpperCase()), right=h[0]<W-110;
-   g+='<rect x="'+(h[0]-6)+'" y="'+(h[1]-6)+'" width="12" height="12" fill="#0c0c0c"/>';
-   g+='<text x="'+(right?h[0]+14:h[0]-14)+'" y="'+(h[1]+4)+'"'+(right?'':' text-anchor="end"')+' font-family="Inter,sans-serif" font-weight="300" font-size="10" letter-spacing="2" fill="#2a2a2a">'+lab+'</text>'; }
-  D.forEach(function(A){ g+='<circle cx="'+A.p[0].toFixed(1)+'" cy="'+A.p[1].toFixed(1)+'" r="11" fill="#fff" stroke="#2a2a2a" stroke-width=".8"/>';
-   g+='<text x="'+A.p[0].toFixed(1)+'" y="'+(A.p[1]+3.5).toFixed(1)+'" text-anchor="middle" font-family="Inter,sans-serif" font-weight="300" font-size="10" fill="#2a2a2a">'+(A.k+1)+'</text>'; });
-  g+='</svg>';
-  m.innerHTML=g+'<figcaption>Illustrative map. Not to scale. Positions indicative.</figcaption>';
+ var m=document.getElementById('wjgv-lf-map'), mc=d.map||false, col=document.getElementById('wjgv-lf-mapcol');
+ if(!mc||!mc.image){ col.remove(); root.querySelector('.wjgv-lf').classList.add('wjgv-lf-wide'); return; }
+ /* hand-drawn base art (886x886 transparent, lossless WebP + PNG) with HTML dots placed by % of the image.
+    Dots outside 0-100 are pinned inside the edge with an arrow toward the real location; close in-frame dots are spaced so they never overlap. */
+ var sz=mc.size||886, CAP='Illustrative map. Not to scale. Positions indicative.';
+ m.innerHTML='<div class="wjgv-lf-art"><picture>'+(mc.webp?'<source srcset="'+esc(mc.webp)+'" type="image/webp">':'')+'<img src="'+esc(mc.image)+'" width="'+sz+'" height="'+sz+'" alt="'+esc(mc.alt||'')+'" decoding="async"></picture></div><figcaption>'+CAP+'</figcaption>';
+ if(mc.credit){ document.getElementById('wjgv-lf-credit').innerHTML=mc.creditUrl?'<a href="'+esc(mc.creditUrl)+'" target="_blank" rel="noopener noreferrer">'+mc.credit+'<span class="wjgv-lf-sr"> (opens in new tab)</span></a>':mc.credit; }
+ var art=m.querySelector('.wjgv-lf-art');
+ function place(){
+  art.querySelectorAll('.wjgv-lf-dot').forEach(function(e){e.remove();});
+  var w=art.clientWidth; if(!w) return; var r=10, D=[], any=false;
+  items.forEach(function(it,k){ if(it.x==null||it.y==null) return; var x=it.x/100*w, y=it.y/100*w, out=it.x<0||it.x>100||it.y<0||it.y>100, ins=out?r+12:r+4;
+   var px=Math.max(ins,Math.min(w-ins,x)), py=Math.max(ins,Math.min(w-ins,y));
+   D.push({k:k,x:px,y:py,out:out,a:Math.atan2(y-py,x-px)*180/Math.PI}); });
+  for(var n=0;n<60;n++){ D.forEach(function(A,i){ D.forEach(function(B,j){ if(j<=i) return; var ux=B.x-A.x, uy=B.y-A.y, dd=Math.sqrt(ux*ux+uy*uy)||.01, mn=2*r+3; if(dd<mn){ var f=(mn-dd)/((A.out||B.out)?1:2); ux/=dd; uy/=dd; if(!A.out){A.x-=ux*f;A.y-=uy*f;} if(!B.out){B.x+=ux*f;B.y+=uy*f;} } }); }); }
+  D.forEach(function(A){ var e=document.createElement('span'); e.className='wjgv-lf-dot'+(A.out?' wjgv-lf-pin':''); e.setAttribute('aria-hidden','true'); e.style.left=(A.x/w*100).toFixed(2)+'%'; e.style.top=(A.y/w*100).toFixed(2)+'%';
+   e.innerHTML=(A.k+1)+(A.out?'<span class="wjgv-lf-dir" style="transform:rotate('+A.a.toFixed(1)+'deg)"></span>':''); if(A.out)any=true; art.appendChild(e); });
+  m.querySelector('figcaption').textContent=CAP+(any?' Arrows point to places beyond the map edge.':'');
  }
- draw(); if(document.fonts&&document.fonts.ready)document.fonts.ready.then(draw); var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(draw,150);});
+ place(); if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place); var rt; addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(place,150);});
+
 })();
 </script>
 </div>
