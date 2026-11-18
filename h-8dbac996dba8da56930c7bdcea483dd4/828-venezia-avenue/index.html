@@ -369,7 +369,8 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 .wl .wjgv-pan::-webkit-slider-thumb{-webkit-appearance:none;width:44px;height:14px;margin-top:-7px;border:1px solid #2a2a28;border-radius:0;background:#fff}
 .wl .wjgv-pan::-moz-range-thumb{width:44px;height:14px;border:1px solid #2a2a28;border-radius:0;background:#fff}
 .wl .wjgv-meta{display:block}
-@media (max-width:767px){.wl .wjgv-opt{display:flex;width:100%}.wl .wjgv-opt-b{flex:1 1 0;padding:0 8px;font-size:11px;letter-spacing:.14em}.wl .wjgv-opt[hidden]{display:none}}
+.wl .wjgv-opt-s{display:none}
+@media (max-width:767px){.wl .wjgv-opt{display:flex;width:100%}.wl .wjgv-opt-b{flex:1 1 0;min-width:0;padding:0 6px;font-size:11px;letter-spacing:.14em}.wl .wjgv-opt[hidden]{display:none}.wl .wjgv-opt-l{display:none}.wl .wjgv-opt-s{display:inline}}
 </style>
 <section class="wjgv-hero" data-wjh-hero="" id="s-hero" aria-label="828 Venezia Avenue">
  <div class="wjgv-ph"><div><b>Hero photograph</b>Exterior, from Weston (pro shoot pending)</div></div>
@@ -423,10 +424,10 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
    <button class="wjgv-tab" role="tab" aria-selected="false" data-f="second-floor">Second Floor</button>
    <button class="wjgv-tab" role="tab" aria-selected="false" data-f="roof-deck">Roof Deck</button>
   </div>
-  <div class="wjgv-opt" id="altrow" role="group" aria-label="Garage layout"><button type="button" class="wjgv-opt-b" data-v="garage" aria-pressed="true">Two-car garage</button><button type="button" class="wjgv-opt-b" data-v="studio" aria-pressed="false">Creative studio</button></div>
+  <div class="wjgv-opt" id="altrow" role="group" aria-label="Garage layout"><button type="button" class="wjgv-opt-b" data-v="garage" aria-pressed="true"><span class="wjgv-opt-l">Two-car garage</span><span class="wjgv-opt-s">Garage</span></button><button type="button" class="wjgv-opt-b" data-v="studio" aria-pressed="false"><span class="wjgv-opt-l">Creative studio</span><span class="wjgv-opt-s">Studio</span></button><button type="button" class="wjgv-opt-b" data-v="gym" aria-pressed="false">Gym</button></div>
   <div class="wjgv-meta"><span class="wjgv-hint-d">Use + and &minus; to zoom, then drag to pan</span><span class="wjgv-hint-m">Pinch or use + and &minus; to zoom</span></div>
   <div class="wjgv-stage">
-   <div class="wjgv-scroll" id="sc"><img id="plate" src="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp" srcset="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp 1200w, https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822b27d08b16af83d39_828-venezia-first-floor-plan-v2-2400.png 2400w" sizes="(max-width:767px) 100vw, 880px" width="1200" height="487" alt="828 Venezia Avenue, first floor plan" draggable="false"></div>
+   <div class="wjgv-scroll" id="sc"><img id="plate" src="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c76e9cd28a7878e5e33_828-venezia-first-floor-plan-v3-1200.webp" srcset="https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c76e9cd28a7878e5e33_828-venezia-first-floor-plan-v3-1200.webp 1200w, https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c76c30d118bdbf381d5_828-venezia-first-floor-plan-v3-2400.png 2400w" sizes="(max-width:767px) 100vw, 880px" width="1200" height="487" alt="828 Venezia Avenue, first floor plan" draggable="false"></div>
    <div class="wjgv-zoom"><button type="button" aria-label="Zoom in" data-z="in">+</button><button type="button" aria-label="Zoom out" data-z="out">&minus;</button><button type="button" aria-label="Reset zoom" data-z="reset">&#8634;</button></div>
   </div>
   <div class="wjgv-pan-row" id="panrow" data-on="false"><input type="range" class="wjgv-pan" id="pan" min="0" max="1000" step="1" value="0" aria-label="Pan along the plan" tabindex="-1"></div>
@@ -454,10 +455,10 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 <script id="wjgv-js">
 (function(){
  /* plates: generated from PLATE_FILES in build.py (drop-in swap) */
- var P={"first-floor": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5833c_828-venezia-first-floor-plan-v2-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822b27d08b16af83d39_828-venezia-first-floor-plan-v2-2400.png"}, "first-floor-studio": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd8225f26510fb3c5834b_828-venezia-first-floor-plan-studio-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd822790e784df06cb12d_828-venezia-first-floor-plan-studio-2400.png"}, "second-floor": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f833aca8dcc32457e7_828-venezia-second-floor-plan-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f85365990d111edc1c_828-venezia-second-floor-plan-2400.png"}, "roof-deck": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f8d325a73de387fb77_828-venezia-roof-deck-plan-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f86ce45e20c0855c8b_828-venezia-roof-deck-plan-2400.png"}}, NOTE="Drawn from the owner's plans. Landscape is illustrative. Not to scale.", ADDR="828 Venezia Avenue";
+ var P={"first-floor": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c76e9cd28a7878e5e33_828-venezia-first-floor-plan-v3-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c76c30d118bdbf381d5_828-venezia-first-floor-plan-v3-2400.png"}, "first-floor-studio": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c76ebce0213b56d2c84_828-venezia-first-floor-plan-studio-v2-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c77c30d118bdbf3820a_828-venezia-first-floor-plan-studio-v2-2400.png"}, "first-floor-gym": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c7776c43460a0f5d035_828-venezia-first-floor-plan-gym-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c77920deb43f7ceedda_828-venezia-first-floor-plan-gym-2400.png"}, "second-floor": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f833aca8dcc32457e7_828-venezia-second-floor-plan-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afcd6f85365990d111edc1c_828-venezia-second-floor-plan-2400.png"}, "roof-deck": {"s": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c77920deb43f7ceedec_828-venezia-roof-deck-plan-v2-1200.webp", "l": "https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6afd0c77e505fb9fc6a4bd16_828-venezia-roof-deck-plan-v2-2400.png"}}, NOTE="Drawn from the owner's plans. Landscape is illustrative. Not to scale.", ADDR="828 Venezia Avenue";
  var img=document.getElementById('plate'),sc=document.getElementById('sc'),pan=document.getElementById('pan'),panrow=document.getElementById('panrow'),altrow=document.getElementById('altrow'),note=document.getElementById('fpnote');
  if(img&&sc){
- var z=1, level='first-floor', studio=false, ZMAX=5;
+ var z=1, level='first-floor', variant='garage', ZMAX=5;
  function maxL(){return Math.max(0,sc.scrollWidth-sc.clientWidth);}
  function syncPan(){ if(!pan)return; var m=maxL(); pan.value=m?Math.round(sc.scrollLeft/m*1000):0; }
  function apply(ax){ /* ax: x inside the viewport to keep fixed while zooming */
@@ -484,14 +485,15 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
  sc.addEventListener('touchend',function(e){ if(e.touches.length<2)pin=null; },{passive:true});
  /* keep zoom anchored when the stage width changes */
  addEventListener('resize',function(){ apply(); });
- function show(){ var key=level==='first-floor'&&studio?'first-floor-studio':level, f=P[key];
+ var ALT={studio:{alt:'first floor plan with the garage as a creative studio',note:' Creative studio is an illustrative alternative use of the garage.'},gym:{alt:'first floor plan with the garage as a home gym',note:' Gym is an illustrative alternative use of the garage.'}};
+ function show(){ var a=level==='first-floor'&&variant!=='garage'?ALT[variant]:null, key=a?'first-floor-'+variant:level, f=P[key];
   img.src=f.s; img.srcset=f.s+' 1200w, '+f.l+' 2400w';
-  img.alt=ADDR+', '+(key==='first-floor-studio'?'first floor plan with the garage as a creative studio':level.replace('-',' ')+' plan');
-  if(note)note.textContent=key==='first-floor-studio'?NOTE+' Creative studio is an illustrative alternative use of the garage.':NOTE;
-  var done=function(){ if(img.naturalWidth){img.width=img.naturalWidth/(img.currentSrc.indexOf('-2400')>-1?2:1);img.height=img.naturalHeight/(img.currentSrc.indexOf('-2400')>-1?2:1);} if(key==='first-floor-studio'&&z>1.001)sc.scrollLeft=maxL(); syncPan(); };
+  img.alt=ADDR+', '+(a?a.alt:level.replace('-',' ')+' plan');
+  if(note)note.textContent=a?NOTE+a.note:NOTE;
+  var done=function(){ if(img.naturalWidth){img.width=img.naturalWidth/(img.currentSrc.indexOf('-2400')>-1?2:1);img.height=img.naturalHeight/(img.currentSrc.indexOf('-2400')>-1?2:1);} if(a&&z>1.001)sc.scrollLeft=maxL(); syncPan(); };
   (img.decode?img.decode():Promise.resolve()).then(done,done); }
  if(altrow)altrow.querySelectorAll('.wjgv-opt-b').forEach(function(b){b.addEventListener('click',function(){
-  studio=b.dataset.v==='studio'; altrow.querySelectorAll('.wjgv-opt-b').forEach(function(o){o.setAttribute('aria-pressed',o===b);}); show(); });});
+  variant=b.dataset.v; altrow.querySelectorAll('.wjgv-opt-b').forEach(function(o){o.setAttribute('aria-pressed',o===b);}); show(); });});
  document.querySelectorAll('.wjgv-tab').forEach(function(t){t.addEventListener('click',function(){
   document.querySelectorAll('.wjgv-tab').forEach(function(o){o.setAttribute('aria-selected',o===t)});
   level=t.dataset.f; if(altrow)altrow.hidden=level!=='first-floor'; show(); });});
