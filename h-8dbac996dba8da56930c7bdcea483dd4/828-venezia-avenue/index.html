@@ -615,4 +615,151 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
   <div class="ff-legal"><p>Weston Littlefield, Estates Director &middot; CA DRE# 02053581</p><p>AKG | Christie&rsquo;s International Real Estate &middot; AKGRE Inc. &middot; CA DRE# 01527644</p><p>Equal Housing Opportunity</p></div>
  </div>
 </footer>
+<!-- wjg-header-logo-fade (2026-11-13, Grok Bot, staging; v2 2026-11-17 light-section fade, Weston t1617u option A): When the footer wordmark overlaps the fixed header wordmark, fade the header logo out (v1, unchanged). v2: the white logo, the tagline and the + also fade while they sit over light-background content (white sections, light floor plans and maps), and stay fully visible over the hero, photography and dark sections. The + fades out only while scrolling down. Scrolling up, pointing at the top of the window, hovering it or keyboard focus brings it back, and its tap target never goes away. Marks stay white. No band, gradient, scrim or shadow is added. Rollback: paste back the v1 block (header-fade/before.html). -->
+<style id="wjg-header-logo-fade">
+html body .navbar-3 .image-17,
+html.wjg-hdr-light body .navbar-3 .image-17,
+html body .navbar-3 .w-nav-brand,
+html.wjg-hdr-logo-hide body .navbar-3 .image-17,
+html.wjg-hdr-logo-hide.wjg-hdr-light body .navbar-3 .image-17,
+html.wjg-hdr-logo-hide body .navbar-3 .w-nav-brand,
+html body .nav-wraper .nav-button,
+html body .mal-wmd{
+  transition:opacity .4s ease!important;
+}
+html.wjg-hdr-logo-hide body .navbar-3 .image-17,
+html.wjg-hdr-logo-hide.wjg-hdr-light body .navbar-3 .image-17,
+html.wjg-hdr-logo-hide body .navbar-3 .w-nav-brand,
+html.wjg-hdr-ol-logo body .navbar-3 .image-17,
+html.wjg-hdr-ol-logo.wjg-hdr-light body .navbar-3 .image-17,
+html.wjg-hdr-ol-logo body .navbar-3 .w-nav-brand{
+  opacity:0!important;
+  pointer-events:none!important;
+}
+/* v2: tagline over light content */
+html.wjg-hdr-ol-tag body .mal-wmd{opacity:0!important}
+/* v2: + over light content, only while scrolling down. The button keeps its tap target; hover, focus and an open menu always show it. */
+html.wjg-hdr-ol-plus:not(.wjg-hdr-peek) body .nav-wraper .nav-button{opacity:0!important}
+html body .nav-wraper .nav-button:hover,
+html body .nav-wraper .nav-button:focus-visible,
+html.wjg-hdr-menu-open body .nav-wraper .nav-button{opacity:1!important}
+@media (prefers-reduced-motion:reduce){
+  html body .navbar-3 .image-17,
+  html.wjg-hdr-light body .navbar-3 .image-17,
+  html body .navbar-3 .w-nav-brand,
+  html.wjg-hdr-logo-hide body .navbar-3 .image-17,
+  html.wjg-hdr-logo-hide.wjg-hdr-light body .navbar-3 .image-17,
+  html.wjg-hdr-logo-hide body .navbar-3 .w-nav-brand,
+  html body .nav-wraper .nav-button,
+  html body .mal-wmd{
+    transition:none!important;
+  }
+}
+/* preview shell only: same rules for the stand-in header */
+.hdr .logo,.hdr .menu,.hdr .wmd{transition:opacity .4s ease}
+html.wjg-hdr-logo-hide .hdr .logo,html.wjg-hdr-ol-logo .hdr .logo{opacity:0;pointer-events:none}
+html.wjg-hdr-ol-tag .hdr .wmd{opacity:0}
+html.wjg-hdr-ol-plus:not(.wjg-hdr-peek) .hdr .menu{opacity:0}
+.hdr .menu:hover,.hdr .menu:focus-visible{opacity:1}
+@media (prefers-reduced-motion:reduce){.hdr .logo,.hdr .menu,.hdr .wmd{transition:none}}
+</style>
+<script id="wjg-header-logo-fade-js">
+(function(){
+  /* v2 config: marks that fade over light content, and what counts as light */
+  var MARKS={logo:'.navbar-3 img.image-17, .navbar-3 .w-nav-brand, .hdr .logo', plus:'.nav-wraper .nav-button, .hdr .menu', tag:'.mal-wmd, .hdr .wmd'};
+  var HEADER='.navbar-3, .nav-wraper, .hdr';
+  var MENU='.nav-wraper .nav-menu';
+  var LIGHT='[data-wjg-tone="light"], .wl-fp, .wjgv-stage, .wjgv-lf-map'; /* light images: floor plans, illustrated maps */
+  var DARK='[data-wjg-tone="dark"]';
+  function boot(){
+    var headerLogo=document.querySelector('.navbar-3 img.image-17')||document.querySelector('.navbar-3 .w-nav-brand')||document.querySelector('.hdr .logo');
+    if(!headerLogo) return;
+    var root=document.documentElement;
+    var ticking=false;
+    function footerLogo(){
+      return document.querySelector('.grid-9 .image-53, .section-footer .image-53, .wjg-ff img.image-53');
+    }
+    function footerRoot(){
+      return document.querySelector('.section-footer, .grid-9.wjg-ff, .grid-9, .wjgv-site-ff');
+    }
+    function overlap(a,b,pad){
+      pad=pad||16;
+      return a.width>0 && b.width>0 && a.bottom>b.top-pad && a.top<b.bottom+pad && a.right>b.left-pad && a.left<b.right+pad;
+    }
+    /* v2: tone of the page behind a point, ignoring the header itself */
+    function lum(c){
+      var m=c.match(/[\d.]+/g); if(!m||m.length<3) return null;
+      if(m.length>3 && +m[3]<0.5) return null;
+      function ch(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);}
+      return 0.2126*ch(+m[0])+0.7152*ch(+m[1])+0.0722*ch(+m[2]);
+    }
+    function toneAt(x,y){
+      var st=document.elementsFromPoint?document.elementsFromPoint(x,y):[];
+      for(var i=0;i<st.length;i++){
+        var el=st[i];
+        if(el.closest(HEADER)) continue;
+        if(el.closest(LIGHT)) return 1;
+        if(el.closest(DARK)) return 0;
+        var tn=el.tagName;
+        if(tn==='IMG'||tn==='VIDEO'||tn==='CANVAS'||tn==='IFRAME'||tn==='PICTURE') return 0;
+        var cs=getComputedStyle(el);
+        if(cs.backgroundImage&&cs.backgroundImage.indexOf('url(')>-1) return 0;
+        var L=lum(cs.backgroundColor);
+        if(L!==null) return L>0.5?1:0;
+      }
+      return 1; /* nothing painted: the white page */
+    }
+    function overLight(el){
+      if(!el) return false;
+      var r=el.getBoundingClientRect(); if(!r.width||!r.height) return false;
+      var n=0,t=0,xs=[.15,.5,.85],ys=[.3,.7];
+      for(var i=0;i<3;i++)for(var j=0;j<2;j++){t++; n+=toneAt(r.left+r.width*xs[i], r.top+r.height*ys[j]);}
+      return n*2>=t;
+    }
+    function first(sel){var l=document.querySelectorAll(sel);for(var i=0;i<l.length;i++){var r=l[i].getBoundingClientRect();if(r.width&&r.height)return l[i];}return null;}
+    function menuOpen(){var m=document.querySelector(MENU);return !!(m&&getComputedStyle(m).display!=='none'&&m.getBoundingClientRect().height>0);}
+    var lastY=scrollY, upAcc=0, downAcc=0;
+    function sync(){
+      ticking=false;
+      var target=footerRoot()||footerLogo();
+      var hide=!!target && overlap(headerLogo.getBoundingClientRect(), target.getBoundingClientRect());
+      root.classList.toggle('wjg-hdr-logo-hide', hide);
+      /* v2 */
+      var open=menuOpen();
+      root.classList.toggle('wjg-hdr-menu-open', open);
+      var y=scrollY, dy=y-lastY; lastY=y;
+      if(dy<0){upAcc-=dy; downAcc=0; if(upAcc>16) root.classList.add('wjg-hdr-peek');}
+      else if(dy>0){downAcc+=dy; upAcc=0; if(downAcc>24) root.classList.remove('wjg-hdr-peek');}
+      var lg=!open && overLight(first(MARKS.logo));
+      root.classList.toggle('wjg-hdr-ol-logo', lg);
+      root.classList.toggle('wjg-hdr-ol-tag', !open && overLight(first(MARKS.tag)));
+      root.classList.toggle('wjg-hdr-ol-plus', !open && overLight(first(MARKS.plus)));
+      headerLogo.setAttribute('aria-hidden', (hide||lg)?'true':'false');
+    }
+    function requestSync(){
+      if(!ticking){ ticking=true; requestAnimationFrame(sync); }
+    }
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(requestSync,{root:null,threshold:[0,0.01,0.1,0.25,0.5,0.75,1],rootMargin:'80px 0px 80px 0px'});
+      var foot=footerRoot();
+      var logo=footerLogo();
+      if(foot) io.observe(foot);
+      if(logo) io.observe(logo);
+    }
+    addEventListener('scroll', requestSync, {passive:true});
+    addEventListener('resize', requestSync);
+    /* v2: top zone (pointer near the top of the window) and keyboard focus bring the + back */
+    addEventListener('mousemove', function(e){ if(e.clientY<120 && !root.classList.contains('wjg-hdr-peek')){ root.classList.add('wjg-hdr-peek'); } }, {passive:true});
+    document.addEventListener('focusin', function(e){ if(e.target.closest && e.target.closest(HEADER)) root.classList.add('wjg-hdr-peek'); });
+    document.addEventListener('click', function(){ setTimeout(requestSync, 450); }, true);
+    addEventListener('load', requestSync);
+    root.classList.add('wjg-hdr-peek'); /* + starts visible; the first scroll down lets it fade */
+    sync();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+<!-- /wjg-header-logo-fade -->
+
 </body></html>
