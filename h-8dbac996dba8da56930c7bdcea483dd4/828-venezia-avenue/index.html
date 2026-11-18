@@ -402,6 +402,13 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
 .wl .wjgv-lf-credit a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .wl .wjgv-lf-wide{grid-template-columns:1fr}
 @media (max-width:767px){.wl .wjgv-lf-intro{margin-top:28px;font-size:16px;line-height:28px}.wl .wjgv-lf{grid-template-columns:1fr;gap:36px;margin-top:24px}.wl .wjgv-lf-item{grid-template-columns:32px minmax(0,1fr);grid-template-areas:"n name" ". cat" ". walk" ". note";padding:16px 0 15px}.wl .wjgv-lf-name{font-size:20px;line-height:26px}.wl .wjgv-lf-walk{text-align:left;margin-top:6px;font-size:13px}.wl .wjgv-lf-note{margin-top:6px}.wl .wjgv-lf-mapcol{position:static;margin:0 calc(-1 * var(--gut))}.wl .wjgv-lf-map figcaption,.wl .wjgv-lf-credit{padding:0 var(--gut);font-size:11px;letter-spacing:2.2px;line-height:19.8px}.wl .wjgv-lf-credit{letter-spacing:.8px}.wl .wjgv-lf-dot{width:19px;height:19px;font-size:10.5px}}
+/* Enquire: two agents, side by side from 768px, stacked below (page-scoped wjgv-agent*) */
+.wl .wjgv-agents{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;gap:0 64px;margin-top:18px}
+.wl .wjgv-agent{min-width:0;padding:0 0 4px}
+.wl .wjgv-agent+.wjgv-agent{border-left:1px solid var(--rule,#d9d9d9);padding-left:64px;margin-left:-1px}
+.wl .wjgv-agent-n{margin:0 0 6px;font:400 22px/28px var(--serif);color:var(--ink);font-style:normal}
+.wl .wjgv-agent a{display:table;margin:2px auto 0;overflow-wrap:anywhere}
+@media (max-width:767px){.wl .wjgv-agents{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:16px}.wl .wjgv-agent+.wjgv-agent{border-left:0;padding-left:0;margin-left:0;border-top:1px solid var(--rule,#d9d9d9);padding-top:24px}.wl .wjgv-agent-n{font-size:20px;line-height:26px}}
 </style>
 <section class="wjgv-hero" data-wjh-hero="" id="s-hero" aria-label="828 Venezia Avenue">
  <div class="wjgv-ph"><div><b>Hero photograph</b>Exterior, from Weston (pro shoot pending)</div></div>
@@ -488,7 +495,12 @@ body .wl .wl-enq h2{text-wrap:balance}body .wl .wl-direct{font-size:0}body .wl .
  <h2>Enquire about 828 Venezia Avenue</h2>
  <p class="wjgv-enq-line">Private viewings are by appointment with Weston Littlefield and Alex Howe.</p>
  <a class="wjgv-btn" href="/contact-us-final-page">Arrange a viewing</a>
- <div class="wjgv-direct"><span class="wjgv-label">Or reach us directly</span><a href="tel:+13108800582">+1 310.880.0582</a><span class="wjgv-sep"> &nbsp;·&nbsp; </span><a href="mailto:Weston@WestonJamesGroup.com">Weston@WestonJamesGroup.com</a></div>
+ <div class="wjgv-direct"><span class="wjgv-label">Or reach us directly</span>
+  <div class="wjgv-agents">
+   <div class="wjgv-agent"><p class="wjgv-agent-n">Weston Littlefield</p><a href="tel:+13108800582" aria-label="Call Weston Littlefield, +1 310.880.0582">+1 310.880.0582</a><a href="mailto:Weston@WestonJamesGroup.com" aria-label="Email Weston Littlefield, Weston@WestonJamesGroup.com">Weston@WestonJamesGroup.com</a></div>
+   <div class="wjgv-agent"><p class="wjgv-agent-n">Alex Howe</p><a href="tel:+13106016421" aria-label="Call Alex Howe, +1 310.601.6421">+1 310.601.6421</a><a href="mailto:Alex@Alex-Howe.com" aria-label="Email Alex Howe, Alex@Alex-Howe.com">Alex@Alex-Howe.com</a></div>
+  </div>
+ </div>
 </section>
 <section class="wjgv-close" data-wjh-theme="dark" id="s-close"><div class="wjgv-ph"><div><b>Closing photograph</b>Aerial or street context, full bleed</div></div></section>
 <div class="wjgv-foot" data-wjh-theme="dark" id="s-foot"><p class="wjgv-disc">Weston James Group makes no representation, warranty or guaranty as to accuracy of any data contained herein, and advises interested parties to confirm all information before relying on it for a purchase decision. All information provided has been obtained from sources believed reliable, but may be subject to errors, omissions, change of price, prior sale, or withdrawal without notice. Measurements and square footages are approximate and may be verified by consulting an appraiser or architect. The content set forth on this website is provided exclusively for consumers&rsquo; personal, non-commercial use, solely to identify potential properties for potential purchase; unlawful use, distribution or duplication is strictly prohibited and may violate relevant federal and state law. &copy; 2026 Weston James Group. &nbsp;·&nbsp; <a href="#">Terms of Use</a></p></div>
