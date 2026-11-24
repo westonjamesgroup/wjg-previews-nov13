@@ -177,6 +177,25 @@ col.no{width:48px;} col.price{width:120px;}
   font-weight:400;
   font-style:normal;
 }
+
+/* Variant I only: named-house address subline matches Critiquito's mock
+   (Inter 300, 16/24, --meta). Scoped so variant T is unchanged. */
+body.nums-inter .addr{
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  font-size:16px;
+  line-height:24px;
+  color:var(--meta);
+}
+body.nums-inter table.index .addr-cell{
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  font-size:13px;
+  line-height:20px;
+  color:var(--meta);
+}
 .house .n-num,
 .addr .n-num,
 .addr-cell .n-num,
