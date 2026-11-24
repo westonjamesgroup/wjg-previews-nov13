@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Our Showcase · Refined Monograph · Tinos numerals · Weston James Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Playfair+Display:ital,wght@0,400&display=swap" rel="stylesheet">
+<style>
+@font-face{
+  font-family:"WJG-SC-Nums";
+  font-style:normal;font-weight:400;font-display:swap;
+  src:url("https://fonts.gstatic.com/l/font?kit=UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZ1zgJGrt9_lSwK5LLF9F18&skey=c491285d6722e4fa&v=v20") format("woff2");
+  unicode-range:U+0030-0039,U+0024,U+002C,U+002B;
+}
+:root{
+  --page:#0C0C0C;
+  --ink:#fff;
+  --body:rgba(255,255,255,.85);
+  --meta:rgba(255,255,255,.62);
+  --quiet:rgba(255,255,255,.55);
+  --hair:rgba(255,255,255,.16);
+  --serif:"WJG-SC-Nums","Playfair Display",serif;
+  --sans:Inter,sans-serif;
+  --m:64px;
+  --gutter:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--page);color:var(--ink);font-family:var(--sans);font-weight:300;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+img{display:block;max-width:100%}
+*{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;padding-left:var(--m);padding-right:var(--m);}
+.inner{max-width:1152px;margin-left:auto;margin-right:auto;}
+.opener{padding-top:88px;padding-bottom:96px;}
+.kicker{font-family:var(--sans);font-weight:200;font-size:12px;line-height:16.8px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--meta);}
+.display{font-family:var(--serif);font-weight:400;font-size:64px;line-height:67.2px;letter-spacing:-0.5px;
+  color:#fff;margin-top:18px;font-style:normal;}
+.lede{max-width:38em;margin-top:36px;}
+.lede p{font-family:var(--sans);font-weight:300;font-size:18px;line-height:31.5px;color:var(--body);margin-top:22px;}
+.lede p:first-child{margin-top:0;}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:56px;
+  padding-top:28px;border-top:1px solid var(--hair);max-width:1152px;}
+.facts .n{font-family:var(--sans);font-weight:300;font-size:28px;line-height:32px;letter-spacing:-0.3px;
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;color:#fff;}
+.facts .l{font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;
+  text-transform:uppercase;color:var(--meta);margin-top:8px;}
+.plate{margin:0;}
+.frame{background:#1B1B1B;overflow:hidden;}
+.photo{width:100%;height:100%;background-size:cover;background-repeat:no-repeat;background-color:#1B1B1B;}
+.plate-bleed .frame{width:100%;height:72vh;min-height:520px;max-height:820px;}
+.plate-full{padding-left:var(--m);padding-right:var(--m);}
+.plate-full .frame{width:100%;aspect-ratio:3/2;}
+.cap{padding-top:28px;padding-bottom:8px;}
+.plate-bleed .cap,.plate-full .cap{max-width:1152px;margin-left:auto;margin-right:auto;}
+.plate-bleed .cap{padding-left:var(--m);padding-right:var(--m);}
+.plate-no{font-family:var(--sans);font-weight:200;font-size:12px;line-height:16.8px;letter-spacing:2px;
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;color:var(--meta);}
+.arch-lead{font-family:var(--sans);font-weight:300;font-size:16px;line-height:24px;color:var(--body);margin-top:14px;}
+.house{font-family:var(--serif);font-weight:400;font-size:38px;line-height:44.08px;letter-spacing:-0.2px;
+  color:#fff;margin-top:8px;font-style:normal;}
+.n-inter{font-family:var(--sans);font-weight:400;font-style:normal;
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.addr{font-family:var(--sans);font-weight:300;font-size:16px;line-height:24px;color:var(--meta);margin-top:8px;}
+.meta{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;max-width:640px;}
+.meta div{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:baseline;
+  padding:7px 0;border-top:1px solid var(--hair);}
+.meta div:has(dd.price),
+.meta div:has(dd.status){grid-column:1/-1;}
+.meta dt{font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;
+  text-transform:uppercase;color:var(--meta);}
+.meta dd{font-family:var(--sans);font-weight:300;font-size:14px;line-height:22px;color:var(--body);}
+.meta dd.price{font-size:16px;line-height:24px;color:rgba(255,255,255,.85);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.meta dd.status{color:var(--quiet);letter-spacing:1.6px;text-transform:uppercase;font-weight:200;font-size:12px;line-height:19.2px;}
+.credit{font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:0.4px;
+  color:var(--meta);margin-top:16px;min-height:15px;}
+.band{height:96px;}
+.band-lg{height:128px;}
+.spread{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--gutter);
+  padding-left:var(--m);padding-right:var(--m);align-items:stretch;}
+.spread > .plate{display:grid;grid-template-rows:subgrid;grid-row:span 7;min-width:0;}
+.spread .frame{aspect-ratio:3/2;width:100%;}
+.spread .head{padding-top:28px;min-width:0;}
+.spread .house{font-size:25px;line-height:31px;letter-spacing:-0.2px;}
+.spread .meta-row{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;
+  padding:7px 0;border-top:1px solid var(--hair);min-width:0;}
+.spread .meta-row:first-of-type{margin-top:22px;}
+.spread .meta-row dt{font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;
+  text-transform:uppercase;color:var(--meta);}
+.spread .meta-row dd{font-family:var(--sans);font-weight:300;font-size:14px;line-height:22px;color:var(--body);min-width:0;}
+.spread .meta-row dd.price{font-size:16px;line-height:24px;color:rgba(255,255,255,.85);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.spread .meta-row dd.status{color:var(--quiet);letter-spacing:1.6px;text-transform:uppercase;font-weight:200;
+  font-size:12px;line-height:19.2px;}
+.spread .meta-row.is-empty dt,.spread .meta-row.is-empty dd{visibility:hidden;}
+.spread .credit{margin-top:16px;margin-bottom:8px;}
+.spread .credit.is-empty{visibility:hidden;}
+.table-wrap{padding:0 var(--m);}
+.table-title{padding:0 0 22px;}
+table.index{width:100%;border-collapse:collapse;}
+table.index th,table.index td{text-align:left;vertical-align:baseline;padding:11px 16px 11px 0;
+  border-bottom:1px solid var(--hair);}
+table.index th{font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;
+  text-transform:uppercase;color:var(--meta);padding-top:0;padding-bottom:12px;}
+table.index td{font-family:var(--sans);font-weight:300;font-size:13px;line-height:20px;color:var(--body);}
+table.index td.no{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;
+  font-weight:200;color:var(--meta);width:48px;padding-right:8px;}
+table.index td.res{color:#fff;}
+table.index td.price{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;
+  font-size:14px;line-height:22px;color:rgba(255,255,255,.85);white-space:nowrap;text-align:right;padding-right:0;}
+table.index .status{margin-top:3px;color:var(--quiet);font-weight:200;font-size:10px;line-height:15px;
+  letter-spacing:2px;text-transform:uppercase;}
+table.index .addr-cell{color:var(--meta);font-weight:300;font-size:13px;line-height:20px;}
+col.no{width:48px;} col.price{width:120px;}
+.disclaimer{padding:72px var(--m) 96px;max-width:calc(38em + 2*var(--m));}
+.disclaimer p{font-family:var(--sans);font-weight:200;font-size:10px;line-height:16px;color:rgba(255,255,255,.60);}
+.mobile-index{display:none;}
+.mi-row{padding:14px 0;border-bottom:1px solid var(--hair);}
+.mi-top{display:flex;justify-content:space-between;gap:16px;align-items:baseline;}
+.mi-no{font-family:var(--sans);font-weight:200;font-size:11px;color:var(--meta);letter-spacing:1px;
+  font-variant-numeric:lining-nums tabular-nums;min-width:2.2em;}
+.mi-res{font-family:var(--sans);font-weight:300;font-size:16px;line-height:22px;color:#fff;flex:1;min-width:0;}
+.mi-price{font-family:var(--sans);font-weight:300;font-size:16px;line-height:24px;color:rgba(255,255,255,.85);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;white-space:nowrap;}
+.mi-sub{margin-top:6px;padding-left:2.2em;font-family:var(--sans);font-weight:300;font-size:13px;line-height:20px;color:var(--meta);}
+.mi-status{margin-top:4px;padding-left:2.2em;font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--quiet);}
+@media (max-width:767px){
+  :root{--m:20px;--gutter:20px;}
+  .opener{padding-top:56px;padding-bottom:64px;}
+  .display{font-size:42px;line-height:44.1px;}
+  .lede p{font-size:16px;line-height:28px;margin-top:18px;}
+  .facts{grid-template-columns:1fr;gap:22px;margin-top:40px;}
+  .facts .n{font-size:24px;line-height:28px;}
+  .plate-bleed .frame{height:56vh;min-height:360px;max-height:560px;}
+  .plate-full .frame{aspect-ratio:3/2;}
+  .house{font-size:28px;line-height:32.48px;}
+  .meta{grid-template-columns:1fr;gap:0;max-width:none;}
+  .meta div{grid-template-columns:132px 1fr;}
+  .spread{grid-template-columns:1fr;row-gap:64px;}
+  .spread > .plate{display:block;grid-row:auto;}
+  .spread .house{font-size:25px;line-height:31px;}
+  .spread .meta-row{grid-template-columns:132px 1fr;}
+  .spread .meta-row.is-empty,
+  .spread .credit.is-empty{display:none;}
+  .band{height:64px;}
+  .band-lg{height:80px;}
+  table.index{display:none;}
+  .mobile-index{display:block;}
+  .disclaimer{padding:48px var(--m) 72px;}
+}
+@media (min-width:768px){
+  .mobile-index{display:none;}
+}
+
+/* Staging typography overlay. Does not edit Critiquito's styles.css. */
+
+/* Playfair for address and residence letters. Digits are wrapped in .n-num. */
+:root{
+  --serif:"Playfair Display",serif;
+}
+.n-inter,
+.n-num{
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+.addr{
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:normal;
+}
+.house .n-num,
+.addr .n-num,
+.addr-cell .n-num,
+table.index td.res .n-num,
+.mi-res .n-num{
+  font-weight:300;
+}
+table.index td.res,
+table.index .addr-cell,
+.mi-res{
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:normal;
+}
+table.index .addr-cell{
+  color:var(--meta);
+  font-size:13px;
+  line-height:20px;
+}
+.mi-res{
+  font-size:16px;
+  line-height:22px;
+  color:#fff;
+}
+
+/* Plate and index prices: Inter 300, 16/24 on plates, tabular lining, white 85%. */
+.meta dd.price,
+.spread .meta-row dd.price{
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:24px;
+  color:rgba(255,255,255,.85);
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+table.index td.price{
+  font-family:var(--sans);
+  font-weight:300;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+  font-size:14px;
+  line-height:22px;
+  color:rgba(255,255,255,.85);
+}
+.mi-price{
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:24px;
+  color:rgba(255,255,255,.85);
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+
+/* $550,000,000+ opener stays on the live Playfair Display / Tinos stack.
+   Size stays the monograph fact-row 28/32 so the three-up grid still holds.
+   Tinos figures come from the unicode-range @font-face below; the + stays Playfair. */
+@font-face{
+  font-family:"Playfair Display";
+  src:url(https://fonts.gstatic.com/s/tinos/v26/buE4poGnedXvwjX7fmQ.woff2) format("woff2");
+  font-weight:400;
+  font-style:normal;
+  unicode-range:U+0024,U+002C,U+0030-0039;
+  size-adjust:108.1%;
+  ascent-override:100.1%;
+  descent-override:23.2%;
+  line-gap-override:0%;
+  font-display:swap;
+}
+.facts .n.stat-live{
+  font-family:"Playfair Display",sans-serif;
+  font-weight:400;
+  font-style:normal;
+  letter-spacing:-1px;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+
+/* Variant T (secondary): prices and address/title digits use the live Tinos stack. */
+body.nums-tinos .n-inter,
+body.nums-tinos .n-num,
+body.nums-tinos .meta dd.price,
+body.nums-tinos .spread .meta-row dd.price,
+body.nums-tinos table.index td.price,
+body.nums-tinos .mi-price{
+  font-family:"Playfair Display",sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+
+/* Staging chrome. Hidden in screenshots. */
+.stage-bar{
+  position:sticky;top:0;z-index:20;
+  display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;
+  padding:10px var(--m);
+  background:#161616;
+  border-bottom:1px solid var(--hair);
+  font-family:var(--sans);font-weight:200;font-size:11px;line-height:16px;
+  letter-spacing:1.2px;text-transform:uppercase;color:var(--meta);
+}
+.stage-bar a{color:#fff;letter-spacing:1.2px;border-bottom:1px solid rgba(255,255,255,.35);}
+.stage-bar a.is-on{border-bottom-color:#fff;font-weight:400;}
+.stage-bar .note{text-transform:none;letter-spacing:0;font-weight:300;color:var(--quiet);}
+body.capture .stage-bar{display:none;}
+
+</style>
+<script>window['ga-disable-G-DISABLED']=true;</script>
+</head>
+<body class="nums-tinos">
+<div class="stage-bar" data-stage-chrome><span>Staged preview · not live</span><span>Numbers: <a href="../our-showcase-monograph/">Inter (lead)</a> · <a href="../our-showcase-monograph-tinos/" class="is-on">Tinos (comparison)</a></span><span class="note">$550,000,000+ opener stays on the live Playfair / Tinos stack in both.</span></div>
+<header class="opener wrap"><div class="inner"><div class="kicker">Our Showcase</div><h1 class="display">Notable Transactions</h1><div class="lede"><p>With more than $550 million in career sales across Southern California, Weston has established himself as a leading force in luxury real estate, with a distinct specialization in architecturally significant residences and exceptional properties.</p>
+<p>His portfolio includes some of the region’s most celebrated architectural landmarks, including Richard Neutra’s Tremaine House, John Lautner’s Garcia House, and Craig Ellwood’s Case Study House No. 16, reflecting a deep appreciation for architectural heritage and a proven ability to represent properties of extraordinary significance.</p>
+<p>His track record includes 20 transactions exceeding $10 million, along with 20 beachfront lot sales along Malibu’s coveted Carbon Beach and La Costa Beach, underscoring his expertise in Southern California’s most exclusive coastal markets.</p>
+<p>As founder of Weston James Group at AKG | Christie’s International Real Estate, Weston combines an intimate understanding of architecture, strategic market insight, and a highly personalized approach to representing distinguished properties and discerning clientele.</p></div><div class="facts"><div><div class="n stat-live">$550,000,000+</div><div class="l">In career sales</div></div><div><div class="n">20</div><div class="l">Sales above $10 million</div></div><div><div class="n">20</div><div class="l">Malibu beach-lot transactions</div></div></div></div></header>
+<main>
+<figure class="plate plate-bleed" id="p01"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/63c99da4bafdfae31da7aac0_RD_Garcia_2744_D_F3%20(Linkdin).jpg');background-position:50% 68%;" role="img" aria-label="Garcia House"></div></div><figcaption class="cap">
+<div class="plate-no">01</div>
+<p class="arch-lead">John Lautner</p>
+<h3 class="house">Garcia House</h3>
+<p class="addr"><span class="n-inter">7436</span> Mulholland Drive</p>
+<dl class="meta">
+<div><dt>Location</dt><dd>Hollywood Hills</dd></div>
+<div><dt>Representation</dt><dd>Represented seller</dd></div>
+<div><dt>Status</dt><dd class="status">SOLD</dd></div>
+<div><dt>Price</dt><dd class="price">$12,500,000</dd></div>
+</dl>
+<p class="credit">Photograph: Roger Davies.</p>
+</figcaption></figure>
+<div class="band-lg"></div>
+<figure class="plate plate-full" id="p02"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51662662205158982b82e_320%20St%20Pierre%20Road%20-%20Instagram%20Story%20Post.webp');background-position:50% 70%;" role="img" aria-label="320 St. Pierre Road"></div></div><figcaption class="cap">
+<div class="plate-no">02</div>
+<h3 class="house"><span class="n-inter">320</span> St. Pierre Road</h3>
+<dl class="meta">
+<div><dt>Location</dt><dd>Bel Air</dd></div>
+<div><dt>Representation</dt><dd>Represented buyer</dd></div>
+<div><dt>Status</dt><dd class="status">SOLD</dd></div>
+<div><dt>Price</dt><dd class="price">$39,000,000</dd></div>
+</dl>
+<p class="credit">Photograph: Nils Timm and Christopher Amitrano.</p>
+</figcaption></figure>
+<div class="band-lg"></div>
+<div class="spread">
+<figure class="plate plate-pair" id="p03"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51665c3f471ed849c98ec_Tremaine%20House%201.webp');background-position:50% 58%;" role="img" aria-label="The Tremaine House"></div></div><div class="head"><div class="plate-no">03</div>
+<p class="arch-lead">Richard Neutra</p>
+<h3 class="house">The Tremaine House</h3>
+<p class="addr"><span class="n-inter">1642</span> Moore Road</p></div><div class="meta-row"><dt>Location</dt><dd>Montecito</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented both sides</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">SOLD OFF MARKET</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$12,000,000</dd></div><p class="credit is-empty">&nbsp;</p></figure>
+<figure class="plate plate-pair" id="p04"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6af2acc9a5dc1942103df65d_henry-house-hero.jpg');background-position:50% 52%;" role="img" aria-label="Dr. Richard Henry House"></div></div><div class="head"><div class="plate-no">04</div>
+<p class="arch-lead">Cliff May</p>
+<h3 class="house">Dr. Richard Henry House</h3>
+<p class="addr"><span class="n-inter">667</span> Ledo Way</p></div><div class="meta-row"><dt>Location</dt><dd>Los Angeles</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">SOLD</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$10,000,000</dd></div><p class="credit">Photograph: Matthew Momberger.</p></figure>
+</div>
+<div class="band-lg"></div>
+<div class="spread">
+<figure class="plate plate-pair" id="p05"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51661a2d51cd541be5025_High%20Res%20Case%20Study%20Listing.webp');background-position:50% 75%;" role="img" aria-label="Case Study House No. 16"></div></div><div class="head"><div class="plate-no">05</div>
+<p class="arch-lead">Craig Ellwood</p>
+<h3 class="house">Case Study House No. <span class="n-inter">16</span></h3>
+<p class="addr"><span class="n-inter">1811</span> Bel Air Road</p></div><div class="meta-row"><dt>Location</dt><dd>Bel Air</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">SOLD</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$2,950,000</dd></div><p class="credit is-empty">&nbsp;</p></figure>
+<figure class="plate plate-pair" id="p06"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6af2aabeb7170858d7affdf5_levit-house-hero.jpg');background-position:50% 55%;" role="img" aria-label="William H. Levit House"></div></div><div class="head"><div class="plate-no">06</div>
+<p class="arch-lead">Richard Neutra</p>
+<h3 class="house">William H. Levit House</h3>
+<p class="addr"><span class="n-inter">1705</span> Summitridge Drive</p></div><div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">SOLD</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$6,850,000</dd></div><p class="credit">Photograph: Matthew Momberger.</p></figure>
+</div>
+<div class="band-lg"></div>
+<figure class="plate plate-full" id="p07"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6a023efa6b370a2b545c4fe0_Palms_NEW-9.jpg');background-position:50% 42%;" role="img" aria-label="The Venice Compound"></div></div><figcaption class="cap">
+<div class="plate-no">07</div>
+<h3 class="house">The Venice Compound</h3>
+<p class="addr"><span class="n-inter">649</span> Palms Boulevard</p>
+<dl class="meta">
+<div><dt>Location</dt><dd>Venice</dd></div>
+<div><dt>Representation</dt><dd>Represented seller</dd></div>
+<div><dt>Status</dt><dd class="status">SOLD</dd></div>
+<div><dt>Price</dt><dd class="price">$14,500,000</dd></div>
+</dl>
+
+</figcaption></figure>
+<div class="band-lg"></div>
+<div class="spread">
+<figure class="plate plate-pair" id="p08"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51662d7ea92e53194b46c_1360%20Summitridge%20Pl%20-4.2.webp');background-position:50% 45%;" role="img" aria-label="1360 Summitridge Place"></div></div><div class="head"><div class="plate-no">08</div>
+<h3 class="house"><span class="n-inter">1360</span> Summitridge Place</h3></div><div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented both sides</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">SOLD OFF MARKET</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$24,000,000</dd></div><p class="credit is-empty">&nbsp;</p></figure>
+<figure class="plate plate-pair" id="p09"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/60df53b9e6d6a429c39d929b_Our%20Showcase%20-%209371%20Beverly%20Crest%20Drive.jpg');background-position:50% 60%;" role="img" aria-label="9371 Beverly Crest Drive"></div></div><div class="head"><div class="plate-no">09</div>
+<h3 class="house"><span class="n-inter">9371</span> Beverly Crest Drive</h3></div><div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">SOLD</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$21,990,000</dd></div><p class="credit is-empty">&nbsp;</p></figure>
+</div>
+<div class="band-lg" id="index-start"></div>
+<div class="table-wrap" id="index">
+<div class="table-title"><div class="kicker">Index</div></div>
+<table class="index"><colgroup><col class="no"><col><col><col><col><col class="price"></colgroup><thead><tr><th>No.</th><th>Residence</th><th>Architect</th><th>Location</th><th>Representation</th><th style="text-align:right">Price</th></tr></thead><tbody><tr><td class="no">10</td><td class="res"><span class="n-inter">722</span> N. Rexford Drive<div class="status">SOLD OFF MARKET</div></td><td></td><td>Beverly Hills</td><td>Represented buyer</td><td class="price">$17,475,000</td></tr>
+<tr><td class="no">11</td><td class="res"><span class="n-inter">814</span> N. Whittier Drive<div class="status">SOLD</div></td><td></td><td>Beverly Hills</td><td>Represented seller</td><td class="price">$15,875,000</td></tr>
+<tr><td class="no">12</td><td class="res"><span class="n-inter">14023</span> Aubrey Road<div class="status">SOLD OFF MARKET</div></td><td></td><td>Beverly Hills</td><td>Represented seller</td><td class="price">$15,000,000</td></tr>
+<tr><td class="no">13</td><td class="res"><span class="n-inter">1616</span> Blue Jay Way<div class="status">SOLD</div></td><td></td><td>Bird Streets</td><td>Represented buyer</td><td class="price">$14,250,000</td></tr>
+<tr><td class="no">14</td><td class="res"><span class="n-inter">30940</span> Broad Beach Road<div class="status">SOLD OFF MARKET</div></td><td></td><td>Malibu</td><td>Represented buyer</td><td class="price">$14,000,000</td></tr>
+<tr><td class="no">15</td><td class="res"><span class="n-inter">1071</span> Laurel Way<div class="status">SOLD</div></td><td></td><td>Beverly Hills</td><td>Represented buyer</td><td class="price">$13,250,000</td></tr>
+<tr><td class="no">16</td><td class="res"><span class="n-inter">1375</span> Summitridge Place<div class="status">SOLD OFF MARKET</div></td><td></td><td>Beverly Hills</td><td>Represented buyer</td><td class="price">$12,300,000</td></tr>
+<tr><td class="no">17</td><td class="res"><span class="n-inter">808</span> San Vicente Boulevard<div class="status">SOLD</div></td><td></td><td>Santa Monica</td><td>Represented seller</td><td class="price">$11,500,000</td></tr>
+<tr><td class="no">18</td><td class="res"><span class="n-inter">10820</span> Ambazac Way<div class="status">SOLD</div></td><td></td><td>Bel Air</td><td>Represented both sides</td><td class="price">$11,026,000</td></tr>
+<tr><td class="no">19</td><td class="res"><span class="n-inter">4347</span> Marina Drive<div class="status">SOLD</div></td><td></td><td>Santa Barbara</td><td>Represented seller</td><td class="price">$10,750,000</td></tr>
+<tr><td class="no">20</td><td class="res"><span class="n-inter">1424</span> Tanager Way<div class="status">SOLD OFF MARKET</div></td><td></td><td>Bird Streets</td><td>Represented buyer</td><td class="price">$10,200,000</td></tr>
+<tr><td class="no">21</td><td class="res"><span class="n-inter">3703</span> Alomar Drive<div class="status">SOLD</div></td><td></td><td>Sherman Oaks</td><td>Represented buyer</td><td class="price">$9,500,000</td></tr>
+<tr><td class="no">22</td><td class="res"><span class="n-inter">8818</span> Rising Glen Place<div class="status">SOLD</div></td><td></td><td>Bird Streets</td><td>Represented seller</td><td class="price">$9,000,000</td></tr>
+<tr><td class="no">23</td><td class="res"><span class="n-inter">3801</span> Longridge Avenue<div class="status">SOLD</div></td><td></td><td>Sherman Oaks</td><td>Represented buyer</td><td class="price">$8,415,000</td></tr>
+<tr><td class="no">24</td><td class="res"><span class="n-inter">14140</span> Beresford Road<div class="status">SOLD</div></td><td></td><td>Beverly Hills</td><td>Represented buyer</td><td class="price">$8,045,000</td></tr>
+<tr><td class="no">25</td><td class="res"><span class="n-inter">10985</span> Bellagio Road<div class="status">SOLD</div></td><td></td><td>Bel Air</td><td>Represented both sides</td><td class="price">$7,000,000</td></tr>
+<tr><td class="no">26</td><td class="res"><span class="n-inter">3903</span> Carbon Canyon Road<div class="status">SOLD</div></td><td></td><td>Malibu · Vacant lot</td><td>Represented buyer</td><td class="price">$6,500,026</td></tr>
+<tr><td class="no">27</td><td class="res"><span class="n-inter">221</span> Tranquillo Road<div class="status">SOLD</div></td><td></td><td>Pacific Palisades</td><td>Represented buyer</td><td class="price">$6,200,000</td></tr>
+<tr><td class="no">28</td><td class="res"><span class="n-inter">31833</span> Sea Level Drive<div class="status">SOLD</div></td><td></td><td>Malibu</td><td>Represented seller</td><td class="price">$5,500,000</td></tr>
+<tr><td class="no">29</td><td class="res"><span class="n-inter">8412</span> Carlton Way<div class="status">SOLD</div></td><td></td><td>Los Angeles</td><td>Represented buyer</td><td class="price">$4,962,000</td></tr>
+<tr><td class="no">30</td><td class="res"><span class="n-inter">8818</span> Rising Glen Place<div class="status">SOLD</div></td><td></td><td>Bird Streets</td><td>Represented both sides</td><td class="price">$4,925,000</td></tr>
+<tr><td class="no">31</td><td class="res"><span class="n-inter">954</span> Hillside Terrace<div class="status">SOLD</div></td><td></td><td>Pasadena</td><td>Represented seller</td><td class="price">$4,675,000</td></tr>
+<tr><td class="no">32</td><td class="res"><span class="n-inter">84</span> Royal St. Georges Way<div class="status">SOLD</div></td><td></td><td>Rancho Mirage</td><td>Represented buyer</td><td class="price">$4,600,000</td></tr>
+<tr><td class="no">33</td><td class="res"><span class="n-inter">83333</span> N. Shore Drive<div class="status">SOLD</div></td><td></td><td>Indio</td><td>Represented buyer</td><td class="price">$3,900,000</td></tr>
+<tr><td class="no">34</td><td class="res">Sherman Oaks<div class="status">SOLD</div></td><td></td><td></td><td>Represented buyer</td><td class="price">$3,800,000</td></tr>
+<tr><td class="no">35</td><td class="res"><span class="n-inter">1229</span> Chantilly Road<div class="status">SOLD</div></td><td></td><td>Bel Air</td><td>Represented seller</td><td class="price">$3,795,000</td></tr>
+<tr><td class="no">36</td><td class="res"><span class="n-inter">14550</span> Gallaudet Place<div class="status">SOLD</div></td><td></td><td>Pacific Palisades</td><td>Represented buyer</td><td class="price">$3,715,000</td></tr>
+<tr><td class="no">37</td><td class="res"><span class="n-inter">7200</span> La Presa Drive<div class="status">SOLD</div></td><td></td><td>Los Angeles</td><td>Represented buyer</td><td class="price">$3,525,000</td></tr>
+<tr><td class="no">38</td><td class="res"><span class="n-inter">7904</span> Woodrow Wilson Drive<div class="status">SOLD</div></td><td></td><td>Hollywood Hills</td><td>Represented buyer</td><td class="price">$3,395,000</td></tr>
+<tr><td class="no">39</td><td class="res"><span class="n-inter">3636</span> Glenridge Drive<div class="status">SOLD</div></td><td></td><td>Sherman Oaks</td><td>Represented buyer</td><td class="price">$3,350,000</td></tr>
+<tr><td class="no">40</td><td class="res"><span class="n-inter">812</span> Huntley Drive<div class="status">SOLD</div></td><td></td><td>West Hollywood</td><td>Represented buyer</td><td class="price">$2,675,000</td></tr></tbody></table>
+<div class="mobile-index">
+<div class="mi-row"><div class="mi-top"><div class="mi-no">10</div><div class="mi-res"><span class="n-inter">722</span> N. Rexford Drive</div><div class="mi-price">$17,475,000</div></div><div class="mi-sub">Beverly Hills · Represented buyer</div><div class="mi-status">SOLD OFF MARKET</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">11</div><div class="mi-res"><span class="n-inter">814</span> N. Whittier Drive</div><div class="mi-price">$15,875,000</div></div><div class="mi-sub">Beverly Hills · Represented seller</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">12</div><div class="mi-res"><span class="n-inter">14023</span> Aubrey Road</div><div class="mi-price">$15,000,000</div></div><div class="mi-sub">Beverly Hills · Represented seller</div><div class="mi-status">SOLD OFF MARKET</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">13</div><div class="mi-res"><span class="n-inter">1616</span> Blue Jay Way</div><div class="mi-price">$14,250,000</div></div><div class="mi-sub">Bird Streets · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">14</div><div class="mi-res"><span class="n-inter">30940</span> Broad Beach Road</div><div class="mi-price">$14,000,000</div></div><div class="mi-sub">Malibu · Represented buyer</div><div class="mi-status">SOLD OFF MARKET</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">15</div><div class="mi-res"><span class="n-inter">1071</span> Laurel Way</div><div class="mi-price">$13,250,000</div></div><div class="mi-sub">Beverly Hills · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">16</div><div class="mi-res"><span class="n-inter">1375</span> Summitridge Place</div><div class="mi-price">$12,300,000</div></div><div class="mi-sub">Beverly Hills · Represented buyer</div><div class="mi-status">SOLD OFF MARKET</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">17</div><div class="mi-res"><span class="n-inter">808</span> San Vicente Boulevard</div><div class="mi-price">$11,500,000</div></div><div class="mi-sub">Santa Monica · Represented seller</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">18</div><div class="mi-res"><span class="n-inter">10820</span> Ambazac Way</div><div class="mi-price">$11,026,000</div></div><div class="mi-sub">Bel Air · Represented both sides</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">19</div><div class="mi-res"><span class="n-inter">4347</span> Marina Drive</div><div class="mi-price">$10,750,000</div></div><div class="mi-sub">Santa Barbara · Represented seller</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">20</div><div class="mi-res"><span class="n-inter">1424</span> Tanager Way</div><div class="mi-price">$10,200,000</div></div><div class="mi-sub">Bird Streets · Represented buyer</div><div class="mi-status">SOLD OFF MARKET</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">21</div><div class="mi-res"><span class="n-inter">3703</span> Alomar Drive</div><div class="mi-price">$9,500,000</div></div><div class="mi-sub">Sherman Oaks · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">22</div><div class="mi-res"><span class="n-inter">8818</span> Rising Glen Place</div><div class="mi-price">$9,000,000</div></div><div class="mi-sub">Bird Streets · Represented seller</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">23</div><div class="mi-res"><span class="n-inter">3801</span> Longridge Avenue</div><div class="mi-price">$8,415,000</div></div><div class="mi-sub">Sherman Oaks · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">24</div><div class="mi-res"><span class="n-inter">14140</span> Beresford Road</div><div class="mi-price">$8,045,000</div></div><div class="mi-sub">Beverly Hills · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">25</div><div class="mi-res"><span class="n-inter">10985</span> Bellagio Road</div><div class="mi-price">$7,000,000</div></div><div class="mi-sub">Bel Air · Represented both sides</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">26</div><div class="mi-res"><span class="n-inter">3903</span> Carbon Canyon Road</div><div class="mi-price">$6,500,026</div></div><div class="mi-sub">Malibu · Vacant lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">27</div><div class="mi-res"><span class="n-inter">221</span> Tranquillo Road</div><div class="mi-price">$6,200,000</div></div><div class="mi-sub">Pacific Palisades · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">28</div><div class="mi-res"><span class="n-inter">31833</span> Sea Level Drive</div><div class="mi-price">$5,500,000</div></div><div class="mi-sub">Malibu · Represented seller</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">29</div><div class="mi-res"><span class="n-inter">8412</span> Carlton Way</div><div class="mi-price">$4,962,000</div></div><div class="mi-sub">Los Angeles · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">30</div><div class="mi-res"><span class="n-inter">8818</span> Rising Glen Place</div><div class="mi-price">$4,925,000</div></div><div class="mi-sub">Bird Streets · Represented both sides</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">31</div><div class="mi-res"><span class="n-inter">954</span> Hillside Terrace</div><div class="mi-price">$4,675,000</div></div><div class="mi-sub">Pasadena · Represented seller</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">32</div><div class="mi-res"><span class="n-inter">84</span> Royal St. Georges Way</div><div class="mi-price">$4,600,000</div></div><div class="mi-sub">Rancho Mirage · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">33</div><div class="mi-res"><span class="n-inter">83333</span> N. Shore Drive</div><div class="mi-price">$3,900,000</div></div><div class="mi-sub">Indio · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">34</div><div class="mi-res">Sherman Oaks</div><div class="mi-price">$3,800,000</div></div><div class="mi-sub">Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">35</div><div class="mi-res"><span class="n-inter">1229</span> Chantilly Road</div><div class="mi-price">$3,795,000</div></div><div class="mi-sub">Bel Air · Represented seller</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">36</div><div class="mi-res"><span class="n-inter">14550</span> Gallaudet Place</div><div class="mi-price">$3,715,000</div></div><div class="mi-sub">Pacific Palisades · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">37</div><div class="mi-res"><span class="n-inter">7200</span> La Presa Drive</div><div class="mi-price">$3,525,000</div></div><div class="mi-sub">Los Angeles · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">38</div><div class="mi-res"><span class="n-inter">7904</span> Woodrow Wilson Drive</div><div class="mi-price">$3,395,000</div></div><div class="mi-sub">Hollywood Hills · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">39</div><div class="mi-res"><span class="n-inter">3636</span> Glenridge Drive</div><div class="mi-price">$3,350,000</div></div><div class="mi-sub">Sherman Oaks · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">40</div><div class="mi-res"><span class="n-inter">812</span> Huntley Drive</div><div class="mi-price">$2,675,000</div></div><div class="mi-sub">West Hollywood · Represented buyer</div><div class="mi-status">SOLD</div></div>
+</div>
+</div>
+<div class="band"></div>
+<div class="table-wrap" id="malibu">
+<div class="table-title"><div class="kicker">Malibu, sale by sale</div></div>
+<table class="index"><colgroup><col class="no"><col><col><col><col><col class="price"></colgroup><thead><tr><th>No.</th><th>Residence</th><th>Architect</th><th>Location</th><th>Representation</th><th style="text-align:right">Price</th></tr></thead><tbody><tr><td class="no">41</td><td class="res"><span class="n-inter">21348</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$13,800,000</td></tr>
+<tr><td class="no">42</td><td class="res"><span class="n-inter">21602</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$12,800,000</td></tr>
+<tr><td class="no">43</td><td class="res"><span class="n-inter">21520</span> Pacific Coast Highway<div class="status">SOLD OFF MARKET</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$9,000,000</td></tr>
+<tr><td class="no">44</td><td class="res"><span class="n-inter">22030</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>Carbon Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$7,900,000</td></tr>
+<tr><td class="no">45</td><td class="res"><span class="n-inter">22028</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>Carbon Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$7,400,000</td></tr>
+<tr><td class="no">46</td><td class="res"><span class="n-inter">21922</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>Carbon Beach · Vacant oceanfront lot</td><td>Represented both sides</td><td class="price">$7,000,000</td></tr>
+<tr><td class="no">47</td><td class="res"><span class="n-inter">22050</span> Pacific Coast Highway<div class="status">SOLD OFF MARKET</div></td><td></td><td>Carbon Beach · Vacant oceanfront lot · resale</td><td>Represented both sides</td><td class="price">$6,300,000</td></tr>
+<tr><td class="no">48</td><td class="res"><span class="n-inter">21468</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented both sides</td><td class="price">$5,650,000</td></tr>
+<tr><td class="no">49</td><td class="res"><span class="n-inter">21506</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$5,100,000</td></tr>
+<tr><td class="no">50</td><td class="res"><span class="n-inter">21360</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented both sides</td><td class="price">$5,080,000</td></tr>
+<tr><td class="no">51</td><td class="res"><span class="n-inter">21640</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$5,000,000</td></tr>
+<tr><td class="no">52</td><td class="res"><span class="n-inter">21358</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$5,000,000</td></tr>
+<tr><td class="no">53</td><td class="res"><span class="n-inter">21622</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$5,000,000</td></tr>
+<tr><td class="no">54</td><td class="res"><span class="n-inter">22050</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>Carbon Beach · Vacant oceanfront lot</td><td>Represented both sides</td><td class="price">$5,000,000</td></tr>
+<tr><td class="no">55</td><td class="res"><span class="n-inter">21314</span> Pacific Coast Highway<div class="status">SOLD</div></td><td></td><td>La Costa Beach · Vacant oceanfront lot</td><td>Represented buyer</td><td class="price">$4,650,000</td></tr></tbody></table>
+<div class="mobile-index">
+<div class="mi-row"><div class="mi-top"><div class="mi-no">41</div><div class="mi-res"><span class="n-inter">21348</span> Pacific Coast Highway</div><div class="mi-price">$13,800,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">42</div><div class="mi-res"><span class="n-inter">21602</span> Pacific Coast Highway</div><div class="mi-price">$12,800,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">43</div><div class="mi-res"><span class="n-inter">21520</span> Pacific Coast Highway</div><div class="mi-price">$9,000,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD OFF MARKET</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">44</div><div class="mi-res"><span class="n-inter">22030</span> Pacific Coast Highway</div><div class="mi-price">$7,900,000</div></div><div class="mi-sub">Carbon Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">45</div><div class="mi-res"><span class="n-inter">22028</span> Pacific Coast Highway</div><div class="mi-price">$7,400,000</div></div><div class="mi-sub">Carbon Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">46</div><div class="mi-res"><span class="n-inter">21922</span> Pacific Coast Highway</div><div class="mi-price">$7,000,000</div></div><div class="mi-sub">Carbon Beach · Vacant oceanfront lot · Represented both sides</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">47</div><div class="mi-res"><span class="n-inter">22050</span> Pacific Coast Highway</div><div class="mi-price">$6,300,000</div></div><div class="mi-sub">Carbon Beach · Vacant oceanfront lot · resale · Represented both sides</div><div class="mi-status">SOLD OFF MARKET</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">48</div><div class="mi-res"><span class="n-inter">21468</span> Pacific Coast Highway</div><div class="mi-price">$5,650,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented both sides</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">49</div><div class="mi-res"><span class="n-inter">21506</span> Pacific Coast Highway</div><div class="mi-price">$5,100,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">50</div><div class="mi-res"><span class="n-inter">21360</span> Pacific Coast Highway</div><div class="mi-price">$5,080,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented both sides</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">51</div><div class="mi-res"><span class="n-inter">21640</span> Pacific Coast Highway</div><div class="mi-price">$5,000,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">52</div><div class="mi-res"><span class="n-inter">21358</span> Pacific Coast Highway</div><div class="mi-price">$5,000,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">53</div><div class="mi-res"><span class="n-inter">21622</span> Pacific Coast Highway</div><div class="mi-price">$5,000,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">54</div><div class="mi-res"><span class="n-inter">22050</span> Pacific Coast Highway</div><div class="mi-price">$5,000,000</div></div><div class="mi-sub">Carbon Beach · Vacant oceanfront lot · Represented both sides</div><div class="mi-status">SOLD</div></div>
+<div class="mi-row"><div class="mi-top"><div class="mi-no">55</div><div class="mi-res"><span class="n-inter">21314</span> Pacific Coast Highway</div><div class="mi-price">$4,650,000</div></div><div class="mi-sub">La Costa Beach · Vacant oceanfront lot · Represented buyer</div><div class="mi-status">SOLD</div></div>
+</div>
+</div>
+<div class="disclaimer"><p>Weston James Group makes no representation, warranty or guaranty as to accuracy of any data contained herein, and advises interested parties to confirm all information before relying on it for a purchase decision. All information provided has been obtained from sources believed reliable, but may be subject to errors, omissions, change of price, prior sale, or withdrawal without notice. Measurements and square footages are approximate and may be verified by consulting an appraiser or architect. The content set forth on this website is provided exclusively for consumers’ personal, non-commercial use, solely to identify potential properties for potential purchase; unlawful use, distribution or duplication is strictly prohibited and may violate relevant federal and state law. © 2026 Weston James Group.</p></div>
+</main>
+</body>
+</html>
