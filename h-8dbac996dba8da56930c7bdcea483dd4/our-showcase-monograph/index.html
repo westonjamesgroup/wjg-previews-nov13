@@ -271,8 +271,14 @@ table.index td.price{
   font-weight:400;
   font-style:normal;
   letter-spacing:-1px;
+  color:#fff;
   font-variant-numeric:lining-nums tabular-nums;
+  white-space:nowrap;
 }
+/* The two "20" figures use the same face, weight, tracking, color and size as
+   the $550,000,000+ opener (monograph fact size 28/32, 24/28 at 390). Live 88px
+   would overflow the equal three-up columns; size is therefore kept. */
+
 
 /* Variant T (secondary): prices and address/title digits use the live Tinos stack. */
 body.nums-tinos .n-inter,
@@ -310,7 +316,7 @@ body.capture .stage-bar{display:none;}
 <header class="opener wrap"><div class="inner"><div class="kicker">Our Showcase</div><h1 class="display">Notable Transactions</h1><div class="lede"><p>With more than $550 million in career sales across Southern California, Weston has established himself as a leading force in luxury real estate, with a distinct specialization in architecturally significant residences and exceptional properties.</p>
 <p>His portfolio includes some of the region’s most celebrated architectural landmarks, including Richard Neutra’s Tremaine House, John Lautner’s Garcia House, and Craig Ellwood’s Case Study House No. 16, reflecting a deep appreciation for architectural heritage and a proven ability to represent properties of extraordinary significance.</p>
 <p>His track record includes 20 transactions exceeding $10 million, along with 20 beachfront lot sales along Malibu’s coveted Carbon Beach and La Costa Beach, underscoring his expertise in Southern California’s most exclusive coastal markets.</p>
-<p>As founder of Weston James Group at AKG | Christie’s International Real Estate, Weston combines an intimate understanding of architecture, strategic market insight, and a highly personalized approach to representing distinguished properties and discerning clientele.</p></div><div class="facts"><div><div class="n stat-live">$550,000,000+</div><div class="l">In career sales</div></div><div><div class="n">20</div><div class="l">Sales above $10 million</div></div><div><div class="n">20</div><div class="l">Malibu beach-lot transactions</div></div></div></div></header>
+<p>As founder of Weston James Group at AKG | Christie’s International Real Estate, Weston combines an intimate understanding of architecture, strategic market insight, and a highly personalized approach to representing distinguished properties and discerning clientele.</p></div><div class="facts mal-sc-intro"><div><div class="n stat-live mal-sc-count" data-step="1000" data-count="550000000" data-prefix="$" data-suffix="+"><div>$550,000,000+</div></div><div class="l">In career sales</div></div><div><div class="n stat-live">20</div><div class="l">Sales above $10 million</div></div><div><div class="n stat-live">20</div><div class="l">Malibu beach-lot transactions</div></div></div></div></header>
 <main>
 <figure class="plate plate-bleed" id="p01"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/63c99da4bafdfae31da7aac0_RD_Garcia_2744_D_F3%20(Linkdin).jpg');background-position:50% 68%;" role="img" aria-label="Garcia House"></div></div><figcaption class="cap">
 <div class="plate-no">01</div>
@@ -485,5 +491,10 @@ body.capture .stage-bar{display:none;}
 </div>
 <div class="disclaimer"><p>Weston James Group makes no representation, warranty or guaranty as to accuracy of any data contained herein, and advises interested parties to confirm all information before relying on it for a purchase decision. All information provided has been obtained from sources believed reliable, but may be subject to errors, omissions, change of price, prior sale, or withdrawal without notice. Measurements and square footages are approximate and may be verified by consulting an appraiser or architect. The content set forth on this website is provided exclusively for consumers’ personal, non-commercial use, solely to identify potential properties for potential purchase; unlawful use, distribution or duplication is strictly prohibited and may violate relevant federal and state law. © 2026 Weston James Group.</p></div>
 </main>
+
+<!-- mal-sc-count v2 (2026-10-31 PT, staging): Our Showcase stats count-up. Label-shake fix: a hidden copy of the final value keeps each number's box at its final size and the animated digits are absolutely positioned on top, so labels and columns cannot move. easeOutCubic over 1.8s, data-step kept. If JS is off or reduced motion is set, the static final numerals stay. -->
+<style>.mal-cnt{display:block;position:relative;white-space:nowrap}.mal-cnt-final{visibility:hidden}.mal-cnt-live{position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none;font-variant-numeric:lining-nums tabular-nums}.mal-cnt-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
+<script>(function(){var E=[].slice.call(document.querySelectorAll('.mal-sc-intro [data-count]'));if(!E.length||!('IntersectionObserver'in window)||!window.requestAnimationFrame||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var go=function(){E.forEach(function(e){var t=+e.getAttribute('data-count'),k=+(e.getAttribute('data-step')||1),P=e.getAttribute('data-prefix')||'',S=e.getAttribute('data-suffix')||'',d=1800,f=function(n){return P+n.toLocaleString('en-US')+S},x=e.querySelector('div')||e,w=document.createElement('span'),a=document.createElement('span'),b=document.createElement('span');if(isNaN(t))return;var sr=document.createElement('span');sr.className='mal-cnt-sr';sr.textContent=f(t);w.className='mal-cnt';a.className='mal-cnt-final';a.setAttribute('aria-hidden','true');a.textContent=f(t);b.className='mal-cnt-live';b.setAttribute('aria-hidden','true');b.textContent=f(0);w.appendChild(a);w.appendChild(b);x.textContent='';x.appendChild(w);x.appendChild(sr);var o=new IntersectionObserver(function(s){if(!s[0].isIntersecting)return;o.disconnect();var s0=performance.now();requestAnimationFrame(function r(n){var p=Math.max(0,Math.min((n-s0)/d,1)),v=1-Math.pow(1-p,3);b.textContent=p<1?f(Math.round(t*v/k)*k):f(t);if(p<1)requestAnimationFrame(r)})},{threshold:.4});o.observe(e)})};var T=performance.now(),D=document.documentElement,w8=function(){var fr=!document.fonts||document.fonts.status==='loaded';if((fr&&!D.classList.contains('wf-loading'))||performance.now()-T>2500)go();else setTimeout(w8,50)};w8()})();</script>
+
 </body>
 </html>
