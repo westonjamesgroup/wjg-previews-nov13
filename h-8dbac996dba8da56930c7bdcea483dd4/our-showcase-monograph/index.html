@@ -954,6 +954,13 @@ table.index th{
   .spread{row-gap:48px;}
 }
 
+/* Enhance7 follow-up. 768 2-up only: two-line min-height on the architect
+   line so a wrap does not drop the name or table on one plate of the pair.
+   1280, 1024 and stacked 390 are unchanged. */
+@media (min-width:768px) and (max-width:899px){
+  .spread:not(.spread-solo) .arch-lead{min-height:48px;}
+}
+
 </style>
 </head>
 <body class="nums-inter">
