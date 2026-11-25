@@ -1003,6 +1003,17 @@ body.nums-inter .mi-res{
   font-weight:400;
   font-style:normal;
 }
+/* Plate, index, and mobile prices use the same live stat face as card prices. */
+body.nums-inter .spread .meta-row dd.price,
+body.nums-inter .meta dd.price,
+body.nums-inter table.index td.price,
+body.nums-inter .mi-price{
+  font-family:"Playfair Display",sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
 /* Longer "Represented Buyer & Seller" must wrap at the tight 2-up and stacked widths. */
 @media (max-width:899px){
   .spread .meta-row dd{white-space:normal;}
