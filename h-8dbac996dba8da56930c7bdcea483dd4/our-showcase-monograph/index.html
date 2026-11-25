@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  Staged enhance7 4:3 Inter preview. Not live. No Webflow write, no publish.
+  Base: Critiquito enhance7/mockups/variant-43.html
+  Fact-file overrides (solo-plate-facts.md, Weston Nov 25) instead of the mock:
+    p02 St. Pierre architect: Allison & Allison, with a 1963 addition by Paul Williams
+    p04 Henry location: Bel Air (mock said Los Angeles)
+    p07 Venice architect: Electric Bowery (renovation), landscape by Campion Walker
+    p07 Venice address: 637 and 649 Palms Blvd (mock said 649 Palms Boulevard)
+    p08 1360 Summitridge architect: Marmol Radziner
+    p09 9371 Beverly Crest: no architect line (mock had ARCHITECT TO CONFIRM);
+        Representation remains Represented seller, which Weston confirmed.
+  Garcia photo: Roger Davies edited 2.5, Webflow asset 63c35974d3e27e702d988107
+    (mock still used RD_Garcia_2744). Background position set to 50% 50%.
+  Plate links converted from absolute westonjamesgroup.com URLs to root-relative.
+-->
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Our Showcase · Refined Monograph · Staged preview · Weston James Group</title>
+<title>Our Showcase · Refined Monograph · Enhance 7 · 4:3 · Staged preview · Weston James Group</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Playfair+Display:ital,wght@0,400&display=swap" rel="stylesheet">
@@ -635,92 +651,324 @@ table.index th{
 }
 
 </style>
+
+<style>
+
+/* Enhance6. Static only. Count-up unchanged.
+   All pair plates: 3/2 frames, 64/64 margin and 28px gutter at 1280.
+   2-up through 768 with tighter side margins so values still fit.
+   One column at 390. Enhance5 spacing fix on A/B lists. */
+
+:root{--lab:176px;}
+
+/* Shared label/value row. Single stacked column, equal-length rules, no wrap. */
+.spread .meta-row,
+.plate-full .meta div{
+  display:grid;
+  grid-template-columns:var(--lab) 1fr;
+  column-gap:16px;
+  align-items:baseline;
+  padding:7px 0;
+  border-top:1px solid var(--hair);
+  min-width:0;
+}
+.plate-full .meta{
+  margin-top:0;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  max-width:none;
+  width:100%;
+}
+.plate-full .meta div:has(dd.price),
+.plate-full .meta div:has(dd.status){
+  grid-column:auto;
+}
+.spread .meta-row dt,
+.plate-full .meta dt{
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:12px;
+  line-height:16.8px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--meta);
+}
+.spread .meta-row dd,
+.plate-full .meta dd{
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:14px;
+  line-height:22px;
+  color:var(--body);
+  white-space:nowrap;
+  min-width:0;
+}
+.spread .meta-row dd.status,
+.plate-full .meta dd.status,
+.spread .meta-row dd.price,
+.plate-full .meta dd.price{
+  letter-spacing:normal;
+  text-transform:none;
+  font-weight:300;
+  font-size:14px;
+  line-height:22px;
+  color:var(--body);
+}
+.spread .meta-row:first-of-type{margin-top:22px;}
+
+/* Pair grid. */
+.spread{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:var(--gutter);
+  padding-left:var(--m);
+  padding-right:var(--m);
+  align-items:stretch;
+}
+.spread > .plate{
+  display:grid;
+  grid-template-rows:subgrid;
+  min-width:0;
+}
+.spread.spread-ab > .plate{grid-row:span 6;}
+.spread.spread-c1 > .plate{grid-row:span 4;}
+.spread.spread-c2 > .plate{grid-row:span 5;}
+
+/* Nested subgrid so a wrapping <a.tile> (or div.tile) stays clickable
+   without breaking pair alignment. */
+.spread > .plate > .tile{
+  display:grid;
+  grid-template-rows:subgrid;
+  grid-row:1 / -1;
+  min-width:0;
+  color:inherit;
+  text-decoration:none;
+}
+.spread .frame{aspect-ratio:3/2;width:100%;overflow:hidden;background:#1B1B1B;}
+.spread .photo{
+  filter:saturate(0.68) contrast(1.06) brightness(1.01);
+}
+
+/* Variant A/B pair type. */
+.spread-ab .head{padding-top:28px;min-width:0;}
+.spread-ab .house{
+  font-size:30px;
+  line-height:36px;
+  letter-spacing:-0.2px;
+}
+.house .n-inter{
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  letter-spacing:0;
+  font-variant-numeric:lining-nums;
+  font-feature-settings:"lnum" 1;
+}
+.addr.is-reserved{visibility:hidden;}
+
+/* Variant A: plate 09 centered at one pair width. */
+.spread-solo{
+  display:flex;
+  justify-content:center;
+  padding-left:var(--m);
+  padding-right:var(--m);
+}
+.spread-solo > .plate{
+  width:calc((100% - var(--gutter)) / 2);
+  display:block;
+  grid-row:auto;
+}
+.spread-solo > .plate > .tile{display:block;}
+
+/* Variant B: lean full-width opener, 3/2, no detail frames. */
+.opener-plate{
+  padding-left:var(--m);
+  padding-right:var(--m);
+}
+.opener-plate .frame{width:100%;aspect-ratio:3/2;overflow:hidden;background:#1B1B1B;}
+.opener-plate .cap{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  column-gap:48px;
+  align-items:start;
+  width:100%;
+  max-width:1152px;
+  margin:0 auto;
+  padding-top:28px;
+}
+.opener-plate .cap .meta{margin-top:0;}
+.opener-plate .tile{color:inherit;text-decoration:none;display:block;}
+
+/* Variants C1/C2: architect-led cards. No rules. Generous row gap. */
+.grid-c{display:flex;flex-direction:column;row-gap:120px;}
+.card-name{
+  margin:0;
+  padding-top:28px;
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  font-size:12px;
+  line-height:16.8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--meta);
+}
+.card-name .n-inter{
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  letter-spacing:inherit;
+  font-variant-numeric:lining-nums;
+  font-feature-settings:"lnum" 1;
+  text-transform:uppercase;
+}
+.card-arch{
+  margin:0;
+  padding-top:10px;
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:normal;
+  font-size:30px;
+  line-height:36px;
+  letter-spacing:-0.2px;
+  color:#fff;
+  min-height:36px;
+}
+.card-arch.is-pending{
+  display:flex;
+  align-items:center;
+}
+.card-arch .arch-pending{
+  display:inline-block;
+  box-sizing:border-box;
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  font-size:20px;
+  line-height:24px;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  color:var(--meta);
+  border:1px dashed rgba(255,255,255,0.40);
+  border-radius:0;
+  background:transparent;
+  padding:4px 12px;
+  white-space:nowrap;
+}
+.card-addr{
+  margin:0;
+  padding-top:14px;
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  font-size:16px;
+  line-height:24px;
+  color:var(--meta);
+}
+.card-addr.is-reserved{visibility:hidden;}
+.card-sold{
+  margin:0;
+  padding-top:16px;
+  font-family:var(--sans);
+  font-weight:300;
+  font-style:normal;
+  font-size:14px;
+  line-height:22px;
+  letter-spacing:normal;
+  text-transform:none;
+  color:var(--quiet);
+  font-variant-numeric:lining-nums;
+  font-feature-settings:"lnum" 1;
+}
+
+@media (max-width:1023px){
+  .opener-plate .cap{
+    grid-template-columns:1fr;
+    column-gap:0;
+  }
+  .opener-plate .cap .meta{margin-top:22px;}
+}
+
+/* 2-up at 768: tighten the side measure so --lab 176px still leaves
+   154px+ for "Represented both sides". Stack only below 768. */
+@media (max-width:899px){
+  :root{--m:24px;--gutter:24px;}
+}
+
+@media (max-width:767px){
+  :root{--m:20px;--gutter:20px;}
+  .spread{
+    grid-template-columns:1fr;
+    row-gap:96px;
+  }
+  .spread > .plate{display:block;grid-row:auto;}
+  .spread > .plate > .tile{display:block;grid-row:auto;}
+  .spread-solo > .plate{width:100%;}
+  .addr.is-reserved,
+  .card-addr.is-reserved{display:none;visibility:visible;}
+  .spread-ab .house{font-size:28px;line-height:34px;}
+  .card-arch{font-size:28px;line-height:34px;min-height:34px;}
+  .card-arch .arch-pending{
+    font-size:16px;
+    line-height:20px;
+    letter-spacing:0.5px;
+    padding:3px 8px;
+  }
+  .grid-c{row-gap:80px;}
+}
+
+</style>
+
+<style>
+
+/* Enhance7. From variant A. Static only.
+   Tighter pair-row gap, narrower side margins, larger photos.
+   Two frame ratios: 3/2 and 4/3, set on :root --frame. */
+
+:root{
+  --m:40px;
+  --gutter:28px;
+  --row-gap:64px;
+  --frame:4/3;
+}
+
+.plate-grid{
+  display:flex;
+  flex-direction:column;
+  row-gap:var(--row-gap);
+}
+.spread .frame,
+.spread-solo .frame{
+  aspect-ratio:var(--frame);
+  width:100%;
+}
+
+/* 2-up at 768 still needs a tighter measure so values do not wrap. */
+@media (max-width:899px){
+  :root{--m:24px;--gutter:24px;--row-gap:56px;}
+}
+
+@media (max-width:767px){
+  :root{--m:20px;--gutter:20px;--row-gap:48px;}
+  .spread{row-gap:48px;}
+}
+
+</style>
 </head>
 <body class="nums-inter">
-<div class="stage-bar" data-stage-chrome><span>Staged preview · not live</span><span>Numbers: <a href="../our-showcase-monograph/" class="is-on">Inter (lead)</a> · <a href="../our-showcase-monograph-tinos/">Tinos (comparison)</a></span><span class="note">$550,000,000+ opener stays on the live Playfair / Tinos stack in both. Index of Sales and ARCHITECT TO CONFIRM are unapproved placeholders.</span></div>
+<div class="stage-bar" data-stage-chrome><span>Staged preview · not live</span><span>Numbers: <a href="../our-showcase-monograph/" class="is-on">Inter (lead)</a> · <a href="../our-showcase-monograph-tinos/">Tinos (comparison)</a></span><span class="note">$550,000,000+ opener stays on the live Playfair / Tinos stack in both. Index of Sales is an unapproved placeholder.</span></div>
 <header class="opener wrap"><div class="inner"><div class="kicker">Our Showcase</div><h1 class="display">Notable Transactions</h1><div class="lede"><p>With more than $550 million in career sales across Southern California, Weston has established himself as a leading force in luxury real estate, with a distinct specialization in architecturally significant residences and exceptional properties.</p>
 <p>His portfolio includes some of the region’s most celebrated architectural landmarks, including Richard Neutra’s Tremaine House, John Lautner’s Garcia House, and Craig Ellwood’s Case Study House No. 16, reflecting a deep appreciation for architectural heritage and a proven ability to represent properties of extraordinary significance.</p>
 <p>His track record includes 20 transactions exceeding $10 million, along with 20 beachfront lot sales along Malibu’s coveted Carbon Beach and La Costa Beach, underscoring his expertise in Southern California’s most exclusive coastal markets.</p>
 <p>As founder of Weston James Group at AKG | Christie’s International Real Estate, Weston combines an intimate understanding of architecture, strategic market insight, and a highly personalized approach to representing distinguished properties and discerning clientele.</p></div><div class="facts mal-sc-intro"><div><div class="n stat-live mal-sc-count" data-step="1000" data-count="550000000" data-prefix="$" data-suffix="+"><div>$550,000,000+</div></div><div class="l">In career sales</div></div><div><div class="n stat-live">20</div><div class="l">Sales above $10 million</div></div><div><div class="n stat-live">20</div><div class="l">Malibu beach-lot transactions</div></div></div></div></header>
 <main>
-<figure class="plate plate-bleed" id="p01"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/63c99da4bafdfae31da7aac0_RD_Garcia_2744_D_F3%20(Linkdin).jpg');background-position:50% 68%;" role="img" aria-label="Garcia House"></div></div><figcaption class="cap">
-<div class="plate-no">01</div>
-<p class="arch-lead">John Lautner</p>
-<h3 class="house">Garcia House</h3>
-<p class="addr"><span class="n-inter">7436</span> Mulholland Drive</p>
-<dl class="meta">
-<div><dt>Location</dt><dd>Hollywood Hills</dd></div>
-<div><dt>Representation</dt><dd>Represented seller</dd></div>
-<div><dt>Status</dt><dd class="status">Sold</dd></div>
-<div><dt>Price</dt><dd class="price">$12,500,000</dd></div>
-</dl>
-</figcaption></figure>
-<div class="band-lg"></div>
-<figure class="plate plate-full" id="p02"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51662662205158982b82e_320%20St%20Pierre%20Road%20-%20Instagram%20Story%20Post.webp');background-position:50% 70%;" role="img" aria-label="320 St. Pierre Road"></div></div><figcaption class="cap">
-<div class="plate-no">02</div>
-<p class="arch-lead is-pending"><span class="arch-pending">ARCHITECT TO CONFIRM</span></p>
-
-<h3 class="house"><span class="n-inter">320</span> St. Pierre Road</h3>
-<dl class="meta">
-<div><dt>Location</dt><dd>Bel Air</dd></div>
-<div><dt>Representation</dt><dd>Represented buyer</dd></div>
-<div><dt>Status</dt><dd class="status">Sold</dd></div>
-<div><dt>Price</dt><dd class="price">$39,000,000</dd></div>
-</dl>
-</figcaption></figure>
-<div class="band-lg"></div>
-<div class="spread">
-<figure class="plate plate-pair" id="p03"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51665c3f471ed849c98ec_Tremaine%20House%201.webp');background-position:50% 58%;" role="img" aria-label="The Tremaine House"></div></div><div class="head"><div class="plate-no">03</div>
-<p class="arch-lead">Richard Neutra</p>
-<h3 class="house">The Tremaine House</h3>
-<p class="addr"><span class="n-inter">1642</span> Moore Road</p></div>
-<div class="meta-row"><dt>Location</dt><dd>Montecito</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented both sides</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold Off Market</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$12,000,000</dd></div></figure>
-<figure class="plate plate-pair" id="p04"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6af2acc9a5dc1942103df65d_henry-house-hero.jpg');background-position:50% 52%;" role="img" aria-label="Dr. Richard Henry House"></div></div><div class="head"><div class="plate-no">04</div>
-<p class="arch-lead">Cliff May</p>
-<h3 class="house">Dr. Richard Henry House</h3>
-<p class="addr"><span class="n-inter">667</span> Ledo Way</p></div>
-<div class="meta-row"><dt>Location</dt><dd>Los Angeles</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$10,000,000</dd></div></figure>
-</div>
-<div class="band-lg"></div>
-<div class="spread">
-<figure class="plate plate-pair" id="p05"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51661a2d51cd541be5025_High%20Res%20Case%20Study%20Listing.webp');background-position:50% 75%;" role="img" aria-label="Case Study House No. 16"></div></div><div class="head"><div class="plate-no">05</div>
-<p class="arch-lead">Craig Ellwood</p>
-<h3 class="house">Case Study House No. <span class="n-inter">16</span></h3>
-<p class="addr"><span class="n-inter">1811</span> Bel Air Road</p></div>
-<div class="meta-row"><dt>Location</dt><dd>Bel Air</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$2,950,000</dd></div></figure>
-<figure class="plate plate-pair" id="p06"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6af2aabeb7170858d7affdf5_levit-house-hero.jpg');background-position:50% 55%;" role="img" aria-label="William H. Levit House"></div></div><div class="head"><div class="plate-no">06</div>
-<p class="arch-lead">Richard Neutra</p>
-<h3 class="house">William H. Levit House</h3>
-<p class="addr"><span class="n-inter">1705</span> Summitridge Drive</p></div>
-<div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$6,850,000</dd></div></figure>
-</div>
-<div class="band-lg"></div>
-<figure class="plate plate-full" id="p07"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6a023efa6b370a2b545c4fe0_Palms_NEW-9.jpg');background-position:50% 42%;" role="img" aria-label="The Venice Compound"></div></div><figcaption class="cap">
-<div class="plate-no">07</div>
-<p class="arch-lead is-pending"><span class="arch-pending">ARCHITECT TO CONFIRM</span></p>
-
-<h3 class="house">The Venice Compound</h3>
-<p class="addr"><span class="n-inter">649</span> Palms Boulevard</p>
-<dl class="meta">
-<div><dt>Location</dt><dd>Venice</dd></div>
-<div><dt>Representation</dt><dd>Represented seller</dd></div>
-<div><dt>Status</dt><dd class="status">Sold</dd></div>
-<div><dt>Price</dt><dd class="price">$14,500,000</dd></div>
-</dl>
-
-</figcaption></figure>
-<div class="band-lg"></div>
-<div class="spread">
-<figure class="plate plate-pair" id="p08"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51662d7ea92e53194b46c_1360%20Summitridge%20Pl%20-4.2.webp');background-position:50% 45%;" role="img" aria-label="1360 Summitridge Place"></div></div><div class="head"><div class="plate-no">08</div>
-<p class="arch-lead is-pending"><span class="arch-pending">ARCHITECT TO CONFIRM</span></p>
-
-<h3 class="house"><span class="n-inter">1360</span> Summitridge Place</h3></div>
-<div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented both sides</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold Off Market</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$24,000,000</dd></div></figure>
-<figure class="plate plate-pair" id="p09"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/60df53b9e6d6a429c39d929b_Our%20Showcase%20-%209371%20Beverly%20Crest%20Drive.jpg');background-position:50% 60%;" role="img" aria-label="9371 Beverly Crest Drive"></div></div><div class="head"><div class="plate-no">09</div>
-<p class="arch-lead is-pending"><span class="arch-pending">ARCHITECT TO CONFIRM</span></p>
-
-<h3 class="house"><span class="n-inter">9371</span> Beverly Crest Drive</h3></div>
-<div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$21,990,000</dd></div></figure>
+<div class="plate-grid">
+<div class="spread spread-ab"><figure class="plate plate-pair" id="p01"><a class="tile" href="/garciahouse" aria-label="Garcia House"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/63c35974d3e27e702d988107_Roger%20Davies%20Garcia%20House%20(edited%202.5).jpg');background-position:50% 50%;" role="img" aria-label="Garcia House"></div></div><div class="head"><div class="plate-no">01</div><p class="arch-lead">John Lautner</p><h3 class="house">Garcia House</h3><p class="addr"><span class="n-inter">7436</span> Mulholland Drive</p></div><div class="meta-row"><dt>Location</dt><dd>Hollywood Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$12,500,000</dd></div></a></figure><figure class="plate plate-pair" id="p02"><a class="tile" href="/stpierrehouse" aria-label="320 St. Pierre Road"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51662662205158982b82e_320%20St%20Pierre%20Road%20-%20Instagram%20Story%20Post.webp');background-position:50% 70%;" role="img" aria-label="320 St. Pierre Road"></div></div><div class="head"><div class="plate-no">02</div><p class="arch-lead">Allison &amp; Allison, with a <span class="n-inter">1963</span> addition by Paul Williams</p><h3 class="house"><span class="n-inter">320</span> St. Pierre Road</h3><p class="addr is-reserved" aria-hidden="true">&nbsp;</p></div><div class="meta-row"><dt>Location</dt><dd>Bel Air</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented buyer</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$39,000,000</dd></div></a></figure></div>
+<div class="spread spread-ab"><figure class="plate plate-pair" id="p03"><a class="tile" href="/tremainehouse" aria-label="The Tremaine House"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51665c3f471ed849c98ec_Tremaine%20House%201.webp');background-position:50% 58%;" role="img" aria-label="The Tremaine House"></div></div><div class="head"><div class="plate-no">03</div><p class="arch-lead">Richard Neutra</p><h3 class="house">The Tremaine House</h3><p class="addr"><span class="n-inter">1642</span> Moore Road</p></div><div class="meta-row"><dt>Location</dt><dd>Montecito</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented both sides</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold Off Market</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$12,000,000</dd></div></a></figure><figure class="plate plate-pair" id="p04"><a class="tile" href="/henryhouse" aria-label="Dr. Richard Henry House"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6af2acc9a5dc1942103df65d_henry-house-hero.jpg');background-position:50% 52%;" role="img" aria-label="Dr. Richard Henry House"></div></div><div class="head"><div class="plate-no">04</div><p class="arch-lead">Cliff May</p><h3 class="house">Dr. Richard Henry House</h3><p class="addr"><span class="n-inter">667</span> Ledo Way</p></div><div class="meta-row"><dt>Location</dt><dd>Bel Air</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$10,000,000</dd></div></a></figure></div>
+<div class="spread spread-ab"><figure class="plate plate-pair" id="p05"><div class="tile"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51661a2d51cd541be5025_High%20Res%20Case%20Study%20Listing.webp');background-position:50% 75%;" role="img" aria-label="Case Study House No. 16"></div></div><div class="head"><div class="plate-no">05</div><p class="arch-lead">Craig Ellwood</p><h3 class="house">Case Study House No. <span class="n-inter">16</span></h3><p class="addr"><span class="n-inter">1811</span> Bel Air Road</p></div><div class="meta-row"><dt>Location</dt><dd>Bel Air</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$2,950,000</dd></div></div></figure><figure class="plate plate-pair" id="p06"><a class="tile" href="/levithouse" aria-label="William H. Levit House"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6af2aabeb7170858d7affdf5_levit-house-hero.jpg');background-position:50% 55%;" role="img" aria-label="William H. Levit House"></div></div><div class="head"><div class="plate-no">06</div><p class="arch-lead">Richard Neutra</p><h3 class="house">William H. Levit House</h3><p class="addr"><span class="n-inter">1705</span> Summitridge Drive</p></div><div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$6,850,000</dd></div></a></figure></div>
+<div class="spread spread-ab"><figure class="plate plate-pair" id="p07"><a class="tile" href="/venicecompound" aria-label="The Venice Compound"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6a023efa6b370a2b545c4fe0_Palms_NEW-9.jpg');background-position:50% 42%;" role="img" aria-label="The Venice Compound"></div></div><div class="head"><div class="plate-no">07</div><p class="arch-lead">Electric Bowery (renovation), landscape by Campion Walker</p><h3 class="house">The Venice Compound</h3><p class="addr"><span class="n-inter">637</span> and <span class="n-inter">649</span> Palms Blvd</p></div><div class="meta-row"><dt>Location</dt><dd>Venice</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$14,500,000</dd></div></a></figure><figure class="plate plate-pair" id="p08"><div class="tile"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/6ae51662d7ea92e53194b46c_1360%20Summitridge%20Pl%20-4.2.webp');background-position:50% 45%;" role="img" aria-label="1360 Summitridge Place"></div></div><div class="head"><div class="plate-no">08</div><p class="arch-lead">Marmol Radziner</p><h3 class="house"><span class="n-inter">1360</span> Summitridge Place</h3><p class="addr is-reserved" aria-hidden="true">&nbsp;</p></div><div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented both sides</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold Off Market</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$24,000,000</dd></div></div></figure></div>
+<div class="spread spread-ab spread-solo"><figure class="plate plate-pair" id="p09"><div class="tile"><div class="frame"><div class="photo" style="background-image:url('https://cdn.prod.website-files.com/5d56f76641a5a59c99ac6242/60df53b9e6d6a429c39d929b_Our%20Showcase%20-%209371%20Beverly%20Crest%20Drive.jpg');background-position:50% 60%;" role="img" aria-label="9371 Beverly Crest Drive"></div></div><div class="head"><div class="plate-no">09</div><h3 class="house"><span class="n-inter">9371</span> Beverly Crest Drive</h3></div><div class="meta-row"><dt>Location</dt><dd>Beverly Hills</dd></div><div class="meta-row"><dt>Representation</dt><dd>Represented seller</dd></div><div class="meta-row status-row"><dt>Status</dt><dd class="status">Sold</dd></div><div class="meta-row price-row"><dt>Price</dt><dd class="price">$21,990,000</dd></div></div></figure></div>
 </div>
 <div class="band-lg" id="index-start"></div>
 <div class="table-wrap" id="index">
