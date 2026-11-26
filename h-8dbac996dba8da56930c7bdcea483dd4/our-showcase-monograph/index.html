@@ -1824,6 +1824,81 @@ body.nums-inter .plate-grid dd.price{
   word-wrap: break-word;
   max-width: 100%;
 }
+
+/* t1782u: restore the live 7aab63a plate meta typography on the three-up grid.
+   Moving every plate into .grid-3 had applied the tighter three-column Inter
+   styles to prices, labels, values and row spacing. The live Venice plate
+   (a two-column spread under 7aab63a) is the reference: PRICE uses the serif
+   stat face (Playfair Display, with Tinos digits / $ / comma from the
+   unicode-range @font-face, size-adjust 108.1%), 14/22, weight 400 at desktop
+   and 13/20, weight 400 at 390. Labels, values and row spacing at desktop
+   match that Venice plate. Title size stays the requested 28/32. */
+@media (min-width:768px){
+  .plate-grid .grid-3 .meta-row{
+    grid-template-columns:var(--lab, 176px) 1fr;
+    column-gap:16px;
+    align-items:baseline;
+    padding:7px 0;
+  }
+  .plate-grid .grid-3 .meta-row dt{
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:12px;
+    line-height:16.8px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--meta);
+  }
+  .plate-grid .grid-3 .meta-row dd{
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing:normal;
+    text-transform:none;
+    color:var(--body);
+    white-space:nowrap;
+    min-width:0;
+  }
+  .plate-grid .grid-3 .meta-row dd.status{
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing:normal;
+    text-transform:none;
+    color:var(--body);
+  }
+  .plate-grid .grid-3 .meta-row dd.price{
+    font-family:"Playfair Display",sans-serif;
+    font-weight:400;
+    font-style:normal;
+    font-size:14px;
+    line-height:22px;
+    letter-spacing:normal;
+    text-transform:none;
+    color:rgba(255,255,255,.85);
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"lnum" 1,"tnum" 1;
+  }
+}
+@media (max-width:899px){
+  .plate-grid .grid-3 .meta-row dd{white-space:normal;}
+}
+@media (max-width:767px){
+  .plate-grid .grid-3 .meta-row dd.price{
+    font-family:"Playfair Display",sans-serif;
+    font-weight:400;
+    font-style:normal;
+    font-size:13px;
+    line-height:20px;
+    letter-spacing:normal;
+    text-transform:none;
+    color:rgba(255,255,255,.85);
+    font-variant-numeric:lining-nums tabular-nums;
+    font-feature-settings:"lnum" 1,"tnum" 1;
+  }
+}
 </style>
 <script>(function(){var E=[].slice.call(document.querySelectorAll('.mal-sc-intro [data-count]'));if(!E.length||!('IntersectionObserver'in window)||!window.requestAnimationFrame||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var go=function(){E.forEach(function(e){var t=+e.getAttribute('data-count'),k=+(e.getAttribute('data-step')||1),P=e.getAttribute('data-prefix')||'',S=e.getAttribute('data-suffix')||'',d=1800,f=function(n){return P+n.toLocaleString('en-US')+S},x=e.querySelector('div')||e,w=document.createElement('span'),a=document.createElement('span'),b=document.createElement('span');if(isNaN(t))return;var sr=document.createElement('span');sr.className='mal-cnt-sr';sr.textContent=f(t);w.className='mal-cnt';a.className='mal-cnt-final';a.setAttribute('aria-hidden','true');a.textContent=f(t);b.className='mal-cnt-live';b.setAttribute('aria-hidden','true');b.textContent=f(0);w.appendChild(a);w.appendChild(b);x.textContent='';x.appendChild(w);x.appendChild(sr);var o=new IntersectionObserver(function(s){if(!s[0].isIntersecting)return;o.disconnect();var s0=performance.now();requestAnimationFrame(function r(n){var p=Math.max(0,Math.min((n-s0)/d,1)),v=1-Math.pow(1-p,3);b.textContent=p<1?f(Math.round(t*v/k)*k):f(t);if(p<1)requestAnimationFrame(r)})},{threshold:.4});o.observe(e)})};var T=performance.now(),D=document.documentElement,w8=function(){var fr=!document.fonts||document.fonts.status==='loaded';if((fr&&!D.classList.contains('wf-loading'))||performance.now()-T>2500)go();else setTimeout(w8,50)};w8()})();</script>
 
