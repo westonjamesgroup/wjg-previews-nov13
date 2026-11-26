@@ -1626,6 +1626,15 @@ body.nums-inter .plate-grid dd.price{
   .mal-intro{font-size:20px;}
 }
 
+/* t1788u: space the "Malibu, sale by sale" kicker below the .mal-stat
+   divider. The label stays inside #malibu.table-wrap, so it keeps the
+   same side gutter as the table. Index title is unchanged. */
+#malibu > .table-title{padding-top:48px;}
+@media (max-width:767px){
+  #malibu > .table-title{padding-top:32px;}
+}
+
+
 /* Mobile type: every plate matches the current 3-column (Beresford) computed
    styles below 768. Desktop typography is unchanged. */
 @media (max-width:767px){
