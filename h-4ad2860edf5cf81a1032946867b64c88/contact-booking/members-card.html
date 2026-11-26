@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<!-- WJG Contact: private consultation booking. Direction A · The Members’ Card. Mockup only: no Webflow write, no publish, nothing sent.
+     Availability is EXAMPLE DATA. Elements with data-copy="placeholder" are new copy for Marketing Director. -->
+<title>Contact · Private consultation · Direction A · The Members’ Card · Weston James Group (mockup)</title>
+<style>/* WJG private consultation booking. Mockup only. Playfair Display + Inter; digits in the stat serif (Tinos). */
+@font-face{font-family:"Inter";src:url(fonts/Inter-300.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:block}
+@font-face{font-family:"Playfair Display";src:url(fonts/PlayfairDisplay-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:block}
+/* Stat serif: same mapping as the live homepage $550,000,000 figure (Tinos digits, $ and comma inside a Playfair line). */
+@font-face{font-family:"WJG Stat";src:url(fonts/Tinos-400.woff2) format("woff2");font-weight:400;font-style:normal;
+  unicode-range:U+0024,U+002C,U+0030-0039;size-adjust:108.1%;ascent-override:100.1%;descent-override:23.2%;line-gap-override:0%;font-display:block}
+:root{
+  --page:#0C0C0C;--card:#141414;--raise:#1A1A1A;--ink:#fff;
+  --body:rgba(255,255,255,.85);--meta:rgba(255,255,255,.62);--quiet:rgba(255,255,255,.55);
+  --hair:rgba(255,255,255,.16);--ctrl:rgba(255,255,255,.28);--line:rgba(255,255,255,.45);
+  --serif:"WJG Stat","Playfair Display",serif;--sans:"Inter",sans-serif;
+  --m:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--page);color:var(--ink);font-family:var(--sans);font-weight:300;font-style:normal;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+fieldset{border:0;min-width:0}
+h1,h2,h3,h4,legend,strong,b{font-weight:400}
+.done-p a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:4px}
+button,input,textarea,select{font:inherit;color:inherit;background:none;border:0;border-radius:0;-webkit-appearance:none;appearance:none}
+a{color:inherit}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.n,.stat{font-family:var(--serif);font-weight:400;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+:focus{outline:none}
+:focus-visible{outline:1px solid #fff;outline-offset:4px}
+
+.cb{padding:120px var(--m)}
+.kicker{font-family:var(--sans);font-weight:200;font-size:12px;line-height:16.8px;letter-spacing:3px;text-transform:uppercase;color:var(--meta)}
+.cb-h2{font-family:var(--serif);font-weight:400;font-size:38px;line-height:44.08px;letter-spacing:-.2px;color:#fff;margin-top:16px}
+.lede{font-family:var(--sans);font-weight:300;font-size:18px;line-height:31.5px;color:var(--body);margin-top:20px;max-width:30em}
+
+/* progress */
+.cb-count{font-family:var(--sans);font-weight:200;font-size:12px;line-height:16.8px;letter-spacing:3px;text-transform:uppercase;color:var(--meta)}
+.cb-count .n{font-size:14px;letter-spacing:1px;color:#fff}
+.cb-progress{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:16px}
+.cb-progress li{min-width:0}
+.cb-progress button{display:block;width:100%;min-height:44px;padding-top:12px;text-align:left;border-top:1px solid var(--hair);
+  font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;text-transform:uppercase;color:var(--quiet);cursor:default}
+.cb-progress li.is-done button{border-top-color:rgba(255,255,255,.62);color:var(--meta);cursor:pointer}
+.cb-progress li.is-current button{border-top:2px solid #fff;padding-top:11px;color:#fff}
+.cb-progress li.is-done button:hover{color:#fff}
+
+/* steps */
+.cb-step{border:0;min-width:0}
+.cb-step[hidden]{display:none}
+.cb-q{font-family:var(--serif);font-weight:400;font-size:38px;line-height:44.08px;letter-spacing:-.2px;color:#fff;padding:0;display:block}
+.cb-help{font-family:var(--sans);font-weight:300;font-size:16px;line-height:26px;color:var(--meta);margin-top:12px;max-width:34em}
+.cb-group{margin-top:40px;border:0;min-width:0}
+.cb-group + .cb-group{margin-top:36px}
+.cb-label{display:block;font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;text-transform:uppercase;color:var(--meta);padding:0;margin-bottom:14px}
+.cb-label .opt{font-family:var(--sans);font-weight:300;font-size:12px;letter-spacing:.2px;text-transform:none;color:var(--meta);margin-left:8px}
+
+/* choice rows (step 1) */
+.choices{display:grid;gap:12px}
+.choice{position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice .box{display:block;border:1px solid var(--ctrl);padding:22px 28px;min-height:88px;background:transparent}
+.choice .t{display:block;font-family:var(--serif);font-weight:400;font-size:25px;line-height:31px;letter-spacing:-.2px;color:var(--body)}
+.choice .s{display:block;font-family:var(--sans);font-weight:300;font-size:14px;line-height:22px;color:var(--meta);margin-top:4px}
+.choice:hover .box{border-color:rgba(255,255,255,.55)}
+.choice input:checked + .box{border-color:#fff;box-shadow:inset 0 0 0 1px #fff;background:var(--raise)}
+.choice input:checked + .box .t{color:#fff}
+.choice input:focus-visible + .box{outline:1px solid #fff;outline-offset:4px}
+
+/* pills (timeline, price, format, times) */
+.pills{display:grid;gap:10px}
+.pills.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pills.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pill{position:relative;display:block;cursor:pointer;min-width:0}
+.pill input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pill span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:10px 12px;border:1px solid var(--ctrl);
+  font-family:var(--serif);font-weight:400;font-size:17px;line-height:22px;color:var(--body)}
+.pill:hover span{border-color:rgba(255,255,255,.55)}
+.pill input:checked + span{border-color:#fff;box-shadow:inset 0 0 0 1px #fff;background:var(--raise);color:#fff}
+.pill input:focus-visible + span{outline:1px solid #fff;outline-offset:4px}
+.pill.big span{min-height:64px;font-size:20px}
+
+/* text fields */
+.field{display:block;margin-top:32px}
+.field:first-child{margin-top:0}
+.field input,.field textarea{display:block;width:100%;border-bottom:1px solid var(--line);padding:10px 0 12px;
+  font-family:var(--serif);font-weight:400;font-size:20px;line-height:28px;color:#fff;min-height:52px}
+.field textarea{resize:vertical;min-height:96px}
+.field input:hover,.field textarea:hover{border-bottom-color:rgba(255,255,255,.7)}
+.field input:focus,.field textarea:focus{border-bottom-color:#fff;box-shadow:0 1px 0 0 #fff;outline:none}
+.field input:focus-visible,.field textarea:focus-visible{outline:none}
+.field:focus-within .cb-label{color:#fff}
+.field .err,.cb-err{display:block;font-family:var(--sans);font-weight:300;font-size:13px;line-height:20px;color:#fff;margin-top:8px}
+.field .err[hidden],.cb-err[hidden]{display:none}
+.field.is-invalid input{border-bottom-color:#fff;border-bottom-width:2px}
+.fields-note{font-family:var(--sans);font-weight:300;font-size:13px;line-height:20px;color:var(--meta);margin-top:12px}
+
+/* calendar */
+.when{display:grid;gap:40px;margin-top:36px}
+.cal-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-bottom:12px}
+.cal-head .month{font-family:var(--serif);font-size:20px;line-height:28px;color:#fff;text-align:center}
+.cal-nav{min-height:44px;min-width:44px;font-family:var(--sans);font-weight:200;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--meta);cursor:pointer}
+.cal-nav.prev{justify-self:start;text-align:left}
+.cal-nav.next{justify-self:end;text-align:right}
+.cal-nav[disabled]{color:rgba(255,255,255,.3);cursor:default}
+.cal-nav:not([disabled]):hover{color:#fff}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(44px,1fr));gap:4px}
+.cal .dow{font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;text-transform:uppercase;color:var(--meta);
+  text-align:center;padding:6px 0 10px}
+.day{display:flex;align-items:center;justify-content:center;height:48px;width:100%;
+  font-family:var(--serif);font-size:17px;line-height:1;color:var(--body);border:1px solid transparent;cursor:pointer}
+.day.is-open{border-color:var(--ctrl)}
+.day.is-open:hover{border-color:rgba(255,255,255,.55)}
+.day[aria-disabled="true"]{color:rgba(255,255,255,.3);cursor:default}
+.day[aria-pressed="true"]{background:#fff;color:#0C0C0C;border-color:#fff}
+.day.blank{visibility:hidden}
+.times-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;min-height:44px;align-items:center}
+.times-head .on{font-family:var(--serif);font-size:20px;line-height:28px;color:#fff}
+.example-note{font-family:var(--sans);font-weight:300;font-size:13px;line-height:20px;color:var(--meta);margin-top:14px}
+.suggest{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-family:var(--sans);font-weight:300;font-size:14px;line-height:22px;
+  color:var(--body);text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:5px;cursor:pointer}
+.suggest[aria-pressed="true"]{color:#fff;text-decoration-color:#fff;text-decoration-thickness:2px}
+
+/* itinerary summary (from pin 3: label left, value right, hairline rows) */
+.itin{border-top:1px solid var(--hair)}
+.itin div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--hair)}
+.itin dt{font-family:var(--sans);font-weight:200;font-size:10px;line-height:15px;letter-spacing:2.4px;text-transform:uppercase;color:var(--meta)}
+.itin dd{font-family:var(--serif);font-size:17px;line-height:24px;color:#fff;text-align:right;min-width:0;overflow-wrap:anywhere}
+.itin dd.empty{font-family:var(--sans);font-weight:300;font-size:13px;color:var(--quiet)}
+
+/* actions */
+.cb-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:48px}
+.cb-actions.solo{grid-template-columns:1fr}
+.btn{white-space:nowrap;display:flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;cursor:pointer;
+  font-family:var(--sans);font-weight:300;font-size:12px;line-height:16px;letter-spacing:3px;text-transform:uppercase}
+.btn-back{border:1px solid var(--ctrl);color:var(--body)}
+.btn-back:hover{border-color:#fff;color:#fff}
+.btn-go{background:#fff;color:#0C0C0C;border:1px solid #fff;font-weight:400}
+.btn-go:hover{background:rgba(255,255,255,.88)}
+.btn[hidden]{display:none}
+
+/* confirmation */
+.done-h{font-family:var(--serif);font-weight:400;font-size:38px;line-height:44.08px;letter-spacing:-.2px;color:#fff}
+.done-p{font-family:var(--sans);font-weight:300;font-size:16px;line-height:26px;color:var(--body);margin-top:16px}
+.direct{font-family:var(--sans);font-weight:300;font-size:15px;line-height:24px;color:var(--body)}
+.direct a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.direct a:hover{text-decoration:underline;text-underline-offset:5px}
+.license{font-family:var(--sans);font-weight:200;font-size:10px;line-height:18px;letter-spacing:2.4px;text-transform:uppercase;color:var(--meta)}
+
+.is-entering{animation:cbIn .22s ease-out}
+@keyframes cbIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.is-entering{animation:none}}
+html.shot .is-entering{animation:none}
+
+@media (max-width:767px){
+  :root{--m:20px}
+  .cb{padding:72px var(--m)}
+  .cb-h2,.cb-q,.done-h{font-size:28px;line-height:32.48px}
+  .lede{font-size:16px;line-height:28px}
+  .cb-help{font-size:15px;line-height:24px}
+  .choice .box{padding:18px 20px;min-height:80px}
+  .choice .t{font-size:22px;line-height:28px}
+  .pills.c3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pills.c3.keep3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pill span{font-size:16px}
+  .pill.big span{font-size:17px;padding:8px 6px;min-height:56px}
+  .cal{gap:3px}
+  .day{font-size:16px}
+  .itin div{grid-template-columns:96px minmax(0,1fr)}
+  .cb-progress button{font-size:9px;letter-spacing:1.6px}
+}
+/* every serif element is Playfair Regular 400 (only weight in the brand) */
+.day,.cal-head .month,.times-head .on,.itin dd,.pill span,.field input,.field textarea,.choice .t,.n,.stat,.cb-q,.cb-h2,.done-h{font-weight:400}
+.itin dd.empty{font-weight:300}
+
+.cb--a .cb-intro{text-align:center;max-width:880px;margin:0 auto}
+.cb--a .cb-intro .lede{margin:20px auto 0;max-width:34em}
+.cb--a .card{max-width:880px;margin:56px auto 0;background:var(--card);border:1px solid var(--hair);padding:64px 72px}
+.cb--a .cb-panel{min-width:0}
+.cb--a .cb-step{margin-top:48px}
+.cb--a .cb-head[hidden] + form .cb-step{margin-top:0}
+.cb--a .choices{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:40px}
+.cb--a .s4-itin{margin-top:32px}
+.cb--a .s4-itin .itin-title{margin-bottom:14px}
+.cb--a .fields{margin-top:40px}
+.cb--a .done-itin{margin-top:36px}
+.cb--a .times{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:1000px){.cb--a .when{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}}
+.cb--a .cb-outro{max-width:880px;margin:40px auto 0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.cb--a .cb-outro .kicker{grid-column:1/-1;text-align:center}
+.cb--a .cb-outro .direct:nth-of-type(2){justify-self:end}
+.cb--a .cb-outro .direct:nth-of-type(3){justify-self:start}
+.cb--a .cb-outro .dot{color:var(--meta)}
+.cb--a .times.is-off{opacity:.5}
+@media (max-width:999px){.cb--a .card{padding:56px 48px}}
+@media (max-width:767px){
+ .cb--a .card{margin:40px calc(-1 * var(--m)) 0;padding:40px var(--m) 48px;border-left:0;border-right:0}
+ .cb--a .choices{grid-template-columns:1fr}
+ .cb--a .cb-outro{grid-template-columns:1fr;gap:0;text-align:center}
+ .cb--a .cb-outro .direct{justify-self:center!important}
+ .cb--a .cb-outro .dot{display:none}
+}
+
+html.in-shell .cb{padding-top:24px;padding-bottom:88px}
+@media (max-width:767px){html.in-shell .cb{padding-top:16px;padding-bottom:64px}}
+</style></head>
+<body><section class="cb cb--a" aria-labelledby="cb-title">
+ <div class="cb-intro"><p class="kicker">Contact</p><h2 class="cb-h2" id="cb-title">Begin a conversation.</h2>
+ <p class="lede" data-copy="placeholder">A private consultation with Weston, in person, by phone or by video.</p></div>
+ <div class="card">
+<div class="cb-panel">
+ <header class="cb-head">
+  <p class="cb-count" aria-live="polite">Step <span class="n cur">1</span> of <span class="n">4</span></p>
+  <ol class="cb-progress" aria-label="Progress">
+   <li><button type="button">Purpose</button></li><li><button type="button" data-copy="placeholder">Property</button></li><li><button type="button" data-copy="placeholder">Meeting</button></li><li><button type="button" data-copy="placeholder">Contact</button></li>
+  </ol>
+ </header>
+ <form id="wf-form-Consultation" name="wf-form-Consultation" data-name="Consultation" novalidate aria-label="Request a private consultation">
+  <fieldset class="cb-step" data-step="1">
+   <legend class="cb-q" tabindex="-1">Where shall we begin?</legend>
+   <p class="cb-help">Tell us a little about what you’re imagining. Every conversation stays private.</p>
+   <div class="choices" role="radiogroup" aria-label="I’m interested in"><label class="choice"><input type="radio" name="Interest" value="Buying" id="int-1"><span class="box"><span class="t">Find a Home</span><span class="s">Something extraordinary</span></span></label><label class="choice"><input type="radio" name="Interest" value="Selling" id="int-2"><span class="box"><span class="t">Sell a Property</span><span class="s">A thoughtful next chapter</span></span></label><label class="choice"><input type="radio" name="Interest" value="Both" id="int-3"><span class="box"><span class="t">Both</span><span class="s">A new beginning</span></span></label><label class="choice"><input type="radio" name="Interest" value="Just exploring" id="int-4"><span class="box"><span class="t">Just Exploring</span><span class="s">Let’s start a conversation</span></span></label></div>
+   <p class="cb-err" role="alert" hidden></p>
+  </fieldset>
+  <fieldset class="cb-step" data-step="2" hidden>
+   <legend class="cb-q" tabindex="-1" data-copy="placeholder">Tell us a little more.</legend>
+   <p class="cb-help" data-copy="placeholder">Share only what you’d like to. Everything on this step is optional.</p>
+   <div class="cb-group"><label class="field"><span class="cb-label">Neighborhood or address<span class="opt">optional</span></span>
+     <input type="text" name="Neighborhood or Address" autocomplete="street-address" aria-describedby="area-help"></label>
+     <p class="fields-note" id="area-help" data-area-help data-copy="placeholder">Where are you looking? A neighborhood, a street or a home you have seen.</p></div>
+   <fieldset class="cb-group"><legend class="cb-label" data-copy="placeholder">Timeline<span class="opt">optional</span></legend><div class="pills c2"><label class="pill "><input type="radio" name="Timeline" value="As soon as possible"><span class="n" data-copy="placeholder">As soon as possible</span></label><label class="pill "><input type="radio" name="Timeline" value="Within 3 months"><span class="n" data-copy="placeholder">Within 3 months</span></label><label class="pill "><input type="radio" name="Timeline" value="Within a year"><span class="n" data-copy="placeholder">Within a year</span></label><label class="pill "><input type="radio" name="Timeline" value="No set timeline"><span class="n" data-copy="placeholder">No set timeline</span></label></div></fieldset>
+   <fieldset class="cb-group"><legend class="cb-label" data-copy="placeholder">Price range<span class="opt">optional</span></legend><div class="pills c3"><label class="pill "><input type="radio" name="Price Range" value="Under $3M"><span class="n" data-copy="placeholder">Under $3M</span></label><label class="pill "><input type="radio" name="Price Range" value="$3M to $5M"><span class="n" data-copy="placeholder">$3M to $5M</span></label><label class="pill "><input type="radio" name="Price Range" value="$5M to $10M"><span class="n" data-copy="placeholder">$5M to $10M</span></label><label class="pill "><input type="radio" name="Price Range" value="$10M to $20M"><span class="n" data-copy="placeholder">$10M to $20M</span></label><label class="pill "><input type="radio" name="Price Range" value="$20M and above"><span class="n" data-copy="placeholder">$20M and above</span></label><label class="pill "><input type="radio" name="Price Range" value="Prefer not to say"><span class="n" data-copy="placeholder">Prefer not to say</span></label></div></fieldset>
+  </fieldset>
+  <fieldset class="cb-step" data-step="3" hidden>
+   <legend class="cb-q" tabindex="-1" data-copy="placeholder">How would you like to meet?</legend>
+   <p class="cb-help" data-copy="placeholder">Choose a format and a time that suits you. We’ll confirm with you personally.</p>
+   <fieldset class="cb-group"><legend class="cb-label" data-copy="placeholder">Format</legend><div class="pills c3 keep3"><label class="pill big"><input type="radio" name="Meeting Format" value="In person"><span class="n" data-copy="placeholder">In person</span></label><label class="pill big"><input type="radio" name="Meeting Format" value="Phone"><span class="n" data-copy="placeholder">Phone</span></label><label class="pill big"><input type="radio" name="Meeting Format" value="Video"><span class="n" data-copy="placeholder">Video</span></label></div></fieldset>
+   <div class="when">
+    <div class="cal-wrap"><p class="cb-label" id="cal-label">Date</p>
+     <div class="cal-head"><button type="button" class="cal-nav prev" aria-label="Previous month">Previous</button><p class="month" aria-live="polite"></p><button type="button" class="cal-nav next" aria-label="Next month">Next</button></div>
+     <div class="cal" role="group" aria-labelledby="cal-label"></div>
+    </div>
+    <fieldset class="times-wrap"><legend class="cb-label">Time</legend>
+     <div class="times-head"><p class="on n"></p></div>
+     <div class="pills times"></div>
+     <p class="example-note" data-copy="placeholder">Example availability for this mockup. Times shown in Pacific Time.</p>
+     <button type="button" class="suggest" aria-pressed="false" data-copy="placeholder">None of these work? Ask us to suggest a time.</button>
+    </fieldset>
+   </div>
+   <p class="cb-err" role="alert" hidden></p>
+  </fieldset>
+  <fieldset class="cb-step" data-step="4" hidden>
+   <legend class="cb-q" tabindex="-1" data-copy="placeholder">How shall we reach you?</legend>
+   <p class="cb-help" data-copy="placeholder">All fields are required unless marked optional.</p>
+   <div class="s4-itin"><p class="kicker itin-title" data-copy="placeholder">Your consultation</p><dl class="itin">
+<div><dt>Purpose</dt><dd data-k="purpose"></dd></div>
+<div><dt>Property</dt><dd data-k="area"></dd></div>
+<div><dt>Format</dt><dd data-k="format"></dd></div>
+<div><dt>Requested</dt><dd data-k="when"></dd></div>
+</dl></div>
+   <div class="cb-group fields">
+    <label class="field"><span class="cb-label">Name</span><input type="text" name="Name" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name" hidden></span></label>
+    <label class="field"><span class="cb-label">Email</span><input type="email" name="Email" autocomplete="email" required aria-describedby="e-email"><span class="err" id="e-email" hidden></span></label>
+    <label class="field"><span class="cb-label">Phone<span class="opt">optional</span></span><input type="tel" name="Phone" autocomplete="tel"><span class="err" hidden></span></label>
+    <label class="field"><span class="cb-label">Anything else we should know?<span class="opt">optional</span></span><textarea name="Message" rows="3"></textarea><span class="err" hidden></span></label>
+   </div>
+  </fieldset>
+  <div class="cb-step done" data-step="5" hidden>
+   <p class="kicker" data-copy="placeholder">Requested</p>
+   <h3 class="done-h" tabindex="-1" data-copy="placeholder">Your private consultation is requested.</h3>
+   <p class="done-p">Weston or a member of our team will be in touch personally to confirm. If your enquiry is time-sensitive, please call <a href="tel:+13108800582" class="n">+1 310.880.0582</a>.</p>
+   <div class="done-itin"><dl class="itin">
+<div><dt>Purpose</dt><dd data-k="purpose"></dd></div>
+<div><dt>Property</dt><dd data-k="area"></dd></div>
+<div><dt>Format</dt><dd data-k="format"></dd></div>
+<div><dt>Requested</dt><dd data-k="when"></dd></div>
+</dl></div>
+   <p class="done-p quietline">Every conversation stays private.</p>
+  </div>
+  <div class="cb-actions solo">
+   <button type="button" class="btn btn-back" hidden>Back</button>
+   <button type="submit" class="btn btn-go">Continue</button>
+  </div>
+ 
+<input type="hidden" name="Source" value="Contact">
+<input type="hidden" name="Time Zone" value="">
+<input type="hidden" name="Preferred Date" value="">
+<input type="hidden" name="Suggest a Time" value="">
+</form>
+</div></div>
+ <div class="cb-outro"><p class="kicker">Or reach us directly</p>
+  <p class="direct"><a href="tel:+13108800582"><span class="n">+1 310.880.0582</span></a></p><span class="dot" aria-hidden="true">·</span>
+  <p class="direct"><a href="mailto:Weston@WestonJamesGroup.com">Weston@WestonJamesGroup.com</a></p></div>
+</section>
+<script>/* Mock behaviour only. Availability below is EXAMPLE DATA; the real build pulls slots from the scheduler. */
+(function(){
+  const root=document.querySelector('.cb');
+  const form=root.querySelector('form');
+  const steps=[...root.querySelectorAll('[data-step]')];
+  const prog=[...root.querySelectorAll('.cb-progress li')];
+  const back=root.querySelector('.btn-back'), go=root.querySelector('.btn-go'), actions=root.querySelector('.cb-actions');
+  const countN=root.querySelector('.cb-count .cur');
+  const head=root.querySelector('.cb-head');
+  const P=new URLSearchParams(location.search);
+  if(P.get('shot')) document.documentElement.classList.add('shot');
+  let cur=1, maxReached=1;
+  const state={date:null,time:null,suggest:false,month:11,year:2026};
+  const DOW=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  // EXAMPLE availability: weekdays from Dec 1, 2026, a few closed days, nothing on weekends.
+  const closed=new Set(['2026-12-3','2026-12-10','2026-12-24','2026-12-25','2026-12-31']);
+  const isOpen=(y,m,d)=>{const w=new Date(y,m,d).getDay();const k=`${y}-${m+1}-${d}`;
+    if(y===2026&&m===10) return false; return w!==0&&w!==6&&!closed.has(k);};
+  const TIMES=['10:00 AM','11:00 AM','12:30 PM','2:00 PM','3:30 PM','5:00 PM'];
+
+  function renderCal(){
+    const cal=root.querySelector('.cal'); const {year:y,month:m}=state;
+    root.querySelector('.cal-head .month').textContent=`${MON[m]} ${y}`;
+    root.querySelector('.cal-nav.prev').disabled=(y===2026&&m<=11);
+    root.querySelector('.cal-nav.next').disabled=(y===2027&&m>=0);
+    cal.innerHTML=['S','M','T','W','T','F','S'].map((d,i)=>`<span class="dow" aria-hidden="true">${d}</span>`).join('');
+    const first=new Date(y,m,1).getDay(), days=new Date(y,m+1,0).getDate();
+    for(let i=0;i<first;i++) cal.insertAdjacentHTML('beforeend','<span class="day blank" aria-hidden="true"></span>');
+    for(let d=1;d<=days;d++){
+      const open=isOpen(y,m,d), w=DOW[new Date(y,m,d).getDay()];
+      const sel=state.date&&state.date.y===y&&state.date.m===m&&state.date.d===d;
+      cal.insertAdjacentHTML('beforeend',`<button type="button" class="day${open?' is-open':''}" data-d="${d}" aria-pressed="${sel}" ${open?'':'aria-disabled="true"'} aria-label="${w}, ${MON[m]} ${d}${open?'':', unavailable'}">${d}</button>`);
+    }
+  }
+  function dateLabel(){ if(!state.date) return null; const {y,m,d}=state.date; return `${DOW[new Date(y,m,d).getDay()]}, ${MON[m]} ${d}`; }
+  function renderTimes(){
+    const on=root.querySelector('.times-head .on'); const box=root.querySelector('.times');
+    on.textContent=state.date?dateLabel():'Choose a date';
+    box.innerHTML=TIMES.map(t=>`<label class="pill"><input type="radio" name="Preferred Time" value="${t}" ${state.time===t?'checked':''} ${state.date?'':'disabled'}><span class="n">${t}</span></label>`).join('');
+    box.querySelectorAll('input').forEach(i=>i.addEventListener('change',()=>{state.time=i.value;state.suggest=false;syncSuggest();summary();}));
+    box.classList.toggle('is-off',!state.date);
+  }
+  function syncSuggest(){ const s=root.querySelector('.suggest'); s.setAttribute('aria-pressed',String(state.suggest)); }
+  root.querySelector('.cal').addEventListener('click',e=>{const b=e.target.closest('.day.is-open'); if(!b) return;
+    state.date={y:state.year,m:state.month,d:+b.dataset.d}; state.time=null; state.suggest=false; renderCal(); renderTimes(); syncSuggest(); summary();
+    root.querySelector(`.day[data-d="${b.dataset.d}"]`).focus();});
+  root.querySelector('.cal-nav.prev').addEventListener('click',()=>{state.month--; if(state.month<0){state.month=11;state.year--;} renderCal();});
+  root.querySelector('.cal-nav.next').addEventListener('click',()=>{state.month++; if(state.month>11){state.month=0;state.year++;} renderCal();});
+  root.querySelector('.suggest').addEventListener('click',()=>{state.suggest=!state.suggest; if(state.suggest){state.time=null;} renderTimes(); syncSuggest(); summary();});
+
+  const val=n=>{const el=form.querySelector(`[name="${n}"]:checked`)||form.querySelector(`[name="${n}"]:not([type=radio])`); return el&&el.value?el.value.trim():'';};
+  const LABEL={'Buying':'Find a Home','Selling':'Sell a Property','Both':'Both','Just exploring':'Just Exploring'};
+  function summary(){
+    const rows={purpose:LABEL[val('Interest')]||'',area:val('Neighborhood or Address'),format:val('Meeting Format'),
+      when:state.suggest?'Please suggest a time':(state.date?dateLabel()+(state.time?`, ${state.time}`:''):'')};
+    root.querySelectorAll('.itin [data-k]').forEach(dd=>{const v=rows[dd.dataset.k]; dd.textContent=v||'Not yet chosen'; dd.classList.toggle('empty',!v);});
+  }
+  form.addEventListener('input',summary); form.addEventListener('change',summary);
+
+  function err(step,msg){const e=steps[step-1].querySelector('.cb-err'); if(!e) return; e.textContent=msg||''; e.hidden=!msg;}
+  function validate(n){
+    if(n===1){ if(!val('Interest')){err(1,'Please choose one to continue.'); steps[0].querySelector('input').focus(); return false;} err(1); }
+    if(n===3){ if(!val('Meeting Format')){err(3,'Please choose how you would like to meet.'); return false;}
+      if(!(state.suggest||(state.date&&state.time))){err(3,'Please choose a date and time, or ask us to suggest one.'); return false;} err(3); }
+    if(n===4){ let ok=true;
+      const f=(name,test,msg)=>{const i=form.querySelector(`[name="${name}"]`),w=i.closest('.field'),e=w.querySelector('.err');
+        const bad=!test(i.value.trim()); w.classList.toggle('is-invalid',bad); i.setAttribute('aria-invalid',String(bad)); e.hidden=!bad; e.textContent=bad?msg:'';
+        if(bad&&ok){i.focus(); ok=false;}};
+      f('Name',v=>v.length>1,'Please enter your name.');
+      f('Email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v),'Please enter an email address we can reply to.');
+      return ok; }
+    return true;
+  }
+  function show(n,{focus=true}={}){
+    cur=n; maxReached=Math.max(maxReached,Math.min(n,4));
+    steps.forEach(s=>{const on=+s.dataset.step===n; s.hidden=!on; if(on){s.classList.remove('is-entering'); void s.offsetWidth; s.classList.add('is-entering');}});
+    prog.forEach((li,i)=>{const k=i+1; li.classList.toggle('is-current',k===n); li.classList.toggle('is-done',k<n||(n<5&&k<maxReached&&k!==n));
+      const b=li.querySelector('button'); b.setAttribute('aria-current',k===n?'step':'false'); b.disabled=!(k<n||k<=maxReached)||k===n;});
+    if(countN) countN.textContent=Math.min(n,4);
+    head.hidden=(n===5); back.hidden=(n===1||n===5); go.hidden=(n===5); actions.classList.toggle('solo',n===1); actions.hidden=(n===5);
+    go.textContent=n===4?'Send request':'Continue';
+    root.classList.toggle('is-done-state',n===5); root.dataset.cur=n;
+    if(focus){const h=steps[n-1].querySelector('.cb-q,.done-h'); h&&h.focus({preventScroll:false});}
+  }
+  function advance(){ if(cur>=5) return; if(!validate(cur)) return; if(cur===4){ /* real build: POST to Webflow form + scheduler */ show(5); return;} show(cur+1); }
+  back.addEventListener('click',()=>{ if(cur>1) show(cur-1); });
+  prog.forEach((li,i)=>li.querySelector('button').addEventListener('click',()=>{ if(i+1<cur||i+1<=maxReached) show(i+1); }));
+  form.addEventListener('submit',e=>{e.preventDefault(); advance();});
+  form.querySelectorAll('input[name="Interest"]').forEach(i=>i.addEventListener('change',()=>{err(1); const lab=root.querySelector('[data-area-help]');
+    const t={'Buying':'Where are you looking? A neighborhood, a street or a home you have seen.','Selling':'The address of the property you are considering selling.','Both':'The home you might sell, and where you would like to be next.','Just exploring':'Anywhere you have in mind.'}[i.value];
+    if(lab) lab.textContent=t;}));
+
+  // URL presets for review screenshots
+  const path=P.get('path'); if(path==='buyer') form.querySelector('[value="Buying"]').checked=true; if(path==='seller') form.querySelector('[value="Selling"]').checked=true;
+  const target=+(P.get('step')||1);
+  if(P.get('demo')){
+    if(target>=1&&P.get('sel')!=='0') {const r=form.querySelector('[value="Buying"]'); r.checked=true; r.dispatchEvent(new Event('change'));}
+    if(target>=3){ form.querySelector('[name="Neighborhood or Address"]').value='Bel Air'; form.querySelector('[name="Timeline"][value="Within 3 months"]').checked=true; }
+    if(target>=3&&P.get('fmt')!=='0') form.querySelector('[name="Meeting Format"][value="Video"]').checked=true;
+    if(target>=4||P.get('pick')){ state.date={y:2026,m:11,d:8}; state.time='11:00 AM'; }
+    if(target>=5){ form.querySelector('[name="Name"]').value='Sample Name'; form.querySelector('[name="Email"]').value='name@example.com'; }
+  }
+  renderCal(); renderTimes(); summary();
+  maxReached=target; show(target,{focus:false});
+  const fo=P.get('focus'); if(fo){ const el=form.querySelector(`[name="${fo}"]`)||root.querySelector(fo); el&&el.focus(); }
+  if(P.get('invalid')) validate(+P.get('invalid'));
+})();
+</script>
+<script>
+(function(){
+  var P=new URLSearchParams(location.search);
+  if(window.self!==window.top || P.get('shell')) document.documentElement.classList.add('in-shell');
+  var form=document.querySelector('.cb form');
+  function syncHidden(){
+    if(!form) return;
+    var tz=form.querySelector('[name="Time Zone"]');
+    if(tz && !tz.value){ try{ tz.value=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){} }
+    var date=form.querySelector('[name="Preferred Date"]');
+    var sug=form.querySelector('[name="Suggest a Time"]');
+    // state lives in the mock IIFE; read the visible summary / checked radios as a fallback
+    if(sug){ var b=document.querySelector('.suggest'); sug.value=(b && b.getAttribute('aria-pressed')==='true')?'true':''; }
+    if(date){
+      var sel=document.querySelector('.cal .day[aria-pressed="true"]');
+      if(sel){
+        var lab=sel.getAttribute('aria-label')||'';
+        // keep ISO if the button dataset exists; reconstruct from December 2026 mock
+        var d=sel.getAttribute('data-d');
+        var head=document.querySelector('.cal-head .month');
+        var iso='';
+        if(d && head){
+          var t=head.textContent.trim().split(/\s+/);
+          var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+          var mi=months.indexOf(t[0]); var y=t[1];
+          if(mi>=0 && y) iso=y+'-'+String(mi+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+        }
+        date.value=iso;
+      } else date.value='';
+    }
+  }
+  document.addEventListener('click', function(){ setTimeout(syncHidden, 0); });
+  document.addEventListener('change', syncHidden);
+  syncHidden();
+  function report(){
+    if(window.parent===window) return;
+    var h=Math.ceil(Math.max(document.documentElement.scrollHeight, document.body?document.body.scrollHeight:0));
+    window.parent.postMessage({type:'wjg-cb-h', h:h}, '*');
+  }
+  window.addEventListener('load', report);
+  if(window.ResizeObserver){
+    var ro=new ResizeObserver(report);
+    ro.observe(document.documentElement);
+    var cb=document.querySelector('.cb'); if(cb) ro.observe(cb);
+  }
+  setInterval(report, 400);
+})();
+</script>
+</body></html>
